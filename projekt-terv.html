@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Projekt terv - Szevasztopol Szoftverek</title>
+</head>
+<body>
+
+<h1>Projekt terv</h1>
+
+<hr>
+
+<h2>Címlap</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<td><strong>Projekt neve:</strong></td>
+<td>Visszhang (Echo)</td>
+</tr>
+<tr>
+<td><strong>Csoport neve:</strong></td>
+<td>Szevasztopol Szoftverek</td>
+</tr>
+<tr>
+<td><strong>Dokumentum típusa:</strong></td>
+<td>Projekt terv</td>
+</tr>
+<tr>
+<td><strong>Verzió:</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Készítette:</strong></td>
+<td>Szevasztopol Szoftverek csapat</td>
+</tr>
+<tr>
+<td><strong>Intézmény:</strong></td>
+<td>Miskolci Egyetem</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Tartalomjegyzék</h2>
+
+<ol>
+<li><a href="#p1">Bevezetés</a></li>
+<li><a href="#p2">A projekt célja és hatóköre</a></li>
+<li><a href="#p3">A csapat bemutatása és szerepkörök</a></li>
+<li><a href="#p4">Fejlesztési módszertan</a></li>
+<li><a href="#p5">Mérföldkövek és ütemterv</a></li>
+<li><a href="#p6">Erőforrások és eszközök</a></li>
+<li><a href="#p7">Kockázatkezelés</a></li>
+<li><a href="#p8">Minőségbiztosítás</a></li>
+<li><a href="#p9">Kommunikációs terv</a></li>
+<li><a href="#p10">Dokumentumkezelés</a></li>
+<li><a href="#p11">Összefoglalás</a></li>
+</ol>
+
+<hr>
+
+<h2 id="p1">1. Bevezetés</h2>
+
+<p>Jelen projekt terv a Szevasztopol Szoftverek csapat által készített "Visszhang" (Echo) munkacímű játék dokumentációs projektjének tervezését mutatja be. A projekt célja egy teljes körű szoftver-dokumentációs csomag elkészítése, amely a követelmény analízistől kezdve a rendszertervezésen át az objektumtervezésig terjed. A projekt a H1-H5 mérföldkövekre épül, és a félév során fokozatosan halad előre a dokumentumok elkészítésében.</p>
+
+<p>A projekt terv a H2 mérföldkő részeként készült el, és a H1 során megfogalmazott alapvetésekre épül. A dokumentum célja, hogy részletesen bemutassa a projekt szervezési és tervezési aspektusait, beleértve a csapat felépítését, a fejlesztési módszertant, a mérföldköveket, az erőforrásokat, a kockázatkezelést és a minőségbiztosítást. A projekt terv élő dokumentum, amely a projekt előrehaladtával frissülhet.</p>
+
+<hr>
+
+<h2 id="p2">2. A projekt célja és hatóköre</h2>
+
+<h3>2.1 A projekt célja</h3>
+
+<p>A projekt fő célja egy olyan dokumentációs csomag elkészítése, amely egy túlélőhorror játék teljes tervezését lefedi. A dokumentumoknak összhangban kell lenniük egymással, és a követelményektől a tervezésig terjedő folyamatot kell leírniuk. A projekt nem tartalmaz tényleges implementációt, kivéve egy opcionális skeleton implementációt a H5 mérföldkő során. A cél az, hogy a csapat tagjai elsajátítsák a szoftverfejlesztési dokumentumok készítésének módszertanát, és képesek legyenek egy összetett rendszer tervezésének dokumentálására.</p>
+
+<h3>2.2 A projekt hatóköre</h3>
+
+<p>A projekt az alábbi dokumentumok elkészítését foglalja magában:</p>
+
+<ul>
+<li>H1: Projekt terv (elkészült)</li>
+<li>H2: Vízió dokumentum, Projekt terv (frissített), Munkanapló</li>
+<li>H3: Software követelmény specifikáció, Szótár, Felhasználói dokumentáció első verziója, Munkanapló</li>
+<li>H4: OO analízis modell, Rendszertervezés dokumentum, frissített Szótár és felhasználói dokumentáció, Munkanapló</li>
+<li>H5: Objektumtervezési dokumentum, opcionális skeleton implementáció, nagyvonalú tesztelési terv, Munkanapló</li>
+</ul>
+
+<p>A projekt nem terjed ki a játék tényleges implementációjára, a teljes körű tesztelésre, a kiadásra és a marketingre. A dokumentumok elektronikus úton, HTML és PDF formátumban kerülnek feltöltésre a külön kiadott feltöltési útmutató szerint.</p>
+
+<hr>
+
+<h2 id="p3">3. A csapat bemutatása és szerepkörök</h2>
+
+<h3>3.1 Csapatstruktúra</h3>
+
+<p>A Szevasztopol Szoftverek csapat öt főből áll, akik közösen dolgoznak a projekt minden fázisán. A csapat tagjai megosztott felelősséggel rendelkeznek, de bizonyos szerepkörök kijelölése segíti a hatékony munkavégzést. A csapat tagjai:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Név</th>
+<th>Szerepkör</th>
+<th>Felelősség</th>
+</tr>
+<tr>
+<td>[Csapattag 1]</td>
+<td>Projektvezető</td>
+<td>A projekt általános irányítása, a feladatok koordinálása, a határidők betartatása, a csapatmotiváció fenntartása.</td>
+</tr>
+<tr>
+<td>[Csapattag 2]</td>
+<td>Rendszerarchitekt</td>
+<td>A rendszer architektúrájának tervezése, a technológiai döntések meghozatala, a rendszertervezési dokumentum vezetése.</td>
+</tr>
+<tr>
+<td>[Csapattag 3]</td>
+<td>Játékmenet-tervező</td>
+<td>A játék mechanikáinak és játékmenetének tervezése, a követelmények megfogalmazása, a játékmenet konzisztenciájának biztosítása.</td>
+</tr>
+<tr>
+<td>[Csapattag 4]</td>
+<td>Dokumentációért és UX/UI-ért felelős tag</td>
+<td>A dokumentumok formai követelményeinek betartatása, a felhasználói élmény és a felhasználói felület tervezése, a dokumentumok stílusának egységesítése.</td>
+</tr>
+<tr>
+<td>[Csapattag 5]</td>
+<td>Ellenőrzésért és minőségbiztosításért felelős tag</td>
+<td>A dokumentumok konzisztenciájának ellenőrzése, a hibák feltárása, a minőségi elvárások betartatása, a tesztelési terv elkészítése.</td>
+</tr>
+</table>
+
+<h3>3.2 Szerepkörök és felelősségek</h3>
+
+<p>A szerepkörök kijelölése nem azt jelenti, hogy a csapattagok kizárólag a saját területükkel foglalkoznak. A csapat együttműködésen alapuló megközelítést alkalmaz, ami azt jelenti, hogy minden tag részt vesz a dokumentumok elkészítésében és átvizsgálásában. A szerepkörök inkább a felelősségi területeket jelölik ki, és segítenek abban, hogy a feladatok ne maradjanak elvégezetlenül. A projektvezető felelős a végső döntésekért, de a döntéseket lehetőség szerint konszenzusos alapon hozza meg a csapat.</p>
+
+<p>A csapat heti rendszerességgel tart megbeszéléseket, amelyeken áttekinti a haladást, megbeszéli a felmerülő problémákat, és kijelöli a következő hét feladatait. A megbeszéléseken minden csapattag beszámol az elvégzett munkáról és a felmerült nehézségekről. A megbeszélések online formában zajlanak, hogy a csapattagok számára kényelmes legyen a részvétel.</p>
+
+<hr>
+
+<h2 id="p4">4. Fejlesztési módszertan</h2>
+
+<h3>4.1 Általános megközelítés</h3>
+
+<p>A projekt jellegéből adódóan nem hagyományos szoftverfejlesztési módszertant követünk, hanem egy dokumentumközpontú, iteratív megközelítést alkalmazunk. A projekt a H1-H5 mérföldkövekre épül, amelyek egymásra épülnek, és fokozatosan mélyítik el a rendszer tervezését. Minden mérföldkő végén a csapat áttekinti az elkészült dokumentumokat, és szükség esetén módosítja azokat a következő fázisban.</p>
+
+<h3>4.2 Iteratív dokumentumfejlesztés</h3>
+
+<p>A dokumentumok fejlesztése iteratív módon történik. Ez azt jelenti, hogy az egyes dokumentumok nem egyszerre készülnek el teljesen, hanem fokozatosan, több iterációban. Például a Szótár a H3 mérföldkő során készül el először, majd a H4 és H5 során frissül és bővül. A felhasználói dokumentáció szintén több verzióban készül el, minden mérföldkő során finomodik. Ez a megközelítés lehetővé teszi, hogy a csapat rugalmasan reagáljon a felmerülő igényekre, és a dokumentumok mindig tükrözzék a projekt aktuális állapotát.</p>
+
+<h3>4.3 Verziókezelés</h3>
+
+<p>A dokumentumok verziókezelése egyszerű módon történik: minden dokumentum fejlécében feltüntetjük a verziószámot és a dátumot. A csapat közös tárhelyen tárolja a dokumentumokat, ahol minden tag hozzáférhet a legfrissebb verziókhoz. A változtatásokat a csapattagok dokumentálják, hogy nyomon követhető legyen a dokumentumok fejlődése. A projektvezető felelős azért, hogy a dokumentumok mindig a legfrissebb verzióban legyenek elérhetők.</p>
+
+<hr>
+
+<h2 id="p5">5. Mérföldkövek és ütemterv</h2>
+
+<h3>5.1 Mérföldkövek áttekintése</h3>
+
+<p>A projekt a H1-H5 mérföldkövekre épül, amelyek a félév során fokozatosan követik egymást. Minden mérföldkőhöz konkrét eredmények tartoznak. Az alábbi táblázat összefoglalja a mérföldköveket és a hozzájuk tartozó produktumokat:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Mérföldkő</th>
+<th>Produktumok</th>
+</tr>
+<tr>
+<td>H1</td>
+<td>Projekt terv</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>Vízió dokumentum, Projekt terv (frissített), Munkanapló</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Software követelmény specifikáció, Szótár, Felhasználói dokumentáció első verziója, Munkanapló</td>
+</tr>
+<tr>
+<td>H4</td>
+<td>OO analízis modell, Rendszertervezés dokumentum, frissített Szótár és felhasználói dokumentáció, Munkanapló</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>Objektumtervezési dokumentum, opcionális skeleton implementáció, nagyvonalú tesztelési terv, Munkanapló</td>
+</tr>
+</table>
+
+<h3>5.2 Részletes ütemterv</h3>
+
+<p>Az alábbiakban részletesen bemutatjuk az egyes mérföldkövekhez tartozó feladatokat és azok tervezett ütemezését.</p>
+
+<h4>5.2.1 H1 mérföldkő</h4>
+
+<ul>
+<li>A csapat megalakulása, szerepkörök kijelölése</li>
+<li>A projekt témájának kiválasztása</li>
+<li>A projekt terv első verziójának elkészítése</li>
+<li>A projekt terv feltöltése a megadott határidőre</li>
+</ul>
+
+<h4>5.2.2 H2 mérföldkő</h4>
+
+<ul>
+<li>A Vízió dokumentum elkészítése</li>
+<li>A Projekt terv frissítése a H2 követelményeinek megfelelően</li>
+<li>A Munkanapló vezetése</li>
+<li>A dokumentumok feltöltése a megadott határidőre</li>
+</ul>
+
+<h4>5.2.3 H3 mérföldkő</h4>
+
+<ul>
+<li>A Software követelmény specifikáció elkészítése</li>
+<li>A Szótár első verziójának elkészítése</li>
+<li>A Felhasználói dokumentáció első verziójának elkészítése</li>
+<li>A Munkanapló vezetése</li>
+<li>A dokumentumok feltöltése a megadott határidőre</li>
+</ul>
+
+<h4>5.2.4 H4 mérföldkő</h4>
+
+<ul>
+<li>Az OO analízis modell elkészítése</li>
+<li>A Rendszertervezés dokumentum elkészítése</li>
+<li>A Szótár és a felhasználói dokumentáció frissítése</li>
+<li>A Munkanapló vezetése</li>
+<li>A dokumentumok feltöltése a megadott határidőre</li>
+</ul>
+
+<h4>5.2.5 H5 mérföldkő</h4>
+
+<ul>
+<li>Az Objektumtervezési dokumentum elkészítése</li>
+<li>Az opcionális skeleton implementáció elkészítése (a gyakorlatvezetővel egyeztetett nyelven)</li>
+<li>A nagyvonalú tesztelési terv elkészítése</li>
+<li>A Munkanapló vezetése</li>
+<li>A dokumentumok feltöltése a megadott határidőre</li>
+</ul>
+
+<hr>
+
+<h2 id="p6">6. Erőforrások és eszközök</h2>
+
+<h3>6.1 Emberi erőforrások</h3>
+
+<p>A projekt öt csapattag közreműködésével valósul meg. Minden csapattag heti átlagban 6-8 órát fordít a projekt feladataira. A csapat tagjai a félév során más tantárgyakkal is foglalkoznak, ezért az időbeosztás rugalmas, de a határidők betartása kötelező. A csapat heti rendszerességgel tart megbeszéléseket, amelyeken áttekinti a haladást és kijelöli a következő hét feladatait.</p>
+
+<h3>6.2 Szoftveres eszközök</h3>
+
+<p>A projekt során az alábbi szoftveres eszközöket használjuk:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Eszköz</th>
+<th>Felhasználás</th>
+</tr>
+<tr>
+<td>Visual Paradigm</td>
+<td>UML diagramok készítése (osztály-, szekvencia-, állapotdiagram)</td>
+</tr>
+<tr>
+<td>Draw.io</td>
+<td>Egyszerűbb diagramok és folyamatábrák készítése</td>
+</tr>
+<tr>
+<td>Figma</td>
+<td>Prototípus tervezés, felhasználói felület vázlatok készítése</td>
+</tr>
+<tr>
+<td>Trello</td>
+<td>Projektmenedzsment, feladatok nyomon követése</td>
+</tr>
+<tr>
+<td>Google Docs</td>
+<td>Dokumentumok közös szerkesztése</td>
+</tr>
+<tr>
+<td>HTML szerkesztő (VS Code, Notepad++)</td>
+<td>A dokumentumok HTML formátumban történő elkészítése</td>
+</tr>
+<tr>
+<td>PDF konvertáló eszközök</td>
+<td>A dokumentumok PDF formátumban történő exportálása</td>
+</tr>
+</table>
+
+<h3>6.3 Technológiai döntések</h3>
+
+<p>Mivel a projekt elsődlegesen dokumentumalapú, a technológiai döntések főként a dokumentumok formátumára és a tervezési eszközökre vonatkoznak. A dokumentumok szabványos HTML formátumban készülnek, egyszerű formázással, táblázatokkal és beillesztett képekkel. A dokumentumok stílusai, betűtípusai és betűnagyságai a megadott mintáknak megfelelően kerülnek kialakításra. A tervezési fázisokban UML diagramokat használunk, amelyeket Visual Paradigm és Draw.io segítségével készítünk el.</p>
+
+<p>Az opcionális skeleton implementációhoz a csapat a gyakorlatvezetővel egyeztetett nyelven dolgozik majd. Elméleti szinten a játékmotorhoz illő nyelveket vesszük alapul, például C++ vagy C#. A skeleton implementáció célja, hogy bemutassa a tervezett osztályok és metódusok vázát, de a tényleges logika implementálása nem része a projektnek.</p>
+
+<hr>
+
+<h2 id="p7">7. Kockázatkezelés</h2>
+
+<h3>7.1 Kockázatok azonosítása</h3>
+
+<p>A projekt során az alábbi kockázatokat azonosítottuk:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kockázat</th>
+<th>Valószínűség</th>
+<th>Hatás</th>
+<th>Kezelési stratégia</th>
+</tr>
+<tr>
+<td>A csapattagok elérhetősége nem megfelelő, a feladatok csúsznak.</td>
+<td>Közepes</td>
+<td>Magas</td>
+<td>Rendszeres online megbeszélések, feladatok korai ütemezése, tartalékidő beépítése.</td>
+</tr>
+<tr>
+<td>A dokumentumok formai követelményeinek való megfelelés nehézségekbe ütközik.</td>
+<td>Alacsony</td>
+<td>Közepes</td>
+<td>A mintadokumentumok alapos tanulmányozása, a gyakorlatvezetővel való konzultáció.</td>
+</tr>
+<tr>
+<td>A kétszintű MI rendszer tervezése túl bonyolultnak bizonyul a rendelkezésre álló idő alatt.</td>
+<td>Közepes</td>
+<td>Magas</td>
+<td>A tervezés során a lényegre koncentrálunk, a részleteket a későbbi fázisokra hagyjuk.</td>
+</tr>
+<tr>
+<td>A csapat tagjai között nézeteltérés alakul ki a játék koncepcióját illetően.</td>
+<td>Alacsony</td>
+<td>Közepes</td>
+<td>Nyitott kommunikáció, szavazás a döntéseknél, kompromisszumkeresés.</td>
+</tr>
+<tr>
+<td>A H2 határidőre nem készülnek el a dokumentumok.</td>
+<td>Alacsony</td>
+<td>Magas</td>
+<td>Időben elkezdjük a munkát, rendszeres haladási ellenőrzés, a feladatok felosztása.</td>
+</tr>
+<tr>
+<td>A játék koncepciója nem elég egyedi, a piacon hasonló címek már léteznek.</td>
+<td>Közepes</td>
+<td>Közepes</td>
+<td>A kétszintű MI rendszer és a tisztességesség hangsúlyozása révén megkülönböztetjük magunkat.</td>
+</tr>
+</table>
+
+<h3>7.2 Kockázatkezelési stratégia</h3>
+
+<p>A kockázatok kezelése érdekében a csapat rendszeresen áttekinti a kockázatlistát, és szükség esetén frissíti azt. A projektvezető felelős azért, hogy a kockázatokra időben reagáljon, és a megfelelő intézkedéseket meghozza. A csapat emellett tartalékidőt épít be az ütemtervbe, hogy a váratlan helyzetek kezelhetők legyenek. A kommunikáció nyitott és rendszeres, ami segít a problémák korai felismerésében és megoldásában.</p>
+
+<hr>
+
+<h2 id="p8">8. Minőségbiztosítás</h2>
+
+<h3>8.1 Minőségi elvárások</h3>
+
+<p>A projekt során az alábbi minőségi elvárásokat fogalmaztuk meg:</p>
+
+<ul>
+<li>A dokumentumok formailag megfelelnek a megadott mintáknak és követelményeknek.</li>
+<li>A dokumentumok tartalmilag konzisztensek egymással, nincsenek ellentmondások.</li>
+<li>A dokumentumok nyelvezete magyar, szakmailag helyes és érthető.</li>
+<li>A dokumentumok decimális számozást és tartalomjegyzéket tartalmaznak.</li>
+<li>A dokumentumokban szereplő UML diagramok helyesek és konzisztensek a szöveges leírásokkal.</li>
+<li>A dokumentumok határidőre elkészülnek és feltöltésre kerülnek.</li>
+</ul>
+
+<h3>8.2 Ellenőrzési folyamat</h3>
+
+<p>A minőségbiztosításért felelős csapattag rendszeresen átvizsgálja a dokumentumokat, és visszajelzést ad a szerzőknek. Az ellenőrzés kiterjed a formai követelményekre, a tartalmi konzisztenciára és a nyelvhelyességre. A csapat emellett belső átvizsgálást tart minden mérföldkő előtt, hogy a dokumentumok a lehető legjobb minőségben kerüljenek feltöltésre. A gyakorlatvezető visszajelzéseit a csapat figyelembe veszi, és a szükséges módosításokat elvégzi.</p>
+
+<h3>8.3 Tesztelési követelmények</h3>
+
+<p>Mivel a projekt dokumentumalapú, tényleges tesztelés nem történik. A tesztelés helyett a dokumentumok konzisztenciájának ellenőrzése a cél. A csapat tagjai egymás dokumentumait átvizsgálják, és jelzik az esetleges hibákat vagy ellentmondásokat. A H5 mérföldkő során egy nagyvonalú tesztelési terv készülhet, amely leírja, hogyan lehetne a játékot tesztelni, ha implementációra kerülne sor. A tesztelési terv azonban nem tartalmaz tényleges teszteket vagy teszteseteket, mivel valós implementáció és tesztelés nem része a projektnek.</p>
+
+<hr>
+
+<h2 id="p9">9. Kommunikációs terv</h2>
+
+<h3>9.1 Csapaton belüli kommunikáció</h3>
+
+<p>A csapat heti rendszerességgel tart online megbeszéléseket, amelyeken áttekinti a haladást, megbeszéli a felmerülő problémákat, és kijelöli a következő hét feladatait. A megbeszéléseken minden csapattag beszámol az elvégzett munkáról és a felmerült nehézségekről. A megbeszélések mellett a csapat folyamatosan kommunikál e-mailben és üzenetküldő alkalmazásokban. A dokumentumokat közös tárhelyen tároljuk, ahol minden tag hozzáférhet a legfrissebb verziókhoz.</p>
+
+<h3>9.2 Kommunikáció a gyakorlatvezetővel</h3>
+
+<p>A csapat a gyakorlatvezetővel a gyakorlatok alkalmával és e-mailben kommunikál. A gyakorlatvezető visszajelzéseit a csapat figyelembe veszi, és a szükséges módosításokat elvégzi. A csapat emellett konzultációt kér a gyakorlatvezetőtől, ha elakad a dokumentumok elkészítésében vagy a formai követelmények értelmezésében.</p>
+
+<h3>9.3 Dokumentumok megosztása</h3>
+
+<p>A dokumentumokat a csapat közös tárhelyén tároljuk, ahol minden tag hozzáférhet a legfrissebb verziókhoz. A dokumentumok verziószámmal és dátummal vannak ellátva, hogy nyomon követhető legyen a fejlődésük. A feltöltésre kerülő dokumentumokat a projektvezető ellenőrzi, és gondoskodik arról, hogy azok a megadott határidőre és formátumban kerüljenek feltöltésre.</p>
+
+<hr>
+
+<h2 id="p10">10. Dokumentumkezelés</h2>
+
+<h3>10.1 Dokumentumok formátuma</h3>
+
+<p>Valamennyi dokumentum, ami nem tiszta forráskód, szabványos HTML formátumban készül el. A dokumentumok csak egyszerű formázott szöveget, táblázatokat és beillesztett képeket tartalmazhatnak. A tartalom decimális számozású fejezet-alfejezet rendszerbe van rendezve, és tartalomjegyzéket tartalmaz. A dokumentumok stílusai, betűtípusai és betűnagyságai a megadott mintáknak megfelelően kerülnek kialakításra, és nem változtathatók meg.</p>
+
+<h3>10.2 Dokumentumok tárolása</h3>
+
+<p>A dokumentumokat a csapat közös tárhelyén tároljuk, amely minden csapattag számára elérhető. A dokumentumok verziószámmal és dátummal vannak ellátva, hogy nyomon követhető legyen a fejlődésük. A feltöltésre kerülő dokumentumokat a projektvezető ellenőrzi, és gondoskodik arról, hogy azok a megadott határidőre és formátumban kerüljenek feltöltésre. A dokumentumokról biztonsági másolatot készítünk, hogy elkerüljük az adatvesztést.</p>
+
+<h3>10.3 Dokumentumok feltöltése</h3>
+
+<p>A dokumentumokat a H1-H5 határidőkre kell feltölteni a külön kiadott feltöltési útmutató szerint, elektronikus úton, HTML és PDF formátumban. A feltöltésért a projektvezető felelős, aki gondoskodik arról, hogy minden dokumentum a megfelelő formátumban és a megfelelő helyre kerüljön feltöltésre. A feltöltött dokumentumokat a csapat tagjai ellenőrzik, hogy megbizonyosodjanak arról, hogy minden a megfelelő módon történt.</p>
+
+<hr>
+
+<h2 id="p11">11. Összefoglalás</h2>
+
+<p>A Szevasztopol Szoftverek csapat projekt terve részletesen bemutatja a "Visszhang" játék dokumentációs projektjének szervezési és tervezési aspektusait. A projekt öt mérföldkőre épül, amelyek a félév során fokozatosan követik egymást, és egyre részletesebb dokumentumokat eredményeznek. A csapat öt főből áll, akik megosztott felelősséggel dolgoznak a projekt sikeréért. A projekt során számos kockázatot azonosítottunk, amelyek kezelésére megfelelő stratégiákat dolgoztunk ki. A minőségbiztosítás és a rendszeres kommunikáció biztosítja, hogy a dokumentumok a lehető legjobb minőségben készüljenek el, és a határidőkre feltöltésre kerüljenek.</p>
+
+<p>A projekt terv élő dokumentum, amely a projekt előrehaladtával frissülhet. A csapat elkötelezett amellett, hogy a projektet sikeresen befejezze, és a dokumentumok a megadott követelményeknek megfelelően elkészüljenek. A projekt célja nem csupán a dokumentumok elkészítése, hanem a csapat tagjainak szakmai fejlődése és a szoftverfejlesztési dokumentumok készítésének módszertanának elsajátítása.</p>
+
+<hr>
+
+<p><em>Dokumentum vége.</em></p>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Vízió dokumentum - Szevasztopol Szoftverek</title>
+</head>
+<body>
+
+<h1>Vízió dokumentum</h1>
+
+<hr>
+
+<h2>Címlap</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<td><strong>Projekt neve:</strong></td>
+<td>Visszhang (Echo)</td>
+</tr>
+<tr>
+<td><strong>Csoport neve:</strong></td>
+<td>Szevasztopol Szoftverek</td>
+</tr>
+<tr>
+<td><strong>Dokumentum típusa:</strong></td>
+<td>Vízió dokumentum</td>
+</tr>
+<tr>
+<td><strong>Verzió:</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Készítette:</strong></td>
+<td>Szevasztopol Szoftverek csapat</td>
+</tr>
+<tr>
+<td><strong>Intézmény:</strong></td>
+<td>Miskolci Egyetem</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Tartalomjegyzék</h2>
+
+<ol>
+<li><a href="#fejezet1">Bevezetés</a>
+<ol>
+<li><a href="#fejezet1_1">A dokumentum célja</a></li>
+<li><a href="#fejezet1_2">Konvenciók</a></li>
+<li><a href="#fejezet1_3">Célközönség</a></li>
+<li><a href="#fejezet1_4">Referenciák</a></li>
+</ol>
+</li>
+<li><a href="#fejezet2">A termék</a>
+<ol>
+<li><a href="#fejezet2_1">A termék áttekintése</a></li>
+<li><a href="#fejezet2_2">A probléma megfogalmazása</a></li>
+<li><a href="#fejezet2_3">A termék helye</a></li>
+<li><a href="#fejezet2_4">Nincs információ</a></li>
+</ol>
+</li>
+<li><a href="#fejezet3">Felhasználói környezet</a>
+<ol>
+<li><a href="#fejezet3_1">Felhasználói jellemzők</a></li>
+<li><a href="#fejezet3_2">A felhasználók céljai</a></li>
+<li><a href="#fejezet3_3">Nincs információ</a></li>
+<li><a href="#fejezet3_4">Felhasználói környezet</a></li>
+</ol>
+</li>
+<li><a href="#fejezet4">A termék jellemzői</a>
+<ol>
+<li><a href="#fejezet4_1">Nincs információ</a></li>
+<li><a href="#fejezet4_2">A termék használatának előnyei</a></li>
+<li><a href="#fejezet4_3">Feltételezések és függőségek</a></li>
+</ol>
+</li>
+<li><a href="#fejezet5">A végtermék jellemzői</a></li>
+<li><a href="#fejezet6">Nincs információ</a></li>
+<li><a href="#fejezet7">Minőségi elvárások</a></li>
+<li><a href="#fejezet8">Nincs információ</a></li>
+<li><a href="#fejezet9">Kockázat lista</a></li>
+<li><a href="#fejezet10">Szótár</a></li>
+</ol>
+
+<hr>
+
+<h2 id="fejezet1">1. Bevezetés</h2>
+
+<h3 id="fejezet1_1">1.1 A dokumentum célja</h3>
+
+<p>Jelen dokumentum a Szevasztopol Szoftverek csapat által tervezett "Visszhang" (Echo) munkacímű játék vízióját hivatott bemutatni. A dokumentum célja, hogy összefoglalja a projekt alapkoncepcióját, a megoldani kívánt problémát, a célfelhasználói kört, a termék helyét a piacon, valamint a legfontosabb jellemzőket és minőségi elvárásokat. Mivel a projekt elsődlegesen dokumentumalapú szoftverfejlesztési feladat, a vízió dokumentum segít abban, hogy a csapat egységes képet alkosson a tervezett játékról, és megalapozza a későbbi követelmény specifikációs és tervezési fázisokat.</p>
+
+<p>A dokumentum a H2 mérföldkő részeként készült el, és a későbbi H3, H4, H5 szakaszokban további részletes dokumentumok követik majd. A vízió dokumentum nem tartalmaz részletes technikai implementációs leírásokat, mivel a projekt jellegéből adódóan a tényleges kódírás nem része a feladatnak. Ehelyett a cél a játék koncepcionális szintű bemutatása, a főbb játékmenet-elemek és a mögöttes rendszerek magas szintű ismertetése.</p>
+
+<h3 id="fejezet1_2">1.2 Konvenciók</h3>
+
+<p>A dokumentumban használt elnevezések és rövidítések egységesen értelmezendők. A "játék" kifejezés a tervezett szoftvertermékre utal. Az "MI" rövidítés mesterséges intelligenciát jelöl. A "játékos" a végfelhasználó, aki a játékot játszani fogja. A "lény" a játékban szereplő fő ellenfél, amelyet az egyik MI rendszer irányít. A "rendező-MI" a másik mesterséges intelligencia rendszer, amely a játék dinamikáját, feszültségszintjét és tempóját szabályozza. A dokumentumban a fejezetek decimális számozást követnek, a főfejezetek arab számokkal, az alfejezetek pedig pontokkal elválasztott számokkal vannak jelölve.</p>
+
+<h3 id="fejezet1_3">1.3 Célközönség</h3>
+
+<p>Jelen dokumentum elsődleges célközönsége a csapat tagjai, a gyakorlatvezető, valamint a tárgy oktatói. Emellett a dokumentum segítséget nyújthat mindazoknak, akik érdeklődnek a játék koncepciója iránt, például leendő tesztelőknek vagy befektetőknek. A dokumentum nyelvezete magyar, a szakmai kifejezések egységesen értelmezettek. A dokumentum feltételezi, hogy az olvasó rendelkezik alapvető szoftverfejlesztési és játéktervezési ismeretekkel, azonban a szakkifejezéseket a Szótár fejezet tartalmazza.</p>
+
+<h3 id="fejezet1_4">1.4 Referenciák</h3>
+
+<p>Az alábbi források szolgáltak alapul a dokumentum elkészítéséhez:</p>
+
+<ul>
+<li>Alien: Isolation (2014, Creative Assembly, SEGA) - játékelemzés és mechanikai inspiráció</li>
+<li>Tracy Fullerton: Game Design Workshop, 4th Edition, CRC Press, 2018</li>
+<li>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: Design Patterns: Elements of Reusable Object-Oriented Software, Addison-Wesley, 1994</li>
+<li>Ian Sommerville: Software Engineering, 10th Edition, Pearson, 2015</li>
+<li>Követelmény analízis előadásanyagok, Miskolci Egyetem</li>
+<li>UML 2.5 Specification, Object Management Group (OMG)</li>
+</ul>
+
+<hr>
+
+<h2 id="fejezet2">2. A termék</h2>
+
+<h3 id="fejezet2_1">2.1 A termék áttekintése</h3>
+
+<p>A "Visszhang" egy túlélőhorror játék, amely egy elhagyatott űrállomáson játszódik. A játékos egy űrállomás fedélzetén rekedt szerelőt irányít, aki igyekszik kijutni az állomásról, miközben egy ismeretlen, idegen lény vadászik rá. A játék középpontjában a feszültség, a lopakodás, a erőforrások szűkössége és a döntések súlya áll. A játék nem a hagyományos akcióhorror receptet követi, ahol a játékos képes szembeszállni a szörnyeteggel, hanem ehelyett a kiszolgáltatottság és a menekülés élményére helyezi a hangsúlyt.</p>
+
+<p>A játék legfontosabb technikai újítása a kétszintű, többágensű mesterséges intelligencia rendszer. Az egyik MI a lény viselkedését irányítja, annak érzékelését, döntéseit és mozgását szabályozva. A másik MI, az úgynevezett rendező-MI, a játékos mögötti narratív és dramaturgiai réteget kezeli: figyeli a játékos viselkedését, elemezni a feszültségszintet, és ennek megfelelően módosítja a játék nehézségét, a lény aktivitását, valamint a környezeti eseményeket. Ez a kettős rendszer lehetővé teszi, hogy a játék minden játékos számára egyedi, mégis kiegyensúlyozott és tisztességes élményt nyújtson.</p>
+
+<h3 id="fejezet2_2">2.2 A probléma megfogalmazása</h3>
+
+<p>A mai horrorjáték-piacon számos olyan cím található, amely a félelmet és a feszültséget helyezi előtérbe. Ezek közül kiemelkedik az Alien: Isolation, amely 2014-es megjelenése óta etalonnak számít a műfajban. A játék sikere nagyrészt annak köszönhető, hogy a benne szereplő idegen lény viselkedése kiszámíthatatlannak és intelligensnek tűnik, ami folyamatos bizonytalanságban tartja a játékost. Azonban még ebben a játékban is megfigyelhetők bizonyos korlátok: a lény viselkedése hosszú távon kiszámíthatóvá válik, a játékos megtanulja a mintázatokat, és a feszültség idővel csökken. Emellett a játék nehézségi szintje statikus, nem alkalmazkodik a játékos aktuális teljesítményéhez, ami azt eredményezi, hogy egyes játékosok számára túl nehéz, mások számára pedig túl könnyű lehet.</p>
+
+<p>A probléma gyökere abban rejlik, hogy a legtöbb horrorjátékban a mesterséges intelligencia vagy túl egyszerű, vagy túl bonyolult, de nem képes valóban alkalmazkodni a játékos viselkedéséhez. Az egyszerű MI rendszerek kiszámíthatóak, a bonyolultabbak pedig gyakran átláthatatlanok és igazságtalannak tűnnek. A játékosok gyakran érzik úgy, hogy a játék "csal", amikor a lény mindig pontosan ott jelenik meg, ahol a játékos tartózkodik, vagy amikor a játék mesterségesen nehezíti a helyzetet. Ez rontja a játékélményt és csökkenti a feszültség hitelességét.</p>
+
+<p>Ezen kívül a mai horrorjátékok jelentős része lineáris felépítésű, kevés lehetőséget adva a játékosnak a döntésekre és a különböző játékstílusok kipróbálására. A játékosok gyakran ugyanazt az utat járják be, ugyanazokkal a találkozásokkal és ugyanazokkal a megoldásokkal. Ez hosszú távon csökkenti az újrajátszhatóságot és a játék értékét. A "Visszhang" projekt célja, hogy ezeket a problémákat orvosolja egy olyan rendszer kidolgozásával, amely a játékos viselkedésére reagálva dinamikusan alakítja a játék menetét, miközben megőrzi a feszültség és a kiszolgáltatottság érzését.</p>
+
+<p>A probléma másik aspektusa a tisztességesség kérdése. A játékosok akkor érzik hitelesnek a fenyegetést, ha úgy vélik, hogy a lény viselkedése következetes és megérthető, még ha kiszámíthatatlan is. Ha a lény látszólag véletlenszerűen vagy igazságtalanul cselekszik, a játékos elveszíti a bizalmát a játék mechanikájában, és a félelem helyét átveszi a frusztráció. A "Visszhang" célja, hogy a lény MI-je és a rendező-MI együttműködve olyan élményt hozzon létre, amely egyszerre tűnik szervesnek, hitelesnek és tisztességesnek. A lény soha nem "csal", de képes tanulni a játékos viselkedéséből, és a rendező-MI gondoskodik arról, hogy a nehézség mindig a játékos képességeihez igazodjon.</p>
+
+<p>Végezetül a probléma kiterjed a játékok újrajátszhatóságára is. A legtöbb horrorjáték egyszeri élményt nyújt: miután a játékos megismeri a pályákat és a lény viselkedését, a játék elveszíti a varázsát. A "Visszhang" azáltal kívánja megoldani ezt a problémát, hogy a rendező-MI minden játékmenet során más és más eseménysorozatot generál, a lény MI-je pedig folyamatosan tanul és alkalmazkodik, így a játék minden végigjátszás alkalmával más élményt nyújt. Ez hosszú távon növeli a játék értékét és élettartamát.</p>
+
+<h3 id="fejezet2_3">2.3 A termék helye</h3>
+
+<p>A "Visszhang" a túlélőhorror műfajba sorolható, azon belül is az úgynevezett "lopakodós horror" alkategóriába. A műfaj legismertebb képviselői közé tartozik az Alien: Isolation, az Outlast sorozat, az Amnesia sorozat, valamint a layers of Fear. Ezek a játékok közös jellemzője, hogy a játékos fegyvertelen vagy szinte fegyvertelen, és a túlélés kulcsa a menekülés, a rejtőzködés és a környezet kihasználása. A "Visszhang" ebben a műfajban kíván elhelyezkedni, de két fontos ponton is megkülönbözteti magát a versenytársaktól.</p>
+
+<p>Az első megkülönböztető jegy a kétszintű MI rendszer. Míg a legtöbb hasonló játék egyetlen MI rendszert használ a szörny irányítására, a "Visszhang" két különálló, egymással kommunikáló MI rendszert alkalmaz. A lény MI-je felelős a közvetlen fenyegetésért, a rendező-MI pedig a játék dramaturgiai ívét kezeli. Ez a felosztás lehetővé teszi, hogy a játék ne csak a pillanatnyi feszültséget kezelje, hanem hosszú távon is fenntartsa a játékos érdeklődését. A rendező-MI képes például csökkenteni a lény aktivitását, ha a játékos túl sok stresszt él át, vagy éppen növelni azt, ha a játékos magabiztosabbá válik. Ez a dinamikus nehézségi szabályozás a versenytársaknál jellemzően hiányzik vagy statikus.</p>
+
+<p>A második megkülönböztető jegy a tisztességesség és az átláthatóság hangsúlyozása. A "Visszhang" fejlesztése során kiemelt cél, hogy a játékos soha ne érezze úgy, hogy a játék igazságtalanul bánik vele. A lény MI-je nem kaphat olyan információt, amellyel a játékos nem rendelkezik, és nem hozhat olyan döntéseket, amelyek megsértenék a játék világának belső logikáját. A rendező-MI pedig nem manipulálja a játékot a játékos háta mögött, hanem a játékos viselkedésére adott természetes reakcióként módosítja a paramétereket. Ez a megközelítés a játékosok bizalmát erősíti, és hosszú távon elkötelezettebbé teszi őket a játék iránt.</p>
+
+<p>A műfajon belül a "Visszhang" elsősorban a PC-s és konzolos játékosokat célozza meg, különös tekintettel azokra, akik szeretik a feszültséggel teli, lassabb tempójú, atmoszférikus játékokat. A játék nem kíván versenyezni a nagy költségvetésű akcióhorror címekkel, mint például a Resident Evil sorozat, amelyek inkább a harcra és a akcióra helyezik a hangsúlyt. Ehelyett a "Visszhang" a niche piacot célozza meg, ahol a játékosok értékelik a gondosan megtervezett atmoszférát, a intelligens ellenfeleket és a magas újrajátszhatósági értéket. A játék árazása is ennek megfelelően alakul majd: közepes árkategóriás címként pozícionáljuk, amely a benne rejlő innovatív MI rendszer miatt hosszú távon is értéket nyújt.</p>
+
+<h3 id="fejezet2_4">2.4 Nincs információ</h3>
+
+<p>Nincs információ.</p>
+
+<hr>
+
+<h2 id="fejezet3">3. Felhasználói környezet</h2>
+
+<h3 id="fejezet3_1">3.1 Felhasználói jellemzők</h3>
+
+<p>A "Visszhang" célfelhasználói két fő csoportra oszthatók. Az első csoport a hardcore horrorjáték-rajongók, akik rendszeresen játszanak a műfaj képviselőivel, ismerik annak konvencióit, és kihívást keresnek. Ők jellemzően 18 és 35 év közötti férfiak és nők, akik legalább heti rendszerességgel játszanak videojátékokkal, és fontos számukra a játékok atmoszférája, története és újszerűsége. Ők azok, akik értékelik a magas újrajátszhatósági értéket, és hajlandóak időt fektetni a játék mélyebb mechanikáinak megismerésébe.</p>
+
+<p>A második csoport a alkalmi játékosok, akik szeretik a feszültséggel teli élményeket, de nem feltétlenül játszanak rendszeresen horrorjátékokkal. Ők jellemzően szélesebb korosztályt képviselnek, és fontos számukra, hogy a játék ne legyen túl nehéz vagy frusztráló. A rendező-MI dinamikus nehézségi szabályozása különösen számukra jelent előnyt, mivel a játék automatikusan alkalmazkodik a képességeikhez, így soha nem érzi úgy, hogy a játék túl nehéz vagy túl könnyű. Ez a csoport jellemzően kevesebb időt tölt a játékkal, de fontos számukra, hogy az eltöltött idő élvezetes és emlékezetes legyen.</p>
+
+<h3 id="fejezet3_2">3.2 A felhasználók céljai</h3>
+
+<p>A felhasználók fő célja a játékkal kapcsolatban, hogy átéljék a feszültség és a félelem érzését egy biztonságos környezetben. A horrorjátékok vonzereje abban rejlik, hogy a játékosok képesek szembenézni a félelmeikkel anélkül, hogy valódi veszélynek lennének kitéve. A "Visszhang" ezt az élményt kívánja maximalizálni azáltal, hogy a lehető leghitelesebb és leginkább magával ragadó fenyegetést nyújtja. A játékosok emellett szeretnének egyedi élményt kapni, amely nem hasonlít a korábbi játékmenetekhez, és amelyben a döntéseik valóban számítanak.</p>
+
+<p>A felhasználók további célja, hogy a játék kihívást jelentsen számukra, de ne legyen igazságtalan. Azt szeretnék, hogy ha meghalnak, akkor érezzék úgy, hogy a saját hibájukból történt, és tanulhassanak belőle. A "Visszhang" ezt a tisztességes kihívás elvét követi: a lény soha nem csal, a játék pedig mindig következetes szabályok szerint működik. A felhasználók emellett szeretnének egy olyan játékot, amelyet többször is végig lehet játszani anélkül, hogy unalmassá válna. A rendező-MI által generált változatosság ezt a célt szolgálja.</p>
+
+<h3 id="fejezet3_3">3.3 Nincs információ</h3>
+
+<p>Nincs információ.</p>
+
+<h3 id="fejezet3_4">3.4 Felhasználói környezet</h3>
+
+<p>A "Visszhang" játékosai jellemzően otthoni környezetben játszanak, PC-n vagy konzolon. A játékot úgy tervezzük, hogy sötét, csendes szobában, fejhallgatóval a legélvezetesebb legyen, mivel a hangtervezés kiemelt szerepet kap a feszültség megteremtésében. A játék támogatja a különböző képernyőfelbontásokat és a kontrollerek széles skáláját, hogy minél szélesebb közönség számára elérhető legyen. A játék nem igényel állandó internetkapcsolatot, mivel egyjátékos élményt nyújt, és nem tartalmaz többjátékos módot.</p>
+
+<p>A játékosok jellemzően 1-3 órás ülésekben játsszák a játékot, mivel a magas feszültségszint hosszú távon kimerítő lehet. A játék mentési rendszere lehetővé teszi, hogy a játékos bármikor megszakítsa a játékot, és később folytassa. A játék nehézségi szintje a rendező-MI révén automatikusan alkalmazkodik a játékos aktuális állapotához, így a rövidebb játékülések is élvezetesek maradnak. A játék emellett támogatja a széles körű hozzáférhetőségi beállításokat, például a feliratozást, a színvak módot és a gombok újramapelését.</p>
+
+<hr>
+
+<h2 id="fejezet4">4. A termék jellemzői</h2>
+
+<h3 id="fejezet4_1">4.1 Nincs információ</h3>
+
+<p>Nincs információ.</p>
+
+<h3 id="fejezet4_2">4.2 A termék használatának előnyei</h3>
+
+<p>A "Visszhang" legfontosabb előnye a versenytársakkal szemben a kétszintű MI rendszer, amely lehetővé teszi a dinamikus, mégis tisztességes játékmenetet. A játékosok olyan élményt kapnak, amely minden alkalommal más, de soha nem tűnik igazságtalannak vagy véletlenszerűnek. Ez hosszú távon növeli a játék értékét és élettartamát, mivel a játékosoknak nem kell új játékot vásárolniuk ahhoz, hogy új élményt kapjanak. A rendező-MI emellett gondoskodik arról, hogy a játék nehézsége mindig a játékos képességeihez igazodjon, ami különösen az alkalmi játékosok számára jelent előnyt.</p>
+
+<p>A játék másik előnye a hangsúly a tisztességességen és az átláthatóságon. A játékosok bizalmát erősíti, hogy a lény soha nem csal, és a játék mindig következetes szabályok szerint működik. Ez a megközelítés hosszú távon elkötelezettebbé teszi a játékosokat, mivel úgy érzik, hogy a játék tiszteletben tartja őket és a döntéseiket. A játék emellett a lopakodásra és a menekülésre helyezi a hangsúlyt a harc helyett, ami a műfaj rajongói számára vonzó, és megkülönbözteti a játékot a nagy költségvetésű akcióhorror címektől.</p>
+
+<h3 id="fejezet4_3">4.3 Feltételezések és függőségek</h3>
+
+<p>A projekt tervezése során az alábbi feltételezésekkel éltünk:</p>
+
+<ul>
+<li>Feltételezzük, hogy a célfelhasználók rendelkeznek alapvető játékosi tapasztalattal, és ismerik a lopakodós horror műfaj konvencióit.</li>
+<li>Feltételezzük, hogy a játékosok rendelkeznek olyan hardverrel, amely képes futtatni a játékot legalább közepes grafikai beállítások mellett.</li>
+<li>Feltételezzük, hogy a játékosok hajlandóak időt fektetni a játék mechanikáinak megismerésébe, és nem várják el, hogy azonnal sikeresek legyenek.</li>
+<li>Feltételezzük, hogy a játék fejlesztése során a csapat tagjai elegendő időt és erőforrást tudnak biztosítani a dokumentumok elkészítéséhez.</li>
+<li>Feltételezzük, hogy a gyakorlatvezető által biztosított minták és útmutatások elegendő támpontot nyújtanak a dokumentumok elkészítéséhez.</li>
+</ul>
+
+<p>A projekt függőségei közé tartozik a rendelkezésre álló idő, a csapattagok elérhetősége, valamint a gyakorlatvezető visszajelzései. A projekt sikere nagymértékben függ a csapaton belüli kommunikáció hatékonyságától és a feladatok időben történő elvégzésétől.</p>
+
+<hr>
+
+<h2 id="fejezet5">5. A végtermék jellemzői</h2>
+
+<p>A "Visszhang" végterméke egy teljes körűen dokumentált játékterv, amely tartalmazza a játék koncepcióját, a követelmény specifikációt, az analízis modellt, a rendszertervezési dokumentumot, valamint az objektumtervezési dokumentumot. Mivel a projekt elsődlegesen dokumentumalapú, a végtermék nem tartalmaz tényleges forráskódot, kivéve egy opcionális skeleton implementációt, amely a H5 mérföldkő során készülhet el a gyakorlatvezetővel egyeztetett nyelven. A dokumentumok szabványos HTML formátumban készülnek el, és a külön kiadott feltöltési útmutató szerint kerülnek feltöltésre.</p>
+
+<p>A játék tervezett jellemzői közé tartozik a kétszintű MI rendszer, amely a lény viselkedését és a játék dramaturgiai ívét egyaránt kezeli. A lény MI-je felelős a közvetlen fenyegetésért, és képes tanulni a játékos viselkedéséből, míg a rendező-MI a játékos stresszszintjét figyeli, és ennek megfelelően módosítja a játék paramétereit. A játék emellett tartalmaz egy részletesen kidolgozott űrállomás-környezetet, amely több szinten és több különböző területen játszódik, valamint egy erőforrás-gazdálkodási rendszert, amely a játékos döntéseit befolyásolja.</p>
+
+<p>A játék története egy elhagyatott űrállomáson játszódik, ahol a játékos egy szerelőt irányít, aki igyekszik kijutni az állomásról. Az állomás fedélzetén egy idegen lény vadászik a játékosra, amelyet a lény MI-je irányít. A játékosnak erőforrásokat kell gyűjtenie, rejtőzködnie kell, és döntenie kell arról, hogy mikor vállal kockázatot és mikor marad biztonságban. A játék több befejezéssel rendelkezik, amelyek a játékos döntéseitől és a játék során gyűjtött információktól függenek. A játék emellett tartalmaz egy naplórendszert, amely a játékos számára fontos információkat rögzít, és segít a történet megértésében.</p>
+
+<p>A játék grafikai stílusa a sötét, ipari környezetet idézi, amely az Alien filmsorozat és az Alien: Isolation által inspirált. A játék a valósághű grafikára és a részletes környezeti dizájnra helyezi a hangsúlyt, amely segít a játékosnak elmerülni a játék világában. A hangtervezés kiemelt szerepet kap: a játékos számára elérhető hangok és zajok segítenek a lény pozíciójának meghatározásában, de a csend is fontos eszköz a feszültség megteremtésében. A játék zenei aláfestése minimális, hogy a környezeti hangok érvényesüljenek.</p>
+
+<p>A játék irányítása egyszerű és intuitív: a játékos mozoghat, guggolhat, futhat, tárgyakat vehet fel és használhat, valamint interakcióba léphet a környezet elemeivel. A játék nem tartalmaz harcot a hagyományos értelemben, de a játékos képes csapdákat állítani és elterelni a lény figyelmét. A játék nehézségi szintje a rendező-MI révén dinamikusan alkalmazkodik a játékos teljesítményéhez, így minden játékos a saját képességeihez mérten élvezheti a játékot. A játék emellett támogatja a mentést és a betöltést, lehetővé téve a játékos számára, hogy megszakítsa a játékot, és később folytassa.</p>
+
+<p>A játék tervezett platformjai a PC és a konzolok, a játék motorja pedig a Unity vagy az Unreal Engine lehet, a csapat döntése alapján. Mivel a projekt dokumentumalapú, a tényleges implementáció nem része a feladatnak, de a dokumentumok részletesen leírják a játék működését és a mögöttes rendszereket. A játék célja, hogy a lopakodós horror műfaj egyik meghatározó címévé váljon, amely a kétszintű MI rendszer révén új szintre emeli a műfaj játékmenetét.</p>
+
+<hr>
+
+<h2 id="fejezet6">6. Nincs információ</h2>
+
+<p>Nincs információ.</p>
+
+<hr>
+
+<h2 id="fejezet7">7. Minőségi elvárások</h2>
+
+<p>A "Visszhang" fejlesztése során az alábbi minőségi elvárásokat fogalmaztuk meg:</p>
+
+<ul>
+<li><strong>Megbízhatóság:</strong> A játék MI rendszereinek megbízhatóan kell működniük, és nem szabad, hogy a játékos úgy érezze, a játék hibás vagy igazságtalan. A lény MI-je és a rendező-MI együttműködése zökkenőmentes kell, hogy legyen.</li>
+<li><strong>Teljesítmény:</strong> A játék a célhardveren legalább 60 képkocka/másodperc sebességgel kell, hogy fusson közepes grafikai beállítások mellett. Az MI rendszerek nem lassíthatják a játékot.</li>
+<li><strong>Használhatóság:</strong> A játék irányítása intuitív és könnyen megtanulható kell, hogy legyen. A játékos számára világosnak kell lennie, hogy milyen lehetőségei vannak, és hogyan tud interakcióba lépni a környezettel.</li>
+<li><strong>Fenntarthatóság:</strong> A dokumentumoknak és a terveknek konzisztenseknek kell lenniük egymással, és a későbbi fázisokban is könnyen módosíthatóknak kell lenniük.</li>
+<li><strong>Hordozhatóság:</strong> A játék tervei nem kötődnek egyetlen platformhoz vagy motorhoz sem, így a későbbi implementáció során a csapat szabadon dönthet a technológiáról.</li>
+<li><strong>Tesztelhetőség:</strong> A tervek és a követelmények olyan módon kell, hogy megfogalmazásra kerüljenek, hogy azok tesztelhetők és ellenőrizhetők legyenek, még akkor is, ha tényleges tesztelés nem történik.</li>
+</ul>
+
+<p>Ezen kívül a dokumentumok formai követelményeinek való megfelelés is kiemelt szempont: a dokumentumoknak szabványos HTML formátumban kell elkészülniük, a megadott stílusok és betűtípusok megtartásával, valamint a decimális számozás és a tartalomjegyzék követelményeinek betartásával.</p>
+
+<hr>
+
+<h2 id="fejezet8">8. Nincs információ</h2>
+
+<p>Nincs információ.</p>
+
+<hr>
+
+<h2 id="fejezet9">9. Kockázat lista</h2>
+
+<p>A projekt során az alábbi kockázatokat azonosítottuk:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kockázat</th>
+<th>Valószínűség</th>
+<th>Hatás</th>
+<th>Kezelési stratégia</th>
+</tr>
+<tr>
+<td>A csapattagok elérhetősége nem megfelelő, a feladatok csúsznak.</td>
+<td>Közepes</td>
+<td>Magas</td>
+<td>Rendszeres online megbeszélések, feladatok korai ütemezése, tartalékidő beépítése.</td>
+</tr>
+<tr>
+<td>A dokumentumok formai követelményeinek való megfelelés nehézségekbe ütközik.</td>
+<td>Alacsony</td>
+<td>Közepes</td>
+<td>A mintadokumentumok alapos tanulmányozása, a gyakorlatvezetővel való konzultáció.</td>
+</tr>
+<tr>
+<td>A kétszintű MI rendszer tervezése túl bonyolultnak bizonyul a rendelkezésre álló idő alatt.</td>
+<td>Közepes</td>
+<td>Magas</td>
+<td>A tervezés során a lényegre koncentrálunk, a részleteket a későbbi fázisokra hagyjuk.</td>
+</tr>
+<tr>
+<td>A csapat tagjai között nézeteltérés alakul ki a játék koncepcióját illetően.</td>
+<td>Alacsony</td>
+<td>Közepes</td>
+<td>Nyitott kommunikáció, szavazás a döntéseknél, kompromisszumkeresés.</td>
+</tr>
+<tr>
+<td>A H2 határidőre nem készülnek el a dokumentumok.</td>
+<td>Alacsony</td>
+<td>Magas</td>
+<td>Időben elkezdjük a munkát, rendszeres haladási ellenőrzés, a feladatok felosztása.</td>
+</tr>
+<tr>
+<td>A játék koncepciója nem elég egyedi, a piacon hasonló címek már léteznek.</td>
+<td>Közepes</td>
+<td>Közepes</td>
+<td>A kétszintű MI rendszer és a tisztességesség hangsúlyozása révén megkülönböztetjük magunkat.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2 id="fejezet10">10. Szótár</h2>
+
+<p>Az alábbi szótár a dokumentumban használt legfontosabb kifejezéseket és rövidítéseket tartalmazza:</p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kifejezés</th>
+<th>Magyarázat</th>
+</tr>
+<tr>
+<td>MI</td>
+<td>Mesterséges intelligencia. Olyan szoftverrendszer, amely képes önálló döntéseket hozni és viselkedést tanúsítani egy adott környezetben.</td>
+</tr>
+<tr>
+<td>Lény MI</td>
+<td>A játékban szereplő idegen lény viselkedését irányító mesterséges intelligencia rendszer. Felelős a lény mozgásáért, érzékeléséért és döntéseiért.</td>
+</tr>
+<tr>
+<td>Rendező-MI</td>
+<td>A játék dramaturgiai ívét kezelő mesterséges intelligencia rendszer. Figyeli a játékos viselkedését és a feszültségszintet, és ennek megfelelően módosítja a játék paramétereit.</td>
+</tr>
+<tr>
+<td>Többágensű MI</td>
+<td>Olyan mesterséges intelligencia rendszer, amely több különálló ágensből áll, amelyek egymással kommunikálva hoznak döntéseket.</td>
+</tr>
+<tr>
+<td>Lopakodós horror</td>
+<td>A horrorjátékok egy alkategóriája, amelyben a játékos jellemzően fegyvertelen vagy gyengén felfegyverzett, és a túlélés kulcsa a rejtőzködés és a menekülés.</td>
+</tr>
+<tr>
+<td>Dinamikus nehézségi szabályozás</td>
+<td>Olyan játékmechanikai megoldás, amely a játék nehézségét a játékos aktuális teljesítményéhez igazítja.</td>
+</tr>
+<tr>
+<td>Újrajátszhatóság</td>
+<td>A játék azon tulajdonsága, hogy mennyire érdemes többször is végigjátszani. Minél változatosabb a játékmenet, annál magasabb az újrajátszhatóság.</td>
+</tr>
+<tr>
+<td>Feszültségszint</td>
+<td>A játékos által átélt stressz és izgalom mértéke. A rendező-MI ezt figyeli és szabályozza.</td>
+</tr>
+<tr>
+<td>Ágens</td>
+<td>Olyan önálló szoftverkomponens, amely képes érzékelni a környezetét és döntéseket hozni.</td>
+</tr>
+<tr>
+<td>UML</td>
+<td>Unified Modeling Language. Szabványos modellezési nyelv szoftverrendszerek tervezéséhez és dokumentálásához.</td>
+</tr>
+<tr>
+<td>State minta</td>
+<td>Tervezési minta, amely lehetővé teszi egy objektum viselkedésének megváltoztatását a belső állapotának változása esetén.</td>
+</tr>
+<tr>
+<td>Observer minta</td>
+<td>Tervezési minta, amely egy objektum állapotváltozásáról értesíti a függő objektumokat.</td>
+</tr>
+<tr>
+<td>Singleton minta</td>
+<td>Tervezési minta, amely biztosítja, hogy egy osztályból csak egyetlen példány létezzen, és ehhez globális hozzáférési pontot biztosít.</td>
+</tr>
+<tr>
+<td>Skeleton implementáció</td>
+<td>Olyan részleges implementáció, amely az osztályok és metódusok vázát tartalmazza, de a tényleges logika még hiányzik.</td>
+</tr>
+<tr>
+<td>Mérföldkő</td>
+<td>A projekt egy adott pontja, amelyhez konkrét eredmények és határidők tartoznak.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>Dokumentum vége.</em></p>
+
+</body>
+</html>
