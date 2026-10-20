@@ -89,17 +89,29 @@
 
 <h3 id="fejezet1_1">1.1 A dokumentum célja</h3>
 
-<p>Jelen dokumentum a Szevasztopol Szoftverek csapat által tervezett "Visszhang" (Echo) munkacímű játék vízióját hivatott bemutatni. A dokumentum célja, hogy összefoglalja a projekt alapkoncepcióját, a megoldani kívánt problémát, a célfelhasználói kört, a termék helyét a piacon, valamint a legfontosabb jellemzőket és minőségi elvárásokat. Mivel a projekt elsődlegesen dokumentumalapú szoftverfejlesztési feladat, a vízió dokumentum segít abban, hogy a csapat egységes képet alkosson a tervezett játékról, és megalapozza a későbbi követelmény specifikációs és tervezési fázisokat.</p>
+<p>Jelen dokumentum a Szevasztopol Szoftverek csapat által tervezett "Visszhang" (Echo) munkacímű játék vízióját hivatott bemutatni. A vízió dokumentum a szoftverfejlesztési folyamat egyik legelső és legfontosabb dokumentuma, amelynek célja, hogy magas szinten összefoglalja a tervezett termék lényegét, a megoldani kívánt problémát, a célfelhasználói kört, valamint a termék helyét a piacon és a versenytársak között. A dokumentum segít abban, hogy a csapat tagjai egységes képet alkossanak a projektről, és hogy a későbbi dokumentumok, például a követelmény specifikáció és a rendszertervezés, szilárd alapokra épülhessenek.</p>
 
-<p>A dokumentum a H2 mérföldkő részeként készült el, és a későbbi H3, H4, H5 szakaszokban további részletes dokumentumok követik majd. A vízió dokumentum nem tartalmaz részletes technikai implementációs leírásokat, mivel a projekt jellegéből adódóan a tényleges kódírás nem része a feladatnak. Ehelyett a cél a játék koncepcionális szintű bemutatása, a főbb játékmenet-elemek és a mögöttes rendszerek magas szintű ismertetése.</p>
+<p>A vízió dokumentum elkészítése a H2 mérföldkő része, és szorosan kapcsolódik a H1 során elkészített projekt tervhez. Míg a projekt terv a projekt szervezési és ütemezési kérdéseivel foglalkozik, addig a vízió dokumentum a termék tartalmi és koncepcionális oldalára helyezi a hangsúlyt. A két dokumentum együtt alapozza meg a projekt további fázisait, és biztosítja, hogy a csapat tagjai ugyanazt a célt tartsák szem előtt a munka során.</p>
+
+<p>A dokumentum nem tartalmaz részletes technikai implementációs leírásokat, mivel a projekt jellegéből adódóan a tényleges kódírás nem része a feladatnak. Ehelyett a cél a játék koncepcionális szintű bemutatása, a főbb játékmenet-elemek és a mögöttes rendszerek magas szintű ismertetése. A dokumentum ennek megfelelően nem mélyül el a részletes osztálytervekben vagy algoritmusleírásokban, hanem a játék alapötletét, a célközönséget és a tervezett élményt mutatja be. A részletes technikai tervek a H3, H4 és H5 mérföldkövek során készülnek el.</p>
+
+<p>A dokumentumot a csapat a H2 mérföldkő követelményeinek megfelelően készítette el, és a későbbi mérföldkövek során szükség esetén frissülhet. A vízió dokumentum élő dokumentum, ami azt jelenti, hogy a projekt előrehaladtával a benne foglaltak pontosíthatók, bővíthetők vagy módosíthatók, ha a csapat úgy ítéli meg, hogy a változtatás indokolt. A dokumentum jelenlegi verziója a H2 mérföldkőre készült el, és a csapat jóváhagyásával került feltöltésre.</p>
 
 <h3 id="fejezet1_2">1.2 Konvenciók</h3>
 
 <p>A dokumentumban használt elnevezések és rövidítések egységesen értelmezendők. A "játék" kifejezés a tervezett szoftvertermékre utal. Az "MI" rövidítés mesterséges intelligenciát jelöl. A "játékos" a végfelhasználó, aki a játékot játszani fogja. A "lény" a játékban szereplő fő ellenfél, amelyet az egyik MI rendszer irányít. A "rendező-MI" a másik mesterséges intelligencia rendszer, amely a játék dinamikáját, feszültségszintjét és tempóját szabályozza. A dokumentumban a fejezetek decimális számozást követnek, a főfejezetek arab számokkal, az alfejezetek pedig pontokkal elválasztott számokkal vannak jelölve.</p>
 
+<p>A dokumentum formai szempontból szabványos HTML formátumot követ, egyszerű formázott szöveggel, táblázatokkal és beillesztett képekkel. A dokumentumban használt betűtípusok, betűnagyságok és stílusok a megadott mintadokumentumnak megfelelően kerültek kialakításra, és a csapat ezeket nem változtatta meg. A dokumentum elején címlap található, amely tartalmazza a projekt nevét, a csoport nevét, a dokumentum típusát, a verziószámot, a készítőket és az intézmény nevét. A címlapot tartalomjegyzék követi, amely a dokumentum főfejezeteit és alfejezeteit listázza, és amelyben a fejezetekre kattintva a felhasználó közvetlenül az adott szakaszhoz ugorhat.</p>
+
+<p>A dokumentumban a táblázatok egységes formázást követnek: minden táblázatnak van fejléce, a sorok és oszlopok pedig egyértelműen elkülönülnek. A táblázatokban szereplő szöveg nyelvezete magyar, és a szakkifejezések a Szótár fejezetben kerülnek meghatározásra. A dokumentumban előforduló listák számozott vagy számozatlan formában jelennek meg, attól függően, hogy a lista elemei sorrendhez kötöttek-e vagy sem. A dokumentum nyelvezete magyar, a szakmai kifejezések egységesen értelmezettek, és ahol szükséges, a magyar kifejezés mellett zárójelben megjelenik az angol megfelelő is.</p>
+
 <h3 id="fejezet1_3">1.3 Célközönség</h3>
 
-<p>Jelen dokumentum elsődleges célközönsége a csapat tagjai, a gyakorlatvezető, valamint a tárgy oktatói. Emellett a dokumentum segítséget nyújthat mindazoknak, akik érdeklődnek a játék koncepciója iránt, például leendő tesztelőknek vagy befektetőknek. A dokumentum nyelvezete magyar, a szakmai kifejezések egységesen értelmezettek. A dokumentum feltételezi, hogy az olvasó rendelkezik alapvető szoftverfejlesztési és játéktervezési ismeretekkel, azonban a szakkifejezéseket a Szótár fejezet tartalmazza.</p>
+<p>Jelen dokumentum elsődleges célközönsége a csapat tagjai, a gyakorlatvezető, valamint a tárgy oktatói. A csapat tagjai számára a dokumentum segít abban, hogy egységes képet alkossanak a tervezett játékról, és hogy a későbbi munkafázisok során ugyanazt a koncepciót tartsák szem előtt. A gyakorlatvezető és az oktatók számára a dokumentum lehetővé teszi a projekt értékelését, és visszajelzést adhatnak a játék koncepciójának kidolgozottságáról.</p>
+
+<p>Emellett a dokumentum segítséget nyújthat mindazoknak, akik érdeklődnek a játék koncepciója iránt, például leendő tesztelőknek vagy befektetőknek. A tesztelők számára a dokumentum megérthetővé teszi a játék alapötletét és a tervezett játékmenetet, ami segít a tesztelési szempontok kialakításában. A befektetők számára a dokumentum bemutatja a játék piaci helyzetét és versenyelőnyeit, ami segít a döntéshozatalban. A dokumentum nyelvezete magyar, a szakmai kifejezések egységesen értelmezettek, és a dokumentum feltételezi, hogy az olvasó rendelkezik alapvető szoftverfejlesztési és játéktervezési ismeretekkel.</p>
+
+<p>A dokumentum nem feltételezi, hogy az olvasó részt vett a projekt korábbi fázisaiban, ezért a fontosabb kifejezéseket és koncepciókat a dokumentum igyekszik önállóan is érthetően bemutatni. Ahol a megértéshez elengedhetetlen a korábbi dokumentumok ismerete, ott a dokumentum utal a kapcsolódó dokumentumokra. A dokumentum célja, hogy önállóan is olvasható és érthető legyen, ugyanakkor a projekt teljes dokumentációs csomagjának részeként is működjön.</p>
 
 <h3 id="fejezet1_4">1.4 Referenciák</h3>
 
@@ -110,9 +122,10 @@
 <li>Tracy Fullerton: Game Design Workshop, 4th Edition, CRC Press, 2018</li>
 <li>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: Design Patterns: Elements of Reusable Object-Oriented Software, Addison-Wesley, 1994</li>
 <li>Ian Sommerville: Software Engineering, 10th Edition, Pearson, 2015</li>
-<li>Követelmény analízis előadásanyagok, Miskolci Egyetem</li>
 <li>UML 2.5 Specification, Object Management Group (OMG)</li>
 </ul>
+
+<p>Az Alien: Isolation játékelemzése elsősorban a lopakodós horror műfaj mechanikáinak megértésében segített, különös tekintettel a lény viselkedésére és a játékos feszültségszintjének kezelésére. A Game Design Workshop könyv a játéktervezés alapelveit és a játékmenet tervezésének módszertanát ismertette, amelyre a dokumentum játékmenet-leírása épül. A Design Patterns könyv a tervezési minták elméleti hátterét biztosította, amelyeket a későbbi rendszertervezési fázisokban fogunk használni. A Software Engineering tankönyv a szoftverfejlesztési folyamat általános modelljeit és a dokumentumkészítés módszertanát mutatta be. Az UML specifikáció a diagramok készítéséhez nyújtott szabványos keretrendszert. A Miskolci Egyetem követelmény analízis előadásanyagai a dokumentum formai és tartalmi követelményeit határozták meg.</p>
 
 <hr>
 
