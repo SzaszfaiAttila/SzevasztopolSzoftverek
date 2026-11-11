@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Szótár - Szevasztopol Szoftverek</title>
+</head>
+<body>
+
+<h1>Szótár</h1>
+
+<hr>
+
+<h2>Címlap</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<td><strong>Projekt neve:</strong></td>
+<td>Visszhang (Echo)</td>
+</tr>
+<tr>
+<td><strong>Csoport neve:</strong></td>
+<td>Szevasztopol Szoftverek</td>
+</tr>
+<tr>
+<td><strong>Dokumentum típusa:</strong></td>
+<td>Szótár</td>
+</tr>
+<tr>
+<td><strong>Verzió:</strong></td>
+<td>1.0 (H3)</td>
+</tr>
+<tr>
+<td><strong>Készítette:</strong></td>
+<td>Szevasztopol Szoftverek csapat</td>
+</tr>
+<tr>
+<td><strong>Intézmény:</strong></td>
+<td>Miskolci Egyetem</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Tartalomjegyzék</h2>
+
+<ol>
+<li><a href="#s1">Bevezetés</a></li>
+<li><a href="#s2">A szótár célja és használata</a></li>
+<li><a href="#s3">Szakkifejezések és rövidítések</a>
+<ol>
+<li><a href="#s3_1">Általános szoftverfejlesztési fogalmak</a></li>
+<li><a href="#s3_2">Játéktervezési fogalmak</a></li>
+<li><a href="#s3_3">Mesterséges intelligencia fogalmak</a></li>
+<li><a href="#s3_4">Követelmény specifikációs fogalmak</a></li>
+</ol>
+</li>
+<li><a href="#s4">Verziótörténet</a></li>
+</ol>
+
+<hr>
+
+<h2 id="s1">1. Bevezetés</h2>
+
+<p>Jelen szótár a Szevasztopol Szoftverek csapat "Visszhang" (Echo) munkacímű játékához készült dokumentumokban használt legfontosabb szakkifejezéseket és rövidítéseket tartalmazza. A szótár a Vízió dokumentum 10. fejezetéből került kiemelésre, és a H3 mérföldkő során önálló dokumentummá bővült. A szótár célja, hogy a projekt minden résztvevője számára egységes értelmezést biztosítson, és hogy a későbbi dokumentumokban használt kifejezések jelentése egyértelmű legyen.</p>
+
+<h2 id="s2">2. A szótár célja és használata</h2>
+
+<p>A szótár a projekt teljes dokumentációs csomagjára érvényes. A benne szereplő kifejezéseket a Vízió dokumentum, a Projekt terv, a Software követelmény specifikáció, a Felhasználói dokumentáció, valamint a későbbi tervezési dokumentumok egységesen használják. Ha egy dokumentumban egy kifejezés szerepel, amely a szótárban is megtalálható, akkor a szótárban megadott jelentés az irányadó. A szótár a H4 és H5 mérföldkövek során tovább bővülhet, ha új kifejezések kerülnek bevezetésre.</p>
+
+<h2 id="s3">3. Szakkifejezések és rövidítések</h2>
+
+<h3 id="s3_1">3.1 Általános szoftverfejlesztési fogalmak</h3>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kifejezés</th>
+<th>Magyarázat</th>
+</tr>
+<tr>
+<td>Aktor</td>
+<td>Olyan entitás (ember, rendszer vagy külső komponens), amely a rendszerrel interakcióba lép. Lehet elsődleges (a rendszert használja) vagy másodlagos (a rendszert kiszolgálja).</td>
+</tr>
+<tr>
+<td>Használati eset (use case)</td>
+<td>A rendszer egy funkcionális követelménye, amelyet egy aktor egy adott cél érdekében hajt végre. A használati esetek a rendszer viselkedését írják le a felhasználó szemszögéből.</td>
+</tr>
+<tr>
+<td>Use case diagram</td>
+<td>UML diagram, amely a rendszer aktorait, használati eseteit és azok kapcsolatait ábrázolja. A diagram a rendszer funkcionális modelljét mutatja.</td>
+</tr>
+<tr>
+<td>Include kapcsolat</td>
+<td>Use case diagramban használt kapcsolat, amely azt fejezi ki, hogy egy használati eset egy másik használati eset viselkedését kötelezően tartalmazza.</td>
+</tr>
+<tr>
+<td>Extend kapcsolat</td>
+<td>Use case diagramban használt kapcsolat, amely azt fejezi ki, hogy egy használati eset egy másik használati eset viselkedését opcionálisan kiegészíti bizonyos feltételek teljesülése esetén.</td>
+</tr>
+<tr>
+<td>Rendszerhatár</td>
+<td>A rendszer és a külvilág közötti határvonal, amelyet a use case diagramon egy téglalap jelöl. A rendszeren belüli elemek a téglalapon belül, a külső aktorok a téglalapon kívül helyezkednek el.</td>
+</tr>
+<tr>
+<td>UML</td>
+<td>Unified Modeling Language. Szabványos modellezési nyelv szoftverrendszerek tervezéséhez és dokumentálásához.</td>
+</tr>
+<tr>
+<td>State minta</td>
+<td>Tervezési minta, amely lehetővé teszi egy objektum viselkedésének megváltoztatását a belső állapotának változása esetén.</td>
+</tr>
+<tr>
+<td>Observer minta</td>
+<td>Tervezési minta, amely egy objektum állapotváltozásáról értesíti a függő objektumokat.</td>
+</tr>
+<tr>
+<td>Singleton minta</td>
+<td>Tervezési minta, amely biztosítja, hogy egy osztályból csak egyetlen példány létezzen, és ehhez globális hozzáférési pontot biztosít.</td>
+</tr>
+<tr>
+<td>Skeleton implementáció</td>
+<td>Olyan részleges implementáció, amely az osztályok és metódusok vázát tartalmazza, de a tényleges logika még hiányzik.</td>
+</tr>
+<tr>
+<td>Mérföldkő</td>
+<td>A projekt egy adott pontja, amelyhez konkrét eredmények és határidők tartoznak.</td>
+</tr>
+</table>
+
+<h3 id="s3_2">3.2 Játéktervezési fogalmak</h3>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kifejezés</th>
+<th>Magyarázat</th>
+</tr>
+<tr>
+<td>Játék</td>
+<td>A tervezett szoftvertermék, a "Visszhang" (Echo) munkacímű túlélőhorror játék.</td>
+</tr>
+<tr>
+<td>Játékos</td>
+<td>A végfelhasználó, aki a játékot játszani fogja. A játékos a játékban egy szerelőt irányít.</td>
+</tr>
+<tr>
+<td>Lény</td>
+<td>A játékban szereplő fő ellenfél, egy ismeretlen idegen teremtmény, amely az űrállomáson vadászik a játékosra.</td>
+</tr>
+<tr>
+<td>Lopakodós horror</td>
+<td>A horrorjátékok egy alkategóriája, amelyben a játékos jellemzően fegyvertelen vagy gyengén felfegyverzett, és a túlélés kulcsa a rejtőzködés és a menekülés.</td>
+</tr>
+<tr>
+<td>Dinamikus nehézségi szabályozás</td>
+<td>Olyan játékmechanikai megoldás, amely a játék nehézségét a játékos aktuális teljesítményéhez igazítja.</td>
+</tr>
+<tr>
+<td>Újrajátszhatóság</td>
+<td>A játék azon tulajdonsága, hogy mennyire érdemes többször is végigjátszani. Minél változatosabb a játékmenet, annál magasabb az újrajátszhatóság.</td>
+</tr>
+<tr>
+<td>Feszültségszint</td>
+<td>A játékos által átélt stressz és izgalom mértéke. A rendező-MI ezt figyeli és szabályozza.</td>
+</tr>
+<tr>
+<td>Erőforrás</td>
+<td>A játékban gyűjthető tárgyak és anyagok (például elemek, gyógyszerek, szerszámok), amelyek a játékos túlélését segítik.</td>
+</tr>
+<tr>
+<td>Csapda</td>
+<td>A játékos által elhelyezhető eszköz, amely a lény mozgását lassítja vagy eltereli a figyelmét.</td>
+</tr>
+<tr>
+<td>Mentési pont</td>
+<td>A játékban egy kijelölt hely, ahol a játékos elmentheti az aktuális állapotot.</td>
+</tr>
+</table>
+
+<h3 id="s3_3">3.3 Mesterséges intelligencia fogalmak</h3>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kifejezés</th>
+<th>Magyarázat</th>
+</tr>
+<tr>
+<td>MI</td>
+<td>Mesterséges intelligencia. Olyan szoftverrendszer, amely képes önálló döntéseket hozni és viselkedést tanúsítani egy adott környezetben.</td>
+</tr>
+<tr>
+<td>Lény MI</td>
+<td>A játékban szereplő idegen lény viselkedését irányító mesterséges intelligencia rendszer. Felelős a lény mozgásáért, érzékeléséért és döntéseiért.</td>
+</tr>
+<tr>
+<td>Rendező-MI</td>
+<td>A játék dramaturgiai ívét kezelő mesterséges intelligencia rendszer. Figyeli a játékos viselkedését és a feszültségszintet, és ennek megfelelően módosítja a játék paramétereit.</td>
+</tr>
+<tr>
+<td>Többágensű MI</td>
+<td>Olyan mesterséges intelligencia rendszer, amely több különálló ágensből áll, amelyek egymással kommunikálva hoznak döntéseket.</td>
+</tr>
+<tr>
+<td>Ágens</td>
+<td>Olyan önálló szoftverkomponens, amely képes érzékelni a környezetét és döntéseket hozni.</td>
+</tr>
+<tr>
+<td>Érzékelés</td>
+<td>A lény MI-jének azon képessége, hogy információt gyűjtsön a környezetéről (például a játékos pozíciójáról, zajokról).</td>
+</tr>
+<tr>
+<td>Viselkedésfa</td>
+<td>A lény MI-jének döntéshozatali struktúrája, amely a lehetséges viselkedéseket és azok feltételeit írja le.</td>
+</tr>
+</table>
+
+<h3 id="s3_4">3.4 Követelmény specifikációs fogalmak</h3>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Kifejezés</th>
+<th>Magyarázat</th>
+</tr>
+<tr>
+<td>Követelmény</td>
+<td>A rendszerrel szemben támasztott elvárás, amelyet a rendszernek teljesítenie kell. Lehet funkcionális (mit tegyen a rendszer) vagy nem funkcionális (hogyan tegye).</td>
+</tr>
+<tr>
+<td>Funkcionális követelmény</td>
+<td>A rendszer azon viselkedése, amelyet a rendszernek biztosítania kell. A funkcionális követelmények a rendszer bemeneteit, kimeneteit és azok kapcsolatát írják le.</td>
+</tr>
+<tr>
+<td>Nem funkcionális követelmény</td>
+<td>A rendszer minőségi jellemzője, amely a rendszer működésének módjára vonatkozik. Például teljesítmény, megbízhatóság, használhatóság.</td>
+</tr>
+<tr>
+<td>Specifikáció</td>
+<td>Olyan dokumentum, amely a rendszerrel szemben támasztott követelményeket részletesen leírja, és alapul szolgál a tervezéshez és az implementációhoz.</td>
+</tr>
+<tr>
+<td>Elsődleges aktor</td>
+<td>Olyan aktor, aki a rendszert saját céljai érdekében használja. A "Visszhang" esetében a Játékos az elsődleges aktor.</td>
+</tr>
+<tr>
+<td>Másodlagos aktor</td>
+<td>Olyan aktor, aki a rendszert kiszolgálja, de nem használja. A "Visszhang" esetében a Lény MI és a Rendező-MI másodlagos aktorok.</td>
+</tr>
+<tr>
+<td>Előfeltétel</td>
+<td>Olyan feltétel, amelynek teljesülnie kell egy használati eset végrehajtása előtt.</td>
+</tr>
+<tr>
+<td>Utfeltétel</td>
+<td>Olyan feltétel, amelynek teljesülnie kell egy használati eset végrehajtása után.</td>
+</tr>
+<tr>
+<td>Fő folyamat</td>
+<td>Egy használati eset azon lépéssorozata, amely a leggyakoribb és legvártabb esetben végbemegy.</td>
+</tr>
+<tr>
+<td>Alternatív folyamat</td>
+<td>Egy használati eset azon lépéssorozata, amely a fő folyamattól eltérő, de még mindig sikeres kimenetelhez vezet.</td>
+</tr>
+<tr>
+<td>Kivételes folyamat</td>
+<td>Egy használati eset azon lépéssorozata, amely hibás vagy nem várt helyzetet kezel.</td>
+</tr>
+<tr>
+<td>Nyomon követhetőség</td>
+<td>A követelmények és a tervezési elemek közötti kapcsolat, amely lehetővé teszi annak ellenőrzését, hogy minden követelmény teljesül-e, és minden tervezési elem egy követelményt szolgál-e.</td>
+</tr>
+</table>
+
+<h2 id="s4">4. Verziótörténet</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr>
+<th>Verzió</th>
+<th>Mérföldkő</th>
+<th>Változás</th>
+</tr>
+<tr>
+<td>0.1</td>
+<td>H2</td>
+<td>A szótár a Vízió dokumentum 10. fejezeteként jelenik meg.</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>H3</td>
+<td>A szótár önálló dokumentummá válik, és kiegészül a követelmény specifikációs fogalmakkal.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>Dokumentum vége.</em></p>
+
+</body>
+</html>
