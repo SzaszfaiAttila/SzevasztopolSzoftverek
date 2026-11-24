@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Rendszertervezés – Visszhang (Echo)</title>
+</head>
+<body>
+
+<h1>RENDSZERTERVEZÉS</h1>
+
+<table>
+<tr><th>Projekt neve</th><td>Visszhang (Echo)</td></tr>
+<tr><th>Csoport neve</th><td>Szevasztopol Szoftverek</td></tr>
+<tr><th>Dokumentum típusa</th><td>Rendszertervezés</td></tr>
+<tr><th>Mérföldkő</th><td>H4</td></tr>
+<tr><th>Verzió</th><td>1.0</td></tr>
+<tr><th>Készítette</th><td>Szevasztopol Szoftverek csapat</td></tr>
+<tr><th>Intézmény</th><td>Miskolci Egyetem</td></tr>
+</table>
+
+<h2>Verziótörténet</h2>
+<table>
+<tr><th>Verzió</th><th>Leírás</th><th>Szerző</th></tr>
+<tr><td>1.0</td><td>Rendszerterv: felhasználói felület terve, perzisztencia terv, adatmodellek, funkcionális modell kiegészítése, SRS-visszakövethetőség és megvalósítási sorrend.</td><td>Szevasztopol Szoftverek</td></tr>
+</table>
+
+<h2>Tartalomjegyzék</h2>
+<ul>
+<li><a href="#bevezetes">1. Bevezetés</a></li>
+<li><a href="#felulet">2. Felhasználói felület</a>
+  <ul>
+  <li><a href="#f21">2.1 Navigáció és képernyőállapotok</a></li>
+  <li><a href="#f22">2.2 Képernyőtervek</a></li>
+  <li><a href="#f23">2.3 Vezérlés és akadálymentesítés</a></li>
+  <li><a href="#f24">2.4 UI-komponensek és felelősségek</a></li>
+  </ul>
+</li>
+<li><a href="#adatmodellek">3. Adatmodellek</a>
+  <ul>
+  <li><a href="#d31">3.1 Adatbázis kezelő kiválasztása</a></li>
+  <li><a href="#d32">3.2 Szemantikai adatmodell</a></li>
+  <li><a href="#d33">3.3 Relációs adatmodell</a></li>
+  <li><a href="#d34">3.4 Az adatbázis kezelővel kapcsolatot tartó osztályok</a></li>
+  </ul>
+</li>
+<li><a href="#funkcionalis">4. A funkcionális modell kiegészítése</a>
+  <ul>
+  <li><a href="#k41">4.1 Mentés folyamat</a></li>
+  <li><a href="#k42">4.2 Betöltés folyamat</a></li>
+  <li><a href="#k43">4.3 Beállítások módosítása</a></li>
+  <li><a href="#k44">4.4 Lény-MI és rendező-MI adatáramlása</a></li>
+  <li><a href="#k45">4.5 Térbeli hang és vizuális megfelelő</a></li>
+  <li><a href="#k46">4.6 SRS-követelmények visszakövethetősége</a></li>
+  <li><a href="#k47">4.7 Megvalósítási sorrend</a></li>
+  </ul>
+</li>
+<li><a href="#osszefoglalas">5. Összefoglalás</a></li>
+</ul>
+
+<h2 id="bevezetes">1. Bevezetés</h2>
+
+<p>Jelen dokumentum a <strong>Visszhang (Echo)</strong> című, egyjátékos, lopakodásra és túlélésre építő horrorjáték rendszerterve. A játékos egy elhagyatott űrállomáson rekedt szerelőt irányít, a környezet feltárásával, tárgyak gyűjtésével, feladatok végrehajtásával és a lény elkerülésével próbál kijutni. A dokumentum a H4 rendszertervezési feladatához tartozik, és a tantárgyi rendszerterv-minta fejezetcímeit és sorrendjét alkalmazza.</p>
+
+<p>A tervezés alapja az SRS (FR-01–FR-39, UC-01–UC-16), a felhasználói dokumentáció, a projektterv, a vízió, a szótár és az analízis modell. Utóbbi hét logikai alrendszert és 31 analízisosztályt különít el; a jelen dokumentum ezekhez rendeli a kezelőfelületi, adatmegőrzési és együttműködési megoldásokat.</p>
+
+<p><strong>Tervezési feltételezések:</strong> asztali, helyben futó, egyjátékos játék; nincs kötelező online fiók vagy szerverkapcsolat. Az SQLite és az adatbázist használó osztályok a jelen dokumentumban rögzített tervezési döntések, nem az SRS által előírt technológiák. A tényleges játékfejlesztő motor, programnyelv és végleges grafikai dizájn a megvalósítás során rögzíthető.</p>
+
+<p><strong>Legfontosabb minőségi szempontok:</strong> folytatható mentések (FR-32), korábbi érvényes állapot megőrzése hiba esetén (FR-33), az MI-szerepek elkülönítése (FR-16–FR-27), térbeli hangvisszajelzés (FR-35), átállítható irányítás, feliratozás, több felbontás támogatása (FR-36–FR-39).</p>
+
+<h2 id="felulet">2. Felhasználói felület</h2>
+
+<p>Az egységes kezelőfelület célja, hogy a játékos a játékmenet során elsősorban a világra figyeljen. A HUD csak alapvető állapotinformációkat jelenít meg; a részletes célok, bejegyzések és tárgyak külön megnyitható nézetekben érhetők el. A képernyőtervek semlegesek: elrendezési tervek, nem végleges grafikai képernyőképek.</p>
+
+<h3 id="f21">2.1 Navigáció és képernyőállapotok</h3>
+
+<p>A felület állapotai a következőképpen kapcsolódnak egymáshoz. A navigáció minden esetben a Játékfolyamat fázisváltásain keresztül történik, közvetlen képernyőváltás nem megengedett.</p>
+
+<pre>
+[Indítás] -> Főmenü
+Főmenü -> Játékmenet : Új játék
+Főmenü -> Mentés/Betöltés : Betöltés
+Főmenü -> Beállítások
+Játékmenet -> Szünet menü
+Játékmenet -> Készlet/Napló
+Játékmenet -> Befejezés/Halál
+Szünet menü -> Játékmenet : Folytatás
+Szünet menü -> Beállítások
+Szünet menü -> Mentés/Betöltés
+Beállítások -> Főmenü : főmenüből
+Beállítások -> Szünet menü : játékból
+Mentés/Betöltés -> Főmenü : vissza / hiba
+Mentés/Betöltés -> Játékmenet : sikeres betöltés
+Készlet/Napló -> Játékmenet
+Befejezés/Halál -> Főmenü
+</pre>
+
+<table>
+<tr><th>Képernyő</th><th>Feladat</th><th>Kezelési szabály</th><th>Kapcsolódás</th></tr>
+<tr><td>Főmenü</td><td>Új játék, folytatás/betöltés, beállítások, kilépés.</td><td>A Folytatás csak érvényes mentés esetén aktív.</td><td>FR-01–FR-02; UC-01</td></tr>
+<tr><td>Játékmenet / HUD</td><td>Világkép, interakciós jelzés, releváns állapotok.</td><td>Veszélyre utaló információ ne legyen kizárólag hangalapú.</td><td>FR-04–FR-08, FR-35, FR-38</td></tr>
+<tr><td>Szünet</td><td>Folytatás, mentés, betöltés, beállítások, főmenü.</td><td>Szünetben a szimuláció és az MI-időzítők nem haladnak.</td><td>FR-03</td></tr>
+<tr><td>Készlet és napló</td><td>Tárgyak, eszközhasználat, feladatok, összegyűjtött információ.</td><td>Hozzáférés gombbal; visszatérés a játékba.</td><td>FR-11–FR-15, FR-28–FR-29</td></tr>
+<tr><td>Mentés / Betöltés</td><td>Mentési helyek, dátum, terület, előrehaladás, felülírás.</td><td>Hibák érthetőek, az utolsó érvényes mentés nem vész el.</td><td>FR-32–FR-34; UC-08</td></tr>
+<tr><td>Beállítások</td><td>Hang, effekt, felirat, vezérlés, grafika és hozzáférhetőség.</td><td>Változtatások előnézettel; hiba esetén visszaállítás.</td><td>FR-36–FR-39; UC-10</td></tr>
+<tr><td>Befejezés / Halál</td><td>Lezárás vagy újrapróbálás/betöltés.</td><td>A történet következményei megjelennek, de titkok nem szivárognak ki.</td><td>FR-30–FR-31; UC-09</td></tr>
+</table>
+
+<h3 id="f22">2.2 Képernyőtervek</h3>
+
+<h4>Főmenü</h4>
+<div style="border:1px solid #777;padding:8px;max-width:720px;margin:10px 0">
+<div style="border:1px solid #999;padding:6px;text-align:center;font-weight:bold">VISSZHANG – FŐMENÜ</div>
+<div style="text-align:center;padding:14px 0">
+<div style="display:inline-block;border:1px solid #777;padding:4px 12px;margin:3px">Új játék</div>
+<div style="display:inline-block;border:1px solid #777;padding:4px 12px;margin:3px">Folytatás / Betöltés</div>
+<div style="display:inline-block;border:1px solid #777;padding:4px 12px;margin:3px">Beállítások</div>
+<div style="display:inline-block;border:1px solid #777;padding:4px 12px;margin:3px">Kilépés</div>
+</div>
+<div style="font-size:smaller">Választás: egér, billentyűzet vagy kontroller • Verzió és súgó elérhető</div>
+</div>
+
+<h4>Játékképernyő és minimális HUD</h4>
+<div style="border:1px solid #777;padding:8px;max-width:720px;margin:10px 0">
+<div style="border:1px solid #999;padding:6px;text-align:center;font-weight:bold">JÁTÉKMENET – 3D VILÁGKÉP</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<div style="flex:3;border:1px solid #999;min-height:150px;padding:8px;text-align:center">
+Űrállomás – látómező<br><small>Középpont: kontextusérzékeny interakció</small>
+</div>
+<div style="flex:1;border:1px solid #999;padding:8px">
+Aktuális cél<br><small>Rövid, nem zavaró visszajelzés</small>
+</div>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<div style="flex:1;border:1px solid #999;padding:8px">Állapot / zaj-visszajelzés</div>
+<div style="flex:1;border:1px solid #999;padding:8px">Eszköz / készletparancs</div>
+<div style="flex:1;border:1px solid #999;padding:8px">Felirat / vizuális hangjelzés</div>
+</div>
+</div>
+
+<h4>Mentés / Betöltés</h4>
+<div style="border:1px solid #777;padding:8px;max-width:720px;margin:10px 0">
+<div style="border:1px solid #999;padding:6px;text-align:center;font-weight:bold">MENTÉS / BETÖLTÉS</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<div style="flex:1;border:1px solid #999;padding:8px">
+Mentés 01 • példa időpont<br>
+Gépészeti szint • 42%
+<hr>
+Mentés 02 • példa időpont<br>
+Fő folyosó • 48%
+</div>
+<div style="flex:1;border:1px solid #999;padding:8px">
+<strong>Kiválasztott mentés</strong>
+<p>Terület, játékidő, utolsó fő cél</p>
+<div style="display:inline-block;border:1px solid #777;padding:4px 10px;margin:3px">Betöltés</div>
+<div style="display:inline-block;border:1px solid #777;padding:4px 10px;margin:3px">Mentés / felülírás</div>
+<div style="display:inline-block;border:1px solid #777;padding:4px 10px;margin:3px">Vissza</div>
+</div>
+</div>
+<div style="font-size:smaller">Művelet visszajelzése / hibaüzenet / megerősítés. A példában szereplő adatok illusztratívak.</div>
+</div>
+
+<h3 id="f23">2.3 Vezérlés és akadálymentesítés</h3>
+
+<table>
+<tr><th>Funkció</th><th>Billentyűzet/egér</th><th>Kontroller</th><th>Megjegyzés</th></tr>
+<tr><td>Mozgás</td><td>W/A/S/D</td><td>Bal analóg kar</td><td>Szabadon átköthető</td></tr>
+<tr><td>Kamera</td><td>Egér</td><td>Jobb analóg kar</td><td>Érzékenység állítható</td></tr>
+<tr><td>Interakció</td><td>E</td><td>A / X kontextustól függően</td><td>Egységes interakciós jelzés</td></tr>
+<tr><td>Guggolás / lopakodás</td><td>Ctrl</td><td>Jobb kar lenyomása</td><td>Kapcsoló / nyomva tartó mód opcionális</td></tr>
+<tr><td>Futás</td><td>Shift</td><td>Bal kar lenyomása</td><td>Ütközés nélküli kiosztási ellenőrzés</td></tr>
+<tr><td>Készlet / napló</td><td>Tab / J</td><td>Menü gomb</td><td>Szabadon átköthető</td></tr>
+<tr><td>Szünet</td><td>Esc</td><td>Start / Options</td><td>FR-03 szerinti időmegállítás</td></tr>
+</table>
+
+<p>A kiosztás javaslat: a felhasználó átállíthatja (FR-37). A beállítások között külön főhangerő, effekt-hangerő, felirat- és vizuális hangjelzés, színlátást segítő mód, felbontás és UI-méretezés található (FR-36–FR-39). Feliratokban a beszéd és fontos környezeti események forrása megkülönböztethető; az esetleges színkódok szöveggel vagy ikonnal is támogatottak.</p>
+
+<h3 id="f24">2.4 UI-komponensek és felelősségek</h3>
+
+<table>
+<tr><th>Komponens</th><th>Feladat</th><th>Kapcsolódó analízisosztály / szolgáltatás</th></tr>
+<tr><td>MainMenuView</td><td>Indítás és folytatás kiválasztása</td><td>Játékfolyamat, MentésKezelő</td></tr>
+<tr><td>GameHUD</td><td>Aktuális cél, kontextus, készletállapot, felirat</td><td>Játékoskarakter, Feladat, Hangmegjelenítés</td></tr>
+<tr><td>InventoryJournalView</td><td>Tárgylista, napló, aktív feladatok</td><td>Készlet, Napló, Feladat</td></tr>
+<tr><td>SaveLoadView</td><td>Mentési helyek listázása, mentés és betöltés</td><td>MentésKezelő, SaveRepository</td></tr>
+<tr><td>SettingsView</td><td>Állítás, ellenőrzés, visszaállítás</td><td>Beállítások, SettingsRepository</td></tr>
+<tr><td>PauseOverlay</td><td>Szünet és visszatérés</td><td>Játékállapot, Játékfolyamat</td></tr>
+<tr><td>EndingView</td><td>Lezárás vagy újrakezdés</td><td>TörténetÁllapot, Befejezés</td></tr>
+</table>
+
+<h2 id="adatmodellek">3. Adatmodellek</h2>
+
+<p>Az alkalmazás helyi perzisztens adatokat kezel: mentési helyek és állapot-pillanatképek, valamint felhasználói beállítások. A világ statikus tartalma (pályadefiníciók, feladat- és tárgysablonok, hangadatok) verziózott játékerőforrásként érkezik; az adatbázisban ezekre azonosítóval hivatkozó állapot tárolódik. Az MI pillanatnyi döntési állapotát is a mentési csomag tartalmazza, de sem érzékelési, sem rendező-MI naplózás nem használható illegitim játékoskoordináta átadására.</p>
+
+<h3 id="d31">3.1 Adatbázis kezelő kiválasztása</h3>
+
+<p><strong>Tervezési döntés:</strong> a kliensgépbe ágyazott SQLite adatbázis használata. Indoklás: egyjátékos alkalmazás, offline működés, tranzakciók, egyszerű telepítés, táblás sémával ellenőrizhető mentési metaadatok; nem szükséges külön adatbázisszerver. Ez nem ütközik az SRS-sel, amely technológiát nem köt meg. A motor és a programnyelv kiválasztásától függően szabványos SQLite driver vagy adapter biztosítja az elérést.</p>
+
+<table>
+<tr><th>Lehetőség</th><th>Előny</th><th>Hátrány</th><th>Döntés</th></tr>
+<tr><td>SQLite (beágyazott)</td><td>Tranzakció, index, lekérdezés; nincs külön kiszolgáló</td><td>Séma- és verziókezelést igényel</td><td><strong>Választott tervezési megoldás</strong></td></tr>
+<tr><td>JSON-fájlok</td><td>Egyszerű, ember által is olvasható</td><td>Önálló atomikus és konzisztencia-kezelés szükséges</td><td>Alternatíva / exportformátum</td></tr>
+<tr><td>Külső SQL-szerver</td><td>Többfelhasználós szinkron</td><td>Offline egyjátékos környezetben fölösleges komplexitás</td><td>Nem választott</td></tr>
+</table>
+
+<p>A kapcsolattartás a SaveRepository, SettingsRepository, DatabaseConnection és SchemaMigrator osztályokon keresztül történik. A játékmenet kizárólag a SaveService alkalmazási szolgáltatással kommunikál; közvetlen SQL-hívást nem végez.</p>
+
+<p>Hibabiztonság: az új állapotot egy tranzakcióban kell rögzíteni; előbb ellenőrzött állapotcsomag készül, és csak sikeres INSERT/UPDATE + COMMIT után jelölhető aktívként. Sikertelen műveletkor ROLLBACK, az utolsó ellenőrzött mentés megmarad. Az adatbázis integritását idegen kulcsok és ellenőrzőösszeg támogatják. A biztonsági mentés nem azonos a játékbeli mentési hellyel.</p>
+
+<h3 id="d32">3.2 Szemantikai adatmodell</h3>
+
+<p>A mentés egy adott játékfutás meghatározott pillanatának konzisztens állapotát tartalmazza. Az egyszerű kezelhetőség érdekében a dinamikus részrendszer-állapotokat egyetlen, szerializált és verziózott payload pillanatképben tároljuk. A fejlécek, mentési helyek és játékosbeállítások relációs mezőkkel is lekérdezhetők. Ez a hibrid modell logikailag külön kezeli a tartalmi entitásokat, de nem kényszeríti az MI-változókat tucatnyi szorosan csatolt táblába.</p>
+
+<pre>
+PLAYER_PROFILE 1 -- N GAME_RUN
+PLAYER_PROFILE 1 -- N SAVE_SLOT
+PLAYER_PROFILE 1 -- 0..1 USER_SETTINGS
+GAME_RUN 1 -- N SAVE_SNAPSHOT
+SAVE_SLOT 1 -- N SAVE_SNAPSHOT
+</pre>
+
+<table>
+<tr><th>Entitás</th><th>Azonosító</th><th>Attribútumok és jelentés</th><th>Kapcsolat</th></tr>
+<tr><td>PLAYER_PROFILE</td><td>profile_id</td><td>Helyi profil és megjelenített név; nincs online fiókigény.</td><td>1:N GAME_RUN, 1:N SAVE_SLOT, 1:0..1 USER_SETTINGS</td></tr>
+<tr><td>USER_SETTINGS</td><td>profile_id</td><td>Főhangerő, effektek, felirat, billentyűzet/kontroller mapping, grafika, UI méret.</td><td>Profilhoz tartozó aktuális beállítás</td></tr>
+<tr><td>GAME_RUN</td><td>run_id</td><td>Egy új játék logikai futása, kezdeti időpont.</td><td>1:N SAVE_SNAPSHOT</td></tr>
+<tr><td>SAVE_SLOT</td><td>slot_id</td><td>A felületen választható mentési hely és neve.</td><td>1:N SAVE_SNAPSHOT (előzmények)</td></tr>
+<tr><td>SAVE_SNAPSHOT</td><td>save_id</td><td>Pillanatkép-metaadat, blob, ellenőrzőösszeg, séma verzió.</td><td>Pontosan egy futás és egy hely</td></tr>
+</table>
+
+<h4>3.2.1 A mentési pillanatkép logikai felépítése</h4>
+
+<table>
+<tr><th>Logikai blokk</th><th>Tartalom</th><th>Analízismodell-eredet</th><th>Visszaállítási szabály</th></tr>
+<tr><td>session</td><td>Játékállapot, idő, szünet és aktuális terület.</td><td>Játékfolyamat, Játékállapot</td><td>Érvényes futási állapotból indul</td></tr>
+<tr><td>player</td><td>Pozíció, orientáció, mozgásállapot, túlélési állapot.</td><td>Játékoskarakter</td><td>Pályahatárokon belül ellenőrizendő</td></tr>
+<tr><td>world</td><td>Aktivált ajtók, hozzáférések, pályaobjektum-állapotok.</td><td>Terület, Ajtó, Rejtekhely</td><td>Ismert statikus ID-kre hivatkozik</td></tr>
+<tr><td>inventory</td><td>Tárgyazonosítók, mennyiségek, használat.</td><td>Készlet, Tárgy, Eszköz</td><td>Kapacitás és mennyiség érvényes</td></tr>
+<tr><td>quests</td><td>Feladatállapotok, hozzáférési feltételek.</td><td>Feladat, FeladatKezelő</td><td>A teljesítési függőségek konzisztensen állnak</td></tr>
+<tr><td>story</td><td>Naplóbejegyzések, döntések, végkimeneti jelzők.</td><td>Napló, TörténetÁllapot, Befejezés</td><td>Ismeretlen tartalom-ID kontrollált hibát ad</td></tr>
+<tr><td>creature_ai</td><td>Lény fizikai pozíciója, érvényes észlelési nyom, viselkedési állapot.</td><td>Lény, LényMI, ÉszlelésiEsemény</td><td>Nem generálható igazolatlan játékoskoordináta</td></tr>
+<tr><td>director_ai</td><td>Feszültségérték, időzítők, esemény-hűtési idők, véletlenmag.</td><td>RendezőMI, FeszültségModell</td><td>Külön marad a lény észlelési memóriájától</td></tr>
+<tr><td>audio_world</td><td>Aktív térbeli hangforrások és események, ha releváns.</td><td>Hangmegjelenítés</td><td>Forrásazonosító és pozíció alapján újraépíthető</td></tr>
+</table>
+
+<h3 id="d33">3.3 Relációs adatmodell</h3>
+
+<p>Az ER-modellből öt tábla lesz. A kapcsolatok kulcsokkal és megszorításokkal rögzítettek. A save_snapshot sorok verziózott pillanatképei lehetővé teszik, hogy egy felülírt mentési hely korábbi érvényes állapota megmaradjon. A képernyő alapértelmezés szerint az adott mentési hely legfrissebb érvényes pillanatképét mutatja.</p>
+
+<pre>
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE player_profile (
+  profile_id TEXT PRIMARY KEY,
+  display_name TEXT NOT NULL
+);
+
+CREATE TABLE user_settings (
+  profile_id TEXT PRIMARY KEY REFERENCES player_profile(profile_id),
+  settings_version INTEGER NOT NULL CHECK(settings_version > 0),
+  settings_json TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE game_run (
+  run_id TEXT PRIMARY KEY,
+  profile_id TEXT NOT NULL REFERENCES player_profile(profile_id),
+  started_at TEXT NOT NULL
+);
+
+CREATE TABLE save_slot (
+  slot_id TEXT PRIMARY KEY,
+  profile_id TEXT NOT NULL REFERENCES player_profile(profile_id),
+  slot_label TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  UNIQUE(profile_id, slot_label)
+);
+
+CREATE TABLE save_snapshot (
+  save_id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES game_run(run_id),
+  slot_id TEXT NOT NULL REFERENCES save_slot(slot_id),
+  created_at TEXT NOT NULL,
+  schema_version INTEGER NOT NULL CHECK(schema_version > 0),
+  scene_id TEXT NOT NULL,
+  play_time_seconds INTEGER NOT NULL CHECK(play_time_seconds >= 0),
+  progress_percent INTEGER CHECK(progress_percent BETWEEN 0 AND 100),
+  payload_json TEXT NOT NULL,
+  checksum_sha256 TEXT NOT NULL,
+  validation_status TEXT NOT NULL DEFAULT 'valid'
+    CHECK(validation_status IN ('valid','invalid'))
+);
+
+CREATE INDEX idx_save_slot_date ON save_snapshot(slot_id, created_at DESC);
+CREATE INDEX idx_game_run_profile ON game_run(profile_id);
+</pre>
+
+<p><strong>Konverzió:</strong> a PLAYER_PROFILE–GAME_RUN és PLAYER_PROFILE–SAVE_SLOT 1:N kapcsolatok idegen kulcsként szerepelnek a gyermektáblákban; a USER_SETTINGS 1:0..1 kapcsolat a profilazonosítót közös elsődleges és idegen kulcsként használja; a GAME_RUN–SAVE_SNAPSHOT és SAVE_SLOT–SAVE_SNAPSHOT kapcsolatok két kötelező idegen kulccsal reprezentáltak. A mezők azonosítói stabilan tárolt UUID-k lehetnek; az időpontok UTC ISO 8601 karakterláncok.</p>
+
+<p><strong>Integritási többletszabály:</strong> egy mentés run_id és slot_id értéke csak azonos profilhoz tartozhat; ezt a SaveRepository ellenőrzi ugyanabban a tranzakcióban. A checksum_sha256 a kanonizált payload_json bájtjaira vonatkozik; a hash nem titkosítás vagy hitelesítés. Beolvasáskor a tartalmi séma és a hivatkozott játékerőforrások érvényességét is ellenőrizni kell.</p>
+
+<h4>3.3.1 Példák a lekérdezésekre</h4>
+
+<pre>
+-- A kiválasztott mentési hely legfrissebb érvényes állapota:
+SELECT save_id, created_at, scene_id, progress_percent, payload_json, checksum_sha256
+FROM save_snapshot
+WHERE slot_id = :slot_id AND validation_status = 'valid'
+ORDER BY created_at DESC, save_id DESC
+LIMIT 1;
+
+-- Mentések listája (metaadatok; a payloadot a listázás nem tölti be):
+SELECT s.slot_id, s.slot_label, v.created_at, v.scene_id, v.progress_percent
+FROM save_slot s
+LEFT JOIN save_snapshot v ON v.save_id = (
+  SELECT x.save_id FROM save_snapshot x
+  WHERE x.slot_id = s.slot_id AND x.validation_status = 'valid'
+  ORDER BY x.created_at DESC, x.save_id DESC LIMIT 1
+)
+WHERE s.profile_id = :profile_id;
+</pre>
+
+<h3 id="d34">3.4 Az adatbázis kezelővel kapcsolatot tartó osztályok</h3>
+
+<pre>
+Játékfolyamat --> SaveService
+SaveService --> SnapshotCodec
+SaveService --> SaveRepository
+SaveRepository --> DatabaseConnection
+SettingsRepository --> DatabaseConnection
+SchemaMigrator --> DatabaseConnection
+</pre>
+
+<table>
+<tr><th>Osztály</th><th>Felelősség</th><th>Fő műveletek</th><th>Hibakezelés</th></tr>
+<tr><td>SaveService</td><td>Az alkalmazási szintű mentési folyamat koordinálása; teljes állapot összegyűjtése és visszatöltése.</td><td>save(slotId), load(slotId), listSlots()</td><td>Érthető UI-eredmény; sikertelen load nem változtatja az aktív játékot.</td></tr>
+<tr><td>SnapshotCodec</td><td>Világállapot → JSON és vissza; típus, verzió, kapcsolatok ellenőrzése.</td><td>encode(), decode(), validate(), migratePayload()</td><td>Sérült vagy hiányos mező: strukturált hiba.</td></tr>
+<tr><td>SaveRepository</td><td>Mentési metaadat és pillanatkép tárolása, lekérdezése.</td><td>insertSnapshot(), getLatestValid(), listSlotMetadata()</td><td>Tranzakció, visszagörgetés; korábbi mentés megőrzése.</td></tr>
+<tr><td>SettingsRepository</td><td>Helyi beállítások lekérdezése és módosítása.</td><td>getSettings(), saveSettings()</td><td>Mentési hiba esetén előző konfiguráció alkalmazása.</td></tr>
+<tr><td>DatabaseConnection</td><td>SQLite kapcsolat, paraméterezett SQL és tranzakciókezelés.</td><td>open(), begin(), execute(), commit(), rollback()</td><td>Erőforrásbezárás, hibakódok továbbítása.</td></tr>
+<tr><td>SchemaMigrator</td><td>Adatbázisséma és pillanatkép-verziók követése.</td><td>getVersion(), migrate()</td><td>Ismeretlen újabb verzió esetén olvasás megtagadása, adatvesztés nélkül.</td></tr>
+</table>
+
+<p>Az analízis modell MentésKezelő fogalmi osztályát megvalósító SaveService különül el a technikai SaveRepository-tól. A játékbeli MentésAdat a SaveSnapshot adatátviteli modellnek felel meg. A Beállítások osztály és a SettingsRepository csak konfigurációra vonatkozik, a térbeli hangforrások és szimulációs események nem válnak globális konfigurációvá.</p>
+
+<h2 id="funkcionalis">4. A funkcionális modell kiegészítése</h2>
+
+<p>Az analízis modell statikus és dinamikus modelljeit az alábbi végrehajtási forgatókönyvek egészítik ki, az adatáramlás, alternatív ágak és kivételes helyzetek részletezésével.</p>
+
+<h3 id="k41">4.1 Mentés folyamat</h3>
+
+<p><strong>Előfeltétel:</strong> a játék állapota stabil mentési pillanatképként kiolvasható; a játék a kiválasztott mentési politikát megengedi.</p>
+
+<p><strong>Normál ág:</strong></p>
+<ol>
+<li>A felület a SaveLoadView komponensen keresztül mentést kezdeményez.</li>
+<li>A SaveService kiolvassa a világállapotot.</li>
+<li>A SnapshotCodec ellenőrzi és szerializálja az állapotot.</li>
+<li>A SaveRepository tranzakcióban új save_snapshot sort hoz létre.</li>
+<li>Csak a sikeres COMMIT után jelenik meg a sikerüzenet.</li>
+</ol>
+
+<p><strong>Hibaág:</strong> sérült állapot, megtelt háttértár, SQL-hiba vagy ellenőrzési hiba esetén ROLLBACK és célzott hibaüzenet; az előző mentési sor változatlan marad.</p>
+
+<p><strong>Utófeltétel:</strong> egy mentés teljes és ellenőrizhető, vagy nincs látható félkész módosítás. Kapcsolódás: FR-32–FR-34, UC-08.</p>
+
+<h3 id="k42">4.2 Betöltés folyamat</h3>
+
+<ol>
+<li>A felület listázza az érvényes mentések metaadatait.</li>
+<li>A kiválasztott save_id rekord tartalma a kódoló-ellenőrző modulhoz kerül.</li>
+<li>A checksum, a schema_version, a kötelező állapotblokkok és a játékerőforrás-azonosítók ellenőrzése után a világ egy ideiglenes állapotmodellbe épül fel.</li>
+<li>A lény-MI állapota csak a saját legitim észlelési memóriáját tartalmazhatja; a rendező-MI saját időzítőiből és feszültségbecsléséből áll helyre.</li>
+<li>Csak teljes siker esetén cserélődik az aktív játékvilág az ideiglenesre, valamint újraindulnak a megfelelő hang- és felületi komponensek.</li>
+<li>Érvénytelen mentés esetén az aktív játékvilág nem módosul; a felület hibát jelez, és egy korábbi érvényes pillanatképet kínálhat.</li>
+</ol>
+
+<p>Kapcsolódás: FR-32–FR-33, UC-01 és UC-08.</p>
+
+<h3 id="k43">4.3 Beállítások módosítása</h3>
+
+<p>A beállítási felület szerkeszthető munkapéldányt tart fenn. Mentéskor ellenőrzi a határértékeket, a kötelező vezérlési műveletek kiosztását és a képernyőn elérhető UI-elemeket. A sikeres adatbázis-tranzakció után alkalmazza a hang-, vezérlés-, felirat- és méretezési beállításokat. Ha bármelyik alkalmazási lépés sikertelen, visszaállítja a korábbi, működő konfigurációt, és érthető hibaüzenetet ad. A felbontásváltozás csak visszaigazolás után válhat véglegessé. Kapcsolódás: FR-36–FR-39, UC-10.</p>
+
+<h3 id="k44">4.4 Lény-MI és rendező-MI adatáramlása</h3>
+
+<pre>
+Világbeli események (zaj, fény, mozgás)
+    --> Érzékelési modell (látás, hallás)
+        --> Lény-MI (legitim észlelési memória)
+            --> Világállapot : mozgás / támadás
+
+Világbeli események (aggregált játékesemény)
+    --> Rendező-MI (feszültség, ritmus)
+        --> Környezeti eseményvégrehajtó
+            --> Világállapot : fény/zaj módosítás
+
+Világállapot --> Világbeli események : fizikai esemény
+</pre>
+
+<p>A rendező-MI világállapotból és eseménystatisztikákból feszültséget becsül, és lehetséges környezeti történéseket kér. Nem adhat át közvetlen, a lény számára nem észlelt játékospozíciót, nem állíthatja át a lény célpontját kikerülve az érzékelési logikát. Ha a rendező zajt generál, a lény kizárólag a ténylegesen létrejött, hallható zajt észlelheti, és annak helye felé vizsgálódhat. A világ fizikai korlátait a mozgás- és útkereső rendszer végig érvényesíti. Kapcsolódás: FR-16–FR-27; UC-11–UC-16.</p>
+
+<h3 id="k45">4.5 Térbeli hang és vizuális megfelelő</h3>
+
+<p>Minden releváns hang eseményként érkezik a hangrétegbe: sourceId, forráspozíció, típus, erősség, időbélyeg és opcionális feliratszöveg. A játékos és a kamera transzformációjából kiszámítható a relatív irány és távolság, majd ebből a hangerő, panoráma és az elérhető audioeszközzel a térbeli leképezés. A kritikus hangokhoz felirat és választható irányjelzés is társul. Mentés után az egyszeri hangokat nem feltétlenül kell újra lejátszani; a folyamatos források és a hangkörnyezet állapota rekonstruálandó. Kapcsolódás: FR-35 és FR-38.</p>
+
+<h3 id="k46">4.6 SRS-követelmények visszakövethetősége</h3>
+
+<table>
+<tr><th>SRS-csoport</th><th>Jelen terv helye</th><th>Ellenőrzési szempont</th></tr>
+<tr><td>FR-01–FR-03</td><td>2.1–2.2, 4.1–4.2</td><td>Indítás, főmenü, szünet alatti időmegállás</td></tr>
+<tr><td>FR-04–FR-10</td><td>2.2–2.3, 3.2</td><td>Karakter, rejtekhely, pályakapcsolatok, célok állapotának megőrzése</td></tr>
+<tr><td>FR-11–FR-15</td><td>2.1–2.4, 3.2</td><td>Készlet, feladat és eszközök konzisztenciája</td></tr>
+<tr><td>FR-16–FR-21</td><td>3.2, 4.2, 4.4</td><td>Legitim érzékelés és fizikai mozgási korlátok</td></tr>
+<tr><td>FR-22–FR-27</td><td>3.2, 4.4</td><td>Rendező-MI külön feszültségmodell; nincs koordináta-szivárgás</td></tr>
+<tr><td>FR-28–FR-31</td><td>2.1–2.2, 3.2</td><td>Napló, történeti döntések, befejezési feltételek</td></tr>
+<tr><td>FR-32–FR-34</td><td>2.2, 3.1–3.4, 4.1–4.2</td><td>Konzisztens mentés, hibavédelem, azonosítható helyek</td></tr>
+<tr><td>FR-35–FR-39</td><td>2.2–2.4, 4.3, 4.5</td><td>Hangirány, felirat, kontroller, felbontás és skálázás</td></tr>
+</table>
+
+<h3 id="k47">4.7 Megvalósítási sorrend és ellenőrzési esetek</h3>
+
+<table>
+<tr><th>Sorrend</th><th>Tervezett rész</th><th>Ellenőrzés</th></tr>
+<tr><td>1</td><td>Játékállapot és UI-állapotgép</td><td>Szünetben nem telik a szimulációs idő</td></tr>
+<tr><td>2</td><td>SnapshotCodec és SQLite repository</td><td>Mentés és betöltés ugyanabba a logikai állapotba vezet</td></tr>
+<tr><td>3</td><td>Mentési tranzakció és visszaállítás</td><td>Megszakított íráskor a korábbi állapot olvasható</td></tr>
+<tr><td>4</td><td>Lény-MI és rendező-MI kommunikáció</td><td>Észlelés nélküli koordinátaátadás kizárt</td></tr>
+<tr><td>5</td><td>Hangréteg és hozzáférhetőség</td><td>Forrásirány változtatásakor a hang és a vizuális jel is követi</td></tr>
+<tr><td>6</td><td>Sémafrissítés és kompatibilitás</td><td>Régi állomány támogatott migrációja vagy adatvesztés nélküli elutasítása</td></tr>
+</table>
+
+<h2 id="osszefoglalas">5. Összefoglalás</h2>
+
+<p>Jelen dokumentum a Visszhang (Echo) játék rendszertervét mutatta be. A felhasználói felület fejezet a navigációt, a képernyőterveket, a vezérlést és a UI-komponensek felelősségét tartalmazza. Az adatmodellek fejezet az SQLite-alapú perzisztencia megoldást, a szemantikai adatmodellt, a relációs adatmodellt és a kapcsolódó osztályokat írja le. A funkcionális modell kiegészítése a mentés és betöltés folyamatát, a beállítások módosítását, az MI-adatáramlást, a térbeli hangkezelést, az SRS-visszakövethetőséget és a megvalósítási sorrendet rögzíti.</p>
+
+<p>A rendszerterv az analízis modell osztályaira épül, és a H5 objektumtervezési fázis kiindulópontja. A dokumentum a tantárgyi rendszerterv-minta fejezetsorrendjét követi, a rendszer sajátosságaihoz igazított tartalommal.</p>
+
+<p>Vissza a lap tetejére: <a href="#top">ugrás a címlapra</a>.</p>
+
+</body>
+</html>

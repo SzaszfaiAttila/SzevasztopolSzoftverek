@@ -2,296 +2,198 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
-<title>Szótár - Szevasztopol Szoftverek</title>
+<title>Szótár – Visszhang (Echo)</title>
 </head>
 <body>
 
-<h1>Szótár</h1>
+<h1>SZÓTÁR</h1>
 
-<hr>
-
-<h2>Címlap</h2>
-
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<td><strong>Projekt neve:</strong></td>
-<td>Visszhang (Echo)</td>
-</tr>
-<tr>
-<td><strong>Csoport neve:</strong></td>
-<td>Szevasztopol Szoftverek</td>
-</tr>
-<tr>
-<td><strong>Dokumentum típusa:</strong></td>
-<td>Szótár</td>
-</tr>
-<tr>
-<td><strong>Verzió:</strong></td>
-<td>1.0 (H3)</td>
-</tr>
-<tr>
-<td><strong>Készítette:</strong></td>
-<td>Szevasztopol Szoftverek csapat</td>
-</tr>
-<tr>
-<td><strong>Intézmény:</strong></td>
-<td>Miskolci Egyetem</td>
-</tr>
+<table>
+<tr><th>Projekt neve</th><td>Visszhang (Echo)</td></tr>
+<tr><th>Csoport neve</th><td>Szevasztopol Szoftverek</td></tr>
+<tr><th>Dokumentum típusa</th><td>Szótár (fogalomtár)</td></tr>
+<tr><th>Mérföldkő</th><td>H4</td></tr>
+<tr><th>Verzió</th><td>1.0</td></tr>
+<tr><th>Készítette</th><td>Szevasztopol Szoftverek csapat</td></tr>
+<tr><th>Intézmény</th><td>Miskolci Egyetem</td></tr>
 </table>
 
-<hr>
-
-<h2>Tartalomjegyzék</h2>
-
-<ol>
-<li><a href="#s1">Bevezetés</a></li>
-<li><a href="#s2">A szótár célja és használata</a></li>
-<li><a href="#s3">Szakkifejezések és rövidítések</a>
-<ol>
-<li><a href="#s3_1">Általános szoftverfejlesztési fogalmak</a></li>
-<li><a href="#s3_2">Játéktervezési fogalmak</a></li>
-<li><a href="#s3_3">Mesterséges intelligencia fogalmak</a></li>
-<li><a href="#s3_4">Követelmény specifikációs fogalmak</a></li>
-</ol>
-</li>
-<li><a href="#s4">Verziótörténet</a></li>
-</ol>
-
-<hr>
-
-<h2 id="s1">1. Bevezetés</h2>
-
-<p>Jelen szótár a Szevasztopol Szoftverek csapat "Visszhang" (Echo) munkacímű játékához készült dokumentumokban használt legfontosabb szakkifejezéseket és rövidítéseket tartalmazza. A szótár a Vízió dokumentum 10. fejezetéből került kiemelésre, és a H3 mérföldkő során önálló dokumentummá bővült. A szótár célja, hogy a projekt minden résztvevője számára egységes értelmezést biztosítson, és hogy a későbbi dokumentumokban használt kifejezések jelentése egyértelmű legyen.</p>
-
-<h2 id="s2">2. A szótár célja és használata</h2>
-
-<p>A szótár a projekt teljes dokumentációs csomagjára érvényes. A benne szereplő kifejezéseket a Vízió dokumentum, a Projekt terv, a Software követelmény specifikáció, a Felhasználói dokumentáció, valamint a későbbi tervezési dokumentumok egységesen használják. Ha egy dokumentumban egy kifejezés szerepel, amely a szótárban is megtalálható, akkor a szótárban megadott jelentés az irányadó. A szótár a H4 és H5 mérföldkövek során tovább bővülhet, ha új kifejezések kerülnek bevezetésre.</p>
-
-<h2 id="s3">3. Szakkifejezések és rövidítések</h2>
-
-<h3 id="s3_1">3.1 Általános szoftverfejlesztési fogalmak</h3>
-
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<th>Kifejezés</th>
-<th>Magyarázat</th>
-</tr>
-<tr>
-<td>Aktor</td>
-<td>Olyan entitás (ember, rendszer vagy külső komponens), amely a rendszerrel interakcióba lép. Lehet elsődleges (a rendszert használja) vagy másodlagos (a rendszert kiszolgálja).</td>
-</tr>
-<tr>
-<td>Használati eset (use case)</td>
-<td>A rendszer egy funkcionális követelménye, amelyet egy aktor egy adott cél érdekében hajt végre. A használati esetek a rendszer viselkedését írják le a felhasználó szemszögéből.</td>
-</tr>
-<tr>
-<td>Use case diagram</td>
-<td>UML diagram, amely a rendszer aktorait, használati eseteit és azok kapcsolatait ábrázolja. A diagram a rendszer funkcionális modelljét mutatja.</td>
-</tr>
-<tr>
-<td>Include kapcsolat</td>
-<td>Use case diagramban használt kapcsolat, amely azt fejezi ki, hogy egy használati eset egy másik használati eset viselkedését kötelezően tartalmazza.</td>
-</tr>
-<tr>
-<td>Extend kapcsolat</td>
-<td>Use case diagramban használt kapcsolat, amely azt fejezi ki, hogy egy használati eset egy másik használati eset viselkedését opcionálisan kiegészíti bizonyos feltételek teljesülése esetén.</td>
-</tr>
-<tr>
-<td>Rendszerhatár</td>
-<td>A rendszer és a külvilág közötti határvonal, amelyet a use case diagramon egy téglalap jelöl. A rendszeren belüli elemek a téglalapon belül, a külső aktorok a téglalapon kívül helyezkednek el.</td>
-</tr>
-<tr>
-<td>UML</td>
-<td>Unified Modeling Language. Szabványos modellezési nyelv szoftverrendszerek tervezéséhez és dokumentálásához.</td>
-</tr>
-<tr>
-<td>State minta</td>
-<td>Tervezési minta, amely lehetővé teszi egy objektum viselkedésének megváltoztatását a belső állapotának változása esetén.</td>
-</tr>
-<tr>
-<td>Observer minta</td>
-<td>Tervezési minta, amely egy objektum állapotváltozásáról értesíti a függő objektumokat.</td>
-</tr>
-<tr>
-<td>Singleton minta</td>
-<td>Tervezési minta, amely biztosítja, hogy egy osztályból csak egyetlen példány létezzen, és ehhez globális hozzáférési pontot biztosít.</td>
-</tr>
-<tr>
-<td>Skeleton implementáció</td>
-<td>Olyan részleges implementáció, amely az osztályok és metódusok vázát tartalmazza, de a tényleges logika még hiányzik.</td>
-</tr>
-<tr>
-<td>Mérföldkő</td>
-<td>A projekt egy adott pontja, amelyhez konkrét eredmények és határidők tartoznak.</td>
-</tr>
+<h2>Verziótörténet</h2>
+<table>
+<tr><th>Verzió</th><th>Leírás</th><th>Szerző</th></tr>
+<tr><td>1.0</td><td>A szótár legfrissebb állapota: a játékdomén, a követelményspecifikáció, az analízis modell és a rendszerterv fogalmainak egységes gyűjteménye, az analízis 31 osztályával és a perzisztencia technikai fogalmaival.</td><td>Szevasztopol Szoftverek</td></tr>
 </table>
 
-<h3 id="s3_2">3.2 Játéktervezési fogalmak</h3>
+<h2>Bevezetés</h2>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<th>Kifejezés</th>
-<th>Magyarázat</th>
-</tr>
-<tr>
-<td>Játék</td>
-<td>A tervezett szoftvertermék, a "Visszhang" (Echo) munkacímű túlélőhorror játék.</td>
-</tr>
-<tr>
-<td>Játékos</td>
-<td>A végfelhasználó, aki a játékot játszani fogja. A játékos a játékban egy szerelőt irányít.</td>
-</tr>
-<tr>
-<td>Lény</td>
-<td>A játékban szereplő fő ellenfél, egy ismeretlen idegen teremtmény, amely az űrállomáson vadászik a játékosra.</td>
-</tr>
-<tr>
-<td>Lopakodós horror</td>
-<td>A horrorjátékok egy alkategóriája, amelyben a játékos jellemzően fegyvertelen vagy gyengén felfegyverzett, és a túlélés kulcsa a rejtőzködés és a menekülés.</td>
-</tr>
-<tr>
-<td>Dinamikus nehézségi szabályozás</td>
-<td>Olyan játékmechanikai megoldás, amely a játék nehézségét a játékos aktuális teljesítményéhez igazítja.</td>
-</tr>
-<tr>
-<td>Újrajátszhatóság</td>
-<td>A játék azon tulajdonsága, hogy mennyire érdemes többször is végigjátszani. Minél változatosabb a játékmenet, annál magasabb az újrajátszhatóság.</td>
-</tr>
-<tr>
-<td>Feszültségszint</td>
-<td>A játékos által átélt stressz és izgalom mértéke. A rendező-MI ezt figyeli és szabályozza.</td>
-</tr>
-<tr>
-<td>Erőforrás</td>
-<td>A játékban gyűjthető tárgyak és anyagok (például elemek, gyógyszerek, szerszámok), amelyek a játékos túlélését segítik.</td>
-</tr>
-<tr>
-<td>Csapda</td>
-<td>A játékos által elhelyezhető eszköz, amely a lény mozgását lassítja vagy eltereli a figyelmét.</td>
-</tr>
-<tr>
-<td>Mentési pont</td>
-<td>A játékban egy kijelölt hely, ahol a játékos elmentheti az aktuális állapotot.</td>
-</tr>
+<p>Jelen szótár a Visszhang (Echo) projekt dokumentumaiban használt fogalmak egységes értelmezését szolgálja. A szótár lefedi a játékdomén, a követelményspecifikáció, az analízis modell és a rendszerterv szókészletét, valamint az ezek olvasásához szükséges általános szoftverfejlesztési és modellezési fogalmakat. A fogalmak kategóriákba rendezve következnek; a definíciók a projekt jelenlegi állapotára érvényesek.</p>
+
+<p>A szótár a tantárgyi követelménynek megfelelően címlappal és verziószámmal rendelkezik, tartalomjegyzéket nem tartalmaz. Ahol egy fogalom a játék világán belül és a szoftver architektúrájában is értelmezhető, a definíció a projektbeli jelentést adja; a megjegyzés az architekturális előfordulásra utal.</p>
+
+<h2>1. Általános szoftverfejlesztési és modellezési fogalmak</h2>
+
+<table>
+<tr><th>Fogalom</th><th>Definíció</th></tr>
+<tr><td>Aktor</td><td>Olyan entitás (ember, rendszer vagy külső komponens), amely a rendszerrel interakcióba lép; lehet elsődleges vagy másodlagos.</td></tr>
+<tr><td>Használati eset (use case)</td><td>A rendszer funkcionális szolgáltatását a felhasználó célja és a művelet eseménysora alapján leíró modell.</td></tr>
+<tr><td>Use case diagram</td><td>UML-diagram a szereplők, használati esetek és kapcsolataik ábrázolására.</td></tr>
+<tr><td>Include kapcsolat</td><td>Kötelezően bevont használati esetek közötti kapcsolat.</td></tr>
+<tr><td>Extend kapcsolat</td><td>Feltételes, opcionális kiegészítés használati esetek között.</td></tr>
+<tr><td>Rendszerhatár</td><td>A rendszeren belüli funkciókat és a külső szereplőket elválasztó modellezési határ.</td></tr>
+<tr><td>UML</td><td>Unified Modeling Language; egységes grafikus modellezési nyelv.</td></tr>
+<tr><td>State minta</td><td>Viselkedési tervezési minta, amelyben az objektum működése az állapotától függ.</td></tr>
+<tr><td>Observer minta</td><td>A megfigyelt objektum eseményeiről értesítést kapnak a feliratkozó objektumok.</td></tr>
+<tr><td>Singleton minta</td><td>Egyetlen példány létrehozására és elérhetővé tételére szolgáló tervezési minta.</td></tr>
+<tr><td>Skeleton implementáció</td><td>Az osztályok és metódusok vázát tartalmazó részleges megvalósítás.</td></tr>
+<tr><td>Mérföldkő</td><td>A projekt ütemezésének meghatározott átadási pontja.</td></tr>
+<tr><td>OO analízismodell</td><td>A rendszer fogalmi osztályait, felelősségeit, kapcsolatait és viselkedését leíró, implementációtól független modell.</td></tr>
+<tr><td>OO rendszertervezés</td><td>Az analízismodellre épülő terv, amely az adatok tárolását, a felhasználói felületet és a funkciók technikai együttműködését pontosítja.</td></tr>
+<tr><td>Osztály</td><td>Közös attribútumokkal és műveletekkel rendelkező objektumok típusa.</td></tr>
+<tr><td>Objektum</td><td>Egy osztály konkrét példánya, saját aktuális állapottal.</td></tr>
+<tr><td>Attribútum</td><td>Egy osztály vagy objektum tárolt tulajdonsága.</td></tr>
+<tr><td>Operáció</td><td>Egy osztály által biztosított művelet, amely az objektum állapotát vagy más elemekkel való együttműködését kezelheti.</td></tr>
+<tr><td>Asszociáció</td><td>Két osztály példányai közötti szerkezeti kapcsolat.</td></tr>
+<tr><td>Számosság (multiplicitás)</td><td>Az osztálykapcsolat egy végén megengedett példányok száma, például 1 vagy 0..*.</td></tr>
+<tr><td>Aggregáció</td><td>Gyenge egész–rész kapcsolat, ahol a rész önállóan is létezhet.</td></tr>
+<tr><td>Kompozíció</td><td>Erős egész–rész kapcsolat, ahol az alkotóelemek életciklusa az egészhez kötött.</td></tr>
+<tr><td>Öröklődés</td><td>Általánosabb és specializáltabb osztályok közötti típuskapcsolat.</td></tr>
+<tr><td>Bázisosztály</td><td>Olyan osztály, amelyből más osztályok származnak, és amely a közös tulajdonságokat és műveleteket foglalja össze.</td></tr>
+<tr><td>Csomagdiagram</td><td>A modell alrendszereinek, csomagjainak és függőségeinek UML-ábrája.</td></tr>
+<tr><td>Osztálydiagram</td><td>Az osztályokat, attribútumaikat, operációikat és szerkezeti kapcsolataikat ábrázoló UML-diagram.</td></tr>
+<tr><td>Szekvenciadiagram</td><td>Objektumok közötti üzenetváltások időrendjét bemutató UML-diagram.</td></tr>
+<tr><td>Állapotdiagram</td><td>Az objektum lehetséges állapotait és a köztük bekövetkező átmeneteket szemléltető UML-diagram.</td></tr>
+<tr><td>Tevékenységdiagram</td><td>Egy folyamat lépéseit, elágazásait és befejezési pontjait bemutató UML-diagram.</td></tr>
+<tr><td>Alrendszer</td><td>Elkülönített felelősségű komponensek együttese, például készletkezelés vagy történetkezelés.</td></tr>
+<tr><td>Statikus modell</td><td>Az osztályok és kapcsolataik szerkezetét leíró modell.</td></tr>
+<tr><td>Dinamikus modell</td><td>Az állapotváltozásokat és a komponensek közötti együttműködéseket leíró modell.</td></tr>
+<tr><td>Funkcionális modell</td><td>A rendszer műveleteit, bemeneteit, kimeneteit és folyamatait leíró modell.</td></tr>
 </table>
 
-<h3 id="s3_3">3.3 Mesterséges intelligencia fogalmak</h3>
+<h2>2. Játékdomén és játékmenet fogalmak</h2>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<th>Kifejezés</th>
-<th>Magyarázat</th>
-</tr>
-<tr>
-<td>MI</td>
-<td>Mesterséges intelligencia. Olyan szoftverrendszer, amely képes önálló döntéseket hozni és viselkedést tanúsítani egy adott környezetben.</td>
-</tr>
-<tr>
-<td>Lény MI</td>
-<td>A játékban szereplő idegen lény viselkedését irányító mesterséges intelligencia rendszer. Felelős a lény mozgásáért, érzékeléséért és döntéseiért.</td>
-</tr>
-<tr>
-<td>Rendező-MI</td>
-<td>A játék dramaturgiai ívét kezelő mesterséges intelligencia rendszer. Figyeli a játékos viselkedését és a feszültségszintet, és ennek megfelelően módosítja a játék paramétereit.</td>
-</tr>
-<tr>
-<td>Többágensű MI</td>
-<td>Olyan mesterséges intelligencia rendszer, amely több különálló ágensből áll, amelyek egymással kommunikálva hoznak döntéseket.</td>
-</tr>
-<tr>
-<td>Ágens</td>
-<td>Olyan önálló szoftverkomponens, amely képes érzékelni a környezetét és döntéseket hozni.</td>
-</tr>
-<tr>
-<td>Érzékelés</td>
-<td>A lény MI-jének azon képessége, hogy információt gyűjtsön a környezetéről (például a játékos pozíciójáról, zajokról).</td>
-</tr>
-<tr>
-<td>Viselkedésfa</td>
-<td>A lény MI-jének döntéshozatali struktúrája, amely a lehetséges viselkedéseket és azok feltételeit írja le.</td>
-</tr>
+<table>
+<tr><th>Fogalom</th><th>Definíció</th></tr>
+<tr><td>Játék</td><td>A Visszhang (Echo) munkacímű, tervezett egyjátékos túlélőhorror.</td></tr>
+<tr><td>Játékos</td><td>A végfelhasználó, aki a szerelőt irányítja.</td></tr>
+<tr><td>Játékfolyamat</td><td>A játék életciklusát vezérlő elemzési osztály: elindítja, szünetelteti és lezárja a játékfolyamatot, és felügyeli az állapotváltásokat.</td></tr>
+<tr><td>Játékállapot</td><td>A mindenkori játékmenet összefüggő pillanatképe: a pálya, a szereplők, a feladatok és a történeti előrehaladás közös kontextusa.</td></tr>
+<tr><td>Játékoskarakter</td><td>Az űrállomáson rekedt, a játékos által irányított szerelő; mozgása, észlelhetősége, rejtőzködése és életereje határozza meg a túlélési helyzetet.</td></tr>
+<tr><td>Lény</td><td>Az űrállomáson a karaktert fenyegető ellenfél; csak szabályos navigációs és észlelési információk alapján mozoghat és támadhat.</td></tr>
+<tr><td>Lopakodós horror</td><td>A közvetlen harc helyett rejtőzködést, óvatosságot és menekülést hangsúlyozó játékműfaj.</td></tr>
+<tr><td>Dinamikus nehézségi szabályozás</td><td>A játék kihívásait a megfigyelt játékmenethez igazító eljárás.</td></tr>
+<tr><td>Újrajátszhatóság</td><td>A többszöri végigjátszás során tapasztalható változatosság.</td></tr>
+<tr><td>Feszültségszint</td><td>A rendező-MI által játékeseményekből becsült belső mutató; nem élettani vagy orvosi mérés.</td></tr>
+<tr><td>Erőforrás</td><td>Gyűjthető és felhasználható tárgy, például elem, gyógyszer vagy szerszám.</td></tr>
+<tr><td>Csapda</td><td>Elhelyezhető tárgy, amely megfelelő ponton és kiváltó eseménynél átmeneti, korlátozott hatást okoz; a Tárgy leszármazottja.</td></tr>
+<tr><td>Űrállomás</td><td>Az elhagyott űrállomás topológiájának gyökere; az összetartozó területek és átjárók konzisztenciáját tartja fenn.</td></tr>
+<tr><td>Terület (állomásterület)</td><td>Az állomás elkülönülő, bejárható logikai egysége, amelyben objektumok, tárgyak, rejtekhelyek és események találhatók.</td></tr>
+<tr><td>Átjáró</td><td>Két terület közötti fizikai vagy logikai összeköttetés, amely csak teljesült hozzáférési feltételekkel használható.</td></tr>
+<tr><td>InterakciósObjektum</td><td>Az állomás olyan környezeti eleme, amellyel a játékos adott távolságon és állapoton belül interakcióba léphet.</td></tr>
+<tr><td>Interakció</td><td>A játékos művelete egy használható környezeti objektumon.</td></tr>
+<tr><td>Rejtekhely</td><td>Az interakciós objektum specializált fajtája, amely a karakter rejtőzködését segíti, de a lény észlelését nem kapcsolja ki.</td></tr>
+<tr><td>Feladat</td><td>A továbbjutáshoz kapcsolódó cél, amely szükséges teljesítési feltételeket és a feladat előrehaladását tartalmazza.</td></tr>
+<tr><td>Feladatállapot</td><td>Egy célkitűzés előrehaladása, például aktív, teljesített vagy lezárt.</td></tr>
+<tr><td>TeljesítésiFeltétel</td><td>Újrafelhasználható logikai előfeltétel, amely feladat, ajtó vagy befejezés elérhetőségét szabályozza.</td></tr>
+<tr><td>Készlet</td><td>A karakter által magával vitt tárgyakat és azok mennyiségeit kezelő objektum; kapacitása korlátozott.</td></tr>
+<tr><td>Készlettétel</td><td>A készlet és egy tárgyfajta közti mennyiségi kapcsolat; azonos tárgyak több példányát egy bejegyzéssel képviseli.</td></tr>
+<tr><td>Tárgy</td><td>A felvehető vagy használható játékbeli eszköz közös fogalmi típusa, amelyből az eltérő használati viselkedésű eszközök származnak.</td></tr>
+<tr><td>Fogyóeszköz</td><td>Egyszer vagy korlátozott alkalommal használható tárgy, amelynek felhasználása erőforrásfogyással jár.</td></tr>
+<tr><td>FigyelemelterelőEszköz</td><td>Olyan tárgy, amely hangot vagy más szabályos észlelési ingert kelt a lény figyelmének elterelésére.</td></tr>
+<tr><td>Napló</td><td>A játékos által már megszerzett történeti információk gyűjteménye; kizárólag felfedezett tartalmat mutat.</td></tr>
+<tr><td>Naplóbejegyzés</td><td>Az állomásról szerezhető szöveges vagy hangos történeti információ, amely felfedezés után újra megnyitható.</td></tr>
+<tr><td>Döntés</td><td>A történet szempontjából jelentős játékosválasztás és annak következménye; a befejezések egyik bemenete.</td></tr>
+<tr><td>Döntési pont</td><td>A történetben vagy feladatban választást igénylő helyzet, amely befolyásolhatja a lezárást.</td></tr>
+<tr><td>Befejezés</td><td>A játék záróállapotának egyik megkülönböztethető ága, amelynek feltételeit a feladatok és a döntések határozzák meg.</td></tr>
+<tr><td>HUD</td><td>Heads-Up Display; a játék során megjelenő, lényeges állapotokat és célokat jelző felület.</td></tr>
+<tr><td>Térbeli hang</td><td>A hangforrás térbeli irányát és távolságát érzékeltető hangmegjelenítés.</td></tr>
+<tr><td>Vizuális hangjelzés</td><td>Fontos hanginformáció megértését segítő felirat vagy képi visszajelzés.</td></tr>
+<tr><td>Hangmegjelenítés</td><td>A játékvilág eseményeihez és hangforrásaihoz kapcsolódó térbeli hangvisszajelzést előállító objektum; figyelembe veszi a hangerő- és akadálymentesítési beállításokat.</td></tr>
+<tr><td>Beállításprofil</td><td>A játékos által választott hang-, kép-, vezérlés- és akadálymentesítési beállítások együttese.</td></tr>
+<tr><td>Beállítások</td><td>A hangerő, a feliratok, az irányítás és a hozzáférhetőségi opciók felhasználói beállítási adatait tároló objektum.</td></tr>
+<tr><td>FelhasználóiFelület</td><td>A főmenü, a szünet, a HUD, a készlet, a napló, a mentés és a beállítások játékos felé történő egységes megjelenítése.</td></tr>
 </table>
 
-<h3 id="s3_4">3.4 Követelmény specifikációs fogalmak</h3>
+<h2>3. Mesterséges intelligencia fogalmak</h2>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<th>Kifejezés</th>
-<th>Magyarázat</th>
-</tr>
-<tr>
-<td>Követelmény</td>
-<td>A rendszerrel szemben támasztott elvárás, amelyet a rendszernek teljesítenie kell. Lehet funkcionális (mit tegyen a rendszer) vagy nem funkcionális (hogyan tegye).</td>
-</tr>
-<tr>
-<td>Funkcionális követelmény</td>
-<td>A rendszer azon viselkedése, amelyet a rendszernek biztosítania kell. A funkcionális követelmények a rendszer bemeneteit, kimeneteit és azok kapcsolatát írják le.</td>
-</tr>
-<tr>
-<td>Nem funkcionális követelmény</td>
-<td>A rendszer minőségi jellemzője, amely a rendszer működésének módjára vonatkozik. Például teljesítmény, megbízhatóság, használhatóság.</td>
-</tr>
-<tr>
-<td>Specifikáció</td>
-<td>Olyan dokumentum, amely a rendszerrel szemben támasztott követelményeket részletesen leírja, és alapul szolgál a tervezéshez és az implementációhoz.</td>
-</tr>
-<tr>
-<td>Elsődleges aktor</td>
-<td>Olyan aktor, aki a rendszert saját céljai érdekében használja. A "Visszhang" esetében a Játékos az elsődleges aktor.</td>
-</tr>
-<tr>
-<td>Másodlagos aktor</td>
-<td>Olyan aktor, aki a rendszert kiszolgálja, de nem használja. A "Visszhang" esetében a Lény MI és a Rendező-MI másodlagos aktorok.</td>
-</tr>
-<tr>
-<td>Előfeltétel</td>
-<td>Olyan feltétel, amelynek teljesülnie kell egy használati eset végrehajtása előtt.</td>
-</tr>
-<tr>
-<td>Utfeltétel</td>
-<td>Olyan feltétel, amelynek teljesülnie kell egy használati eset végrehajtása után.</td>
-</tr>
-<tr>
-<td>Fő folyamat</td>
-<td>Egy használati eset azon lépéssorozata, amely a leggyakoribb és legvártabb esetben végbemegy.</td>
-</tr>
-<tr>
-<td>Alternatív folyamat</td>
-<td>Egy használati eset azon lépéssorozata, amely a fő folyamattól eltérő, de még mindig sikeres kimenetelhez vezet.</td>
-</tr>
-<tr>
-<td>Kivételes folyamat</td>
-<td>Egy használati eset azon lépéssorozata, amely hibás vagy nem várt helyzetet kezel.</td>
-</tr>
-<tr>
-<td>Nyomon követhetőség</td>
-<td>A követelmények és a tervezési elemek közötti kapcsolat, amely lehetővé teszi annak ellenőrzését, hogy minden követelmény teljesül-e, és minden tervezési elem egy követelményt szolgál-e.</td>
-</tr>
+<table>
+<tr><th>Fogalom</th><th>Definíció</th></tr>
+<tr><td>MI</td><td>Mesterséges intelligencia; környezeti adatok alapján önálló döntéseket hozó szoftverlogika.</td></tr>
+<tr><td>LényMI</td><td>Az ellenfél érzékelési eseményeket kiértékelő, járőröző, gyanakvó, üldöző és nyomvesztő döntési logikája; kizárólag szabályos észlelésre támaszkodik.</td></tr>
+<tr><td>RendezőMI</td><td>A játékmenet eseményeiből becsült feszültség alapján eseményeket javasoló és ütemező döntési logika; a lény érzékelési szabályait nem írhatja felül, és nem adhat át igazolatlan játékospozíciót.</td></tr>
+<tr><td>FeszültségProfil</td><td>A rendező-MI belső állapota: aktuális feszültségszint, célszint és stabilizálási paraméterek.</td></tr>
+<tr><td>RendezőiEsemény</td><td>Egy engedélyezett környezeti történés tervezett és végrehajtott példánya, például hang vagy világításváltozás.</td></tr>
+<tr><td>ÉszlelésiEsemény</td><td>Idő- és helybélyeggel rendelkező hallási vagy látási jel, amelyből a lény a bizonyosságnak megfelelően következtethet.</td></tr>
+<tr><td>Többágensű MI</td><td>Több önálló döntéshozó ágens együttműködésére épülő rendszer.</td></tr>
+<tr><td>Ágens</td><td>Környezetet megfigyelő és arra reagáló önálló komponens.</td></tr>
+<tr><td>Érzékelés</td><td>A lény-MI környezeti látvány- és hangeseményeket feldolgozó folyamata.</td></tr>
+<tr><td>Viselkedésfa</td><td>Feltételek és cselekvések hierarchiáját használó döntési modell.</td></tr>
+<tr><td>MI-állapot</td><td>Az MI adott pillanatnyi működési módja, például járőrözés, keresés vagy üldözés.</td></tr>
+<tr><td>Viselkedésállapot</td><td>A LényMI olyan állapota, amely meghatározza a lény aktuális cselekvési mintáját: járőrözés, gyanakvás, üldözés vagy nyomvesztés.</td></tr>
+<tr><td>Járőrözés</td><td>A LényMI olyan viselkedésállapota, amelyben a lény előre meghatározott útvonalon vagy véletlenszerűen mozog, és észlelési eseményekre vár.</td></tr>
+<tr><td>Nyomvesztés</td><td>A LényMI olyan viselkedésállapota, amelyben a lény elvesztette a játékos nyomát, és fokozatosan visszatér a járőrözéshez.</td></tr>
+<tr><td>Gyanúszint</td><td>A LényMI belső értéke, amely azt fejezi ki, mennyire valószínű, hogy a játékos a közelben van; az észlelési események erőssége és típusa alapján frissül.</td></tr>
+<tr><td>Feszültségkezelés</td><td>A rendező-MI által végzett, események intenzitását és pihenőszakaszait összehangoló szabályozás.</td></tr>
+<tr><td>Információs korlát</td><td>A lény-MI számára csak szabályosan megfigyelhető játékvilág-adatok használatát biztosító megkötés; a rendező-MI nem adhat át közvetlen, nem észlelt játékospozíciót.</td></tr>
 </table>
 
-<h2 id="s4">4. Verziótörténet</h2>
+<h2>4. Követelményspecifikációs fogalmak</h2>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<th>Verzió</th>
-<th>Mérföldkő</th>
-<th>Változás</th>
-</tr>
-<tr>
-<td>0.1</td>
-<td>H2</td>
-<td>A szótár a Vízió dokumentum 10. fejezeteként jelenik meg.</td>
-</tr>
-<tr>
-<td>1.0</td>
-<td>H3</td>
-<td>A szótár önálló dokumentummá válik, és kiegészül a követelmény specifikációs fogalmakkal.</td>
-</tr>
+<table>
+<tr><th>Fogalom</th><th>Definíció</th></tr>
+<tr><td>Követelmény</td><td>A rendszerrel szemben támasztott ellenőrizhető elvárás.</td></tr>
+<tr><td>Funkcionális követelmény</td><td>A rendszer által biztosítandó viselkedést leíró követelmény.</td></tr>
+<tr><td>Nem funkcionális követelmény</td><td>A rendszer minőségi tulajdonságát, például teljesítményét vagy megbízhatóságát meghatározó követelmény.</td></tr>
+<tr><td>Specifikáció</td><td>A követelményeket és azok értelmezését rögzítő dokumentum.</td></tr>
+<tr><td>Elsődleges aktor</td><td>A rendszert saját céljából használó szereplő; a játék esetén a játékos.</td></tr>
+<tr><td>Másodlagos aktor</td><td>A modellezésben kiszolgáló szerepet betöltő szereplő, például a lény-MI vagy a rendező-MI.</td></tr>
+<tr><td>Előfeltétel</td><td>Egy használati eset indítása előtt teljesítendő feltétel.</td></tr>
+<tr><td>Utófeltétel</td><td>A használati eset végrehajtása után fennálló állapot.</td></tr>
+<tr><td>Fő folyamat</td><td>Az elvárt, tipikus lefutás eseménysora.</td></tr>
+<tr><td>Alternatív folyamat</td><td>A sikeres működés másik megengedett eseménysora.</td></tr>
+<tr><td>Kivételes folyamat</td><td>Hibás vagy nem várt helyzet kezelését leíró lefutás.</td></tr>
+<tr><td>Nyomon követhetőség</td><td>A követelmények, a modellelemek és az ellenőrzések közötti megfeleltetés.</td></tr>
+<tr><td>SRS</td><td>Software Requirements Specification; szoftverkövetelmény-specifikáció.</td></tr>
+<tr><td>FR</td><td>Funkcionális követelmény azonosítójának előtagja.</td></tr>
+<tr><td>NFR</td><td>Nem funkcionális követelmény azonosítójának előtagja.</td></tr>
+<tr><td>UC</td><td>Használati eset azonosítójának előtagja.</td></tr>
 </table>
 
-<hr>
+<h2>5. Adatmodellezési és rendszertervezési fogalmak</h2>
 
-<p><em>Dokumentum vége.</em></p>
+<table>
+<tr><th>Fogalom</th><th>Definíció</th></tr>
+<tr><td>Adatmodell</td><td>A rendszerben nyilvántartott adatok szerkezetét és kapcsolatait leíró modell.</td></tr>
+<tr><td>ER-diagram</td><td>Entitás–kapcsolat diagram; az adategyedeket, tulajdonságaikat és kapcsolataikat szemlélteti.</td></tr>
+<tr><td>Relációs adatmodell</td><td>Az adatokat egymáshoz kulcsokkal kapcsolódó táblákban elrendező adatmodell.</td></tr>
+<tr><td>Elsődleges kulcs (PK)</td><td>Egy táblában minden rekordot egyedileg azonosító mező vagy mezők együttese.</td></tr>
+<tr><td>Idegen kulcs (FK)</td><td>Egy másik tábla rekordjára hivatkozó mező, amely a kapcsolatot és az adatintegritást segíti.</td></tr>
+<tr><td>SQLite</td><td>Beágyazott relációs adatbázis-kezelő, amely külön kiszolgáló nélkül működik; a rendszertervben a helyi perzisztencia megoldása.</td></tr>
+<tr><td>SQL</td><td>Structured Query Language; relációs adatbázisok kezelésére használt lekérdezőnyelv.</td></tr>
+<tr><td>Repository (adattár-osztály)</td><td>Az adatbázishoz kapcsolódó olvasási és írási műveleteket elkülönítő alkalmazáskomponens.</td></tr>
+<tr><td>SaveService</td><td>Az alkalmazási szintű mentési folyamatot koordináló szolgáltatás; a MentésKezelő fogalmi osztály megvalósítója.</td></tr>
+<tr><td>SaveRepository</td><td>A mentési metaadat és pillanatkép tárolásáért és lekérdezéséért felelős technikai osztály.</td></tr>
+<tr><td>SnapshotCodec</td><td>A világállapot és a szerializált payload közötti átalakítást, valamint a tartalom ellenőrzését végző komponens.</td></tr>
+<tr><td>SchemaMigrator</td><td>Az adatbázisséma és a pillanatkép-verziók követéséért felelős technikai osztály; ismeretlen újabb verzió esetén az olvasást adatvesztés nélkül megtagadja.</td></tr>
+<tr><td>Mentési pillanatkép</td><td>Egy meghatározott időpillanat összehangolt, később visszaállítható játékállapot-adategyüttese.</td></tr>
+<tr><td>MentésKezelő</td><td>A játékállapot tartós pillanatképének létrehozását, ellenőrzését és visszaállítását koordináló fogalmi osztály.</td></tr>
+<tr><td>MentésAdat</td><td>Egy mentési helyhez tartozó önálló, időbélyegzett és verziózott játékmenet-pillanatkép; nem élő hivatkozás az aktuális objektumokra.</td></tr>
+<tr><td>Mentési hely (slot)</td><td>A felületen megjelenő, a játékos által azonosítható mentési bejegyzés, amely egy vagy több pillanatképet tartalmazhat.</td></tr>
+<tr><td>Adatkonzisztencia</td><td>Az összetartozó mentett adatok egymásnak nem ellentmondó állapota.</td></tr>
+<tr><td>Tranzakció</td><td>Összetartozó adatbázis-műveletek egységesen végrehajtandó és hibakor visszavonható csoportja.</td></tr>
+<tr><td>Commit</td><td>Adatbázis-tranzakció sikeres lezárása; a módosítások tartósan érvénybe lépnek.</td></tr>
+<tr><td>Rollback</td><td>Sikertelen tranzakció változtatásainak visszavonása.</td></tr>
+<tr><td>Séma</td><td>Az adatbázis tábláinak, mezőinek, kulcsainak és korlátozásainak leírása.</td></tr>
+<tr><td>Sémaverzió</td><td>A mentési adatszerkezet változatát jelző azonosító a kompatibilitás ellenőrzéséhez.</td></tr>
+<tr><td>Sérült mentés</td><td>Hiányos, hibás vagy nem ellenőrizhető állapotadat, amely nem tölthető vissza biztonságosan.</td></tr>
+<tr><td>Konzisztens betöltés</td><td>A mentett állapot egészének ellenőrzés utáni visszaállítása részleges felülírás nélkül.</td></tr>
+<tr><td>Állapotgép</td><td>Megengedett állapotok és átmenetek formális leírása, például menü, játék, szünet, betöltés.</td></tr>
+<tr><td>Visszakövethetőségi mátrix</td><td>A követelményeket az analízis- és rendszertervezési elemekhez rendelő táblázat.</td></tr>
+<tr><td>Verziózás</td><td>Az adatok vagy dokumentumok különböző állapotainak megkülönböztetése és nyomon követése.</td></tr>
+<tr><td>Ellenőrzőösszeg (checksum)</td><td>Adatból számított rövid érték, amely az adat sértetlenségének ellenőrzésére szolgál; nem titkosítás vagy hitelesítés.</td></tr>
+<tr><td>Payload</td><td>A mentési pillanatkép szerializált tartalma, amely a dinamikus részrendszer-állapotokat egyetlen mezőben tárolja.</td></tr>
+</table>
+
+<p>Vissza a lap tetejére: <a href="#top">ugrás a címlapra</a>.</p>
 
 </body>
 </html>

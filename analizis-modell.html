@@ -1,0 +1,1019 @@
+1<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Analízis modell – Visszhang (Echo)</title>
+</head>
+<body>
+
+<h1>Analízis modell</h1>
+
+<table>
+<tr><th>Projekt neve</th><td>Visszhang (Echo)</td></tr>
+<tr><th>Csoport neve</th><td>Szevasztopol Szoftverek</td></tr>
+<tr><th>Dokumentum típusa</th><td>Analízis modell</td></tr>
+<tr><th>Mérföldkő</th><td>H4</td></tr>
+<tr><th>Verzió</th><td>1.0</td></tr>
+<tr><th>Készítette</th><td>Szevasztopol Szoftverek csapat</td></tr>
+<tr><th>Intézmény</th><td>Miskolci Egyetem</td></tr>
+</table>
+
+<h2>Verziótörténet</h2>
+<table>
+<tr><th>Verzió</th><th>Leírás</th><th>Szerző</th></tr>
+<tr><td>1.0</td><td>Analízis modell: kezdeti osztálydiagram, alrendszerfelosztás, hét alrendszer statikus, dinamikus és funkcionális modellje, operációazonosítás, osztálydiagramok és osztálylisták.</td><td>Szevasztopol Szoftverek</td></tr>
+</table>
+
+<h2>Tartalomjegyzék</h2>
+<ul>
+<li><a href="#bevezetes">1. Bevezetés</a></li>
+<li><a href="#kezdeti">2. Kezdeti osztálydiagram</a>
+  <ul>
+  <li><a href="#osztalydiagram">2.1 Osztálydiagram</a></li>
+  <li><a href="#osztalyok">2.2 Osztályok felsorolása</a></li>
+  <li><a href="#alrendszerek">2.3 Alrendszerek</a></li>
+  </ul>
+</li>
+<li><a href="#jatekfolyamat">3. Játékfolyamat és karakter alrendszer modellje</a>
+  <ul>
+  <li><a href="#c31">3.1 Statikus modell</a></li>
+  <li><a href="#c32">3.2 Dinamikus modell</a></li>
+  <li><a href="#c33">3.3 Funkcionális modell</a></li>
+  <li><a href="#c34">3.4 Operációk azonosítása</a></li>
+  <li><a href="#c35">3.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c36">3.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#allomaster">4. Állomástér és feladatok alrendszer modellje</a>
+  <ul>
+  <li><a href="#c41">4.1 Statikus modell</a></li>
+  <li><a href="#c42">4.2 Dinamikus modell</a></li>
+  <li><a href="#c43">4.3 Funkcionális modell</a></li>
+  <li><a href="#c44">4.4 Operációk azonosítása</a></li>
+  <li><a href="#c45">4.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c46">4.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#keszlet">5. Készlet és eszközök alrendszer modellje</a>
+  <ul>
+  <li><a href="#c51">5.1 Statikus modell</a></li>
+  <li><a href="#c52">5.2 Dinamikus modell</a></li>
+  <li><a href="#c53">5.3 Funkcionális modell</a></li>
+  <li><a href="#c54">5.4 Operációk azonosítása</a></li>
+  <li><a href="#c55">5.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c56">5.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#lenymi">6. Lény-MI és észlelés alrendszer modellje</a>
+  <ul>
+  <li><a href="#c61">6.1 Statikus modell</a></li>
+  <li><a href="#c62">6.2 Dinamikus modell</a></li>
+  <li><a href="#c63">6.3 Funkcionális modell</a></li>
+  <li><a href="#c64">6.4 Operációk azonosítása</a></li>
+  <li><a href="#c65">6.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c66">6.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#rendezomi">7. Rendező-MI és feszültség alrendszer modellje</a>
+  <ul>
+  <li><a href="#c71">7.1 Statikus modell</a></li>
+  <li><a href="#c72">7.2 Dinamikus modell</a></li>
+  <li><a href="#c73">7.3 Funkcionális modell</a></li>
+  <li><a href="#c74">7.4 Operációk azonosítása</a></li>
+  <li><a href="#c75">7.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c76">7.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#tortenet">8. Történet, napló és befejezések alrendszer modellje</a>
+  <ul>
+  <li><a href="#c81">8.1 Statikus modell</a></li>
+  <li><a href="#c82">8.2 Dinamikus modell</a></li>
+  <li><a href="#c83">8.3 Funkcionális modell</a></li>
+  <li><a href="#c84">8.4 Operációk azonosítása</a></li>
+  <li><a href="#c85">8.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c86">8.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#felulet">9. Felület, beállítások és mentés alrendszer modellje</a>
+  <ul>
+  <li><a href="#c91">9.1 Statikus modell</a></li>
+  <li><a href="#c92">9.2 Dinamikus modell</a></li>
+  <li><a href="#c93">9.3 Funkcionális modell</a></li>
+  <li><a href="#c94">9.4 Operációk azonosítása</a></li>
+  <li><a href="#c95">9.5 Az analízis modell osztálydiagramja</a></li>
+  <li><a href="#c96">9.6 Az analízis modell osztályainak listája</a></li>
+  </ul>
+</li>
+<li><a href="#osszefoglalas">10. Összefoglalás</a></li>
+</ul>
+
+<h2 id="bevezetes">1. Bevezetés</h2>
+
+<p>A jelen dokumentum a <strong>Visszhang (Echo)</strong> munkacímű, egyjátékos, lopakodásra épülő túlélőhorror-játék objektumorientált analízismodellje. Az analízis feladata az SRS-ben szereplő használati esetek és funkcionális követelmények mögötti problématérbeli objektumok, felelősségek, kapcsolatok és együttműködések azonosítása.</p>
+
+<p>A játékos egy űrállomáson rekedt szerelőt irányít. Felfedezés, feladatok, rejtőzködés, készletkezelés és történeti döntések mentén jut tovább. A <strong>lény-MI</strong> szabályos érzékelésre támaszkodik, míg a <strong>rendező-MI</strong> a játékeseményekből becsült feszültséget szabályozza. A két MI nem oszthat meg rejtett vagy igazolatlan játékospozíciót.</p>
+
+<p>A modell az SRS FR-01–FR-39 követelményeire és UC-01–UC-16 használati eseteire, továbbá a felhasználói kézikönyvre, a szótárra, a vízióra és a projekttervre épül. A fejezetszerkezet az oktatói analízismodell-minta sorrendjét és osztálylista-formátumát követi.</p>
+
+<p><strong>Hatókör:</strong> a tervezett játék logikai modellje. Nem cél a végleges motor, adatbázis, programnyelv, UI-keretrendszer vagy fizikai fájlformátum kijelölése. Az itt szereplő típusok és operációk analízisszintű jelölések; a pontos interfészek a későbbi rendszer- és objektumtervezés során rögzíthetők.</p>
+
+<p><strong>Elemzési szabályok:</strong> a szünet megállítja a szimulált időt és az MI-döntéseket (FR-03); a rejtekhely nem garantál észrevétlenséget (FR-05); zárt útvonal feltétel nélkül nem nyílik (FR-09); a lény nem kap igazolatlan koordinátát és nem teleportál (FR-17, FR-20, FR-24); a mentés a releváns állapot egészét őrzi (FR-32). A „feszültség” játékeseményekből becsült belső mutató, nem élettani mérés.</p>
+
+<h2 id="kezdeti">2. Kezdeti osztálydiagram</h2>
+
+<p>Az osztályjelölteket a követelmények fő fogalmai és a használati esetekben szereplő felelősségek alapján választottuk ki. A diagram a problématér fő kapcsolatait mutatja; a részletes attribútumokat, operációkat, szerepköröket és számosságokat az alrendszerek fejezetei pontosítják.</p>
+
+<h3 id="osztalydiagram">2.1 Osztálydiagram</h3>
+
+<p>Az alábbi felsorolás a kezdeti osztálydiagram fő elemeit és asszociációit mutatja, alrendszerek szerint csoportosítva.</p>
+
+<pre>
+Játékfolyamat 1 -- 1 Játékállapot
+Játékfolyamat 1 -- 1 Játékoskarakter
+Játékállapot 1 -- 1 Űrállomás
+Játékállapot 1 -- 1 Lény
+Játékállapot 1 -- 1 RendezőMI
+Játékállapot 1 -- 1 Napló
+Játékoskarakter 1 -- 1 Készlet
+Játékoskarakter 0..1 -- 1 Terület
+Játékoskarakter 1 -- 0..1 Rejtekhely
+
+Űrállomás 1 -- 2..* Terület
+Terület 2 -- 0..* Átjáró
+Terület 1 -- 0..* InterakciósObjektum
+Rejtekhely --|> InterakciósObjektum
+Feladat 1 -- 1..* TeljesítésiFeltétel
+Átjáró 0..* -- 0..* TeljesítésiFeltétel
+
+Készlet 1 -- 0..* Készlettétel
+Készlettétel 0..* -- 1 Tárgy
+Fogyóeszköz --|> Tárgy
+FigyelemelterelőEszköz --|> Tárgy
+Csapda --|> Tárgy
+
+Lény 1 -- 1 LényMI
+LényMI 1 -- 0..* ÉszlelésiEsemény
+
+RendezőMI 1 -- 1 FeszültségProfil
+RendezőMI 1 -- 0..* RendezőiEsemény
+RendezőMI 1 -- 1 LényMI
+
+Napló 1 -- 0..* Naplóbejegyzés
+Döntés 0..* -- 0..* Befejezés
+
+FelhasználóiFelület 1 -- 1 Játékfolyamat
+FelhasználóiFelület 1 -- 1 Beállítások
+FelhasználóiFelület 1 -- 1 Hangmegjelenítés
+MentésKezelő 1 -- 0..* MentésAdat
+MentésKezelő 1 -- 1 Játékállapot
+</pre>
+
+<h3 id="osztalyok">2.2 Osztályok felsorolása</h3>
+
+<p><strong>Játékfolyamat</strong><br>
+A játék életciklusát vezérlő elemzési osztály; elindítja, szünetelteti és lezárja a játékfolyamatot, és egységesen felügyeli az állapotváltásokat.</p>
+
+<p><strong>Játékállapot</strong><br>
+A mindenkori játékmenet összefüggő pillanatképe: a pálya, szereplők, feladatok és történeti előrehaladás közös kontextusa.</p>
+
+<p><strong>Játékoskarakter</strong><br>
+A játékos által vezérelt, az űrállomáson rekedt szerelő; mozgása, észlelhetősége, rejtőzködése és életereje meghatározza a túlélési helyzetet.</p>
+
+<p><strong>Űrállomás</strong><br>
+Az elhagyott űrállomás topológiájának gyökérosztálya; az összetartozó területek és átjárók konzisztenciáját tartja fenn.</p>
+
+<p><strong>Terület</strong><br>
+Az állomás elkülönülő, bejárható logikai egysége, amelyben objektumok, tárgyak, rejtekhelyek és események találhatók.</p>
+
+<p><strong>Átjáró</strong><br>
+Két terület közti fizikai vagy logikai összeköttetés, amely csak teljesült hozzáférési feltételekkel használható.</p>
+
+<p><strong>InterakciósObjektum</strong><br>
+Az állomás olyan környezeti eleme, amellyel a játékos adott távolságon és állapoton belül interakcióba léphet.</p>
+
+<p><strong>Rejtekhely</strong><br>
+Az interakciós objektum speciális fajtája, amely a karakter rejtőzködését segíti, de a lény érzékelését nem kapcsolja ki.</p>
+
+<p><strong>Feladat</strong><br>
+A továbbjutáshoz kapcsolódó cél; szükséges teljesítési feltételeket és a feladat előrehaladását tartalmazza.</p>
+
+<p><strong>TeljesítésiFeltétel</strong><br>
+Újrafelhasználható logikai előfeltétel, amely feladat, ajtó vagy befejezés elérhetőségét szabályozza.</p>
+
+<p><strong>Készlet</strong><br>
+A karakter által magával vitt tárgyakat és azok mennyiségeit kezeli, és biztosítja, hogy az elérhető kapacitás ne lépődjön túl.</p>
+
+<p><strong>Készlettétel</strong><br>
+A készlet és egy tárgyfajta közti mennyiségi kapcsolat; azonos tárgyak több példányát egy bejegyzéssel képviseli.</p>
+
+<p><strong>Tárgy</strong><br>
+A felvehető vagy használható játékbeli eszköz közös fogalmi típusa, melyből az eltérő használati viselkedésű eszközök származnak.</p>
+
+<p><strong>Fogyóeszköz</strong><br>
+Egyszer vagy korlátozott alkalommal használható tárgy, amelynek felhasználása erőforrásfogyással jár.</p>
+
+<p><strong>FigyelemelterelőEszköz</strong><br>
+Olyan tárgy, amely hangot vagy más szabályos észlelési ingert kelt a lény figyelmének elterelésére.</p>
+
+<p><strong>Csapda</strong><br>
+Elhelyezhető tárgy, amely megfelelő ponton és kiváltó eseménynél átmeneti, korlátozott hatást okoz.</p>
+
+<p><strong>Lény</strong><br>
+Az űrállomáson a karaktert fenyegető ellenfél; csak szabályos navigációs és észlelési információk alapján mozoghat és támadhat.</p>
+
+<p><strong>LényMI</strong><br>
+Az ellenfél érzékelési eseményeket kiértékelő, járőröző, gyanakvó, üldöző és nyomvesztő döntési logikája.</p>
+
+<p><strong>ÉszlelésiEsemény</strong><br>
+Idő- és helybélyeggel rendelkező hallási vagy látási jel, amelyből a lény a bizonyosságnak megfelelően következtethet.</p>
+
+<p><strong>RendezőMI</strong><br>
+A játékmenet eseményeiből becsült feszültség alapján eseményeket javasol és ütemez; a lény érzékelési szabályait nem írhatja felül.</p>
+
+<p><strong>FeszültségProfil</strong><br>
+A belső, kizárólag játékbeli megfigyelésekből becsült feszültséget és stabilizálási paramétereit tárolja.</p>
+
+<p><strong>RendezőiEsemény</strong><br>
+Az engedélyezett környezeti történés tervezett és végrehajtott példánya, például hang vagy világításváltozás.</p>
+
+<p><strong>Napló</strong><br>
+A játékos által már megszerzett történeti információk gyűjteménye; kizárólag felfedezett tartalmat mutat.</p>
+
+<p><strong>Naplóbejegyzés</strong><br>
+Az állomásról szerezhető szöveges vagy hangos történeti információ, amely felfedezés után újra megnyitható.</p>
+
+<p><strong>Döntés</strong><br>
+A történet szempontjából jelentős játékosválasztás és annak következménye; a befejezések egyik bemenete.</p>
+
+<p><strong>Befejezés</strong><br>
+A játék záróállapotának egyik megkülönböztethető ága, melynek feltételeit a feladatok és döntések határozzák meg.</p>
+
+<p><strong>FelhasználóiFelület</strong><br>
+A főmenü, szünet, HUD, készlet, napló, mentés és beállítások játékos felé történő egységes megjelenítése.</p>
+
+<p><strong>Beállítások</strong><br>
+A hangerő, feliratok, irányítás és hozzáférhetőségi opciók felhasználói beállítási adatai.</p>
+
+<p><strong>Hangmegjelenítés</strong><br>
+A játékvilág eseményeihez és hangforrásaihoz kapcsolódó térbeli hangvisszajelzést állítja elő, a hangerő- és akadálymentesítési beállítások figyelembevételével.</p>
+
+<p><strong>MentésKezelő</strong><br>
+A játékállapot tartós pillanatképének létrehozását, ellenőrzését és visszaállítását koordinálja, az előző érvényes mentést védve.</p>
+
+<p><strong>MentésAdat</strong><br>
+Egy mentési helyhez tartozó önálló, időbélyegzett és verziózott játékmenet-pillanatkép; nem élő hivatkozás az aktuális objektumokra.</p>
+
+<h3 id="alrendszerek">2.3 Alrendszerek</h3>
+
+<p>A rendszert a felelősségek és az együttműködési határok alapján hét funkcionális alrendszerre bontjuk. Ez logikai felosztás: egy alrendszer nem feltétlenül azonos egy végleges futásidejű komponenssel.</p>
+
+<pre>
+Játékfolyamat és karakter  --- világműveletek --->  Állomástér és feladatok
+Játékfolyamat és karakter  --- készletműveletek --> Készlet és eszközök
+Játékfolyamat és karakter  --- előrehaladás ---->  Történet, napló és befejezések
+Készlet és eszközök        --- zajjelek -------->  Lény-MI és észlelés
+Lény-MI és észlelés        --- terület, útvonal -> Állomástér és feladatok
+Rendező-MI és feszültség   --- környezeti esemény -> Állomástér és feladatok
+Rendező-MI és feszültség   --- csak szabályos aktivitás --> Lény-MI és észlelés
+Felület, beállítások és mentés --- menüparancsok, mentési állapot --> Játékfolyamat és karakter
+Felület, beállítások és mentés --- napló, lezárás ---> Történet, napló és befejezések
+</pre>
+
+<h4>2.3.1 Játékfolyamat és karakter alrendszer</h4>
+<p>A játék elindítását, szüneteltetését, a játékmenet állapotát és a szerelő karakterének működését kezeli. A többi alrendszer ezzel a koherens játékállapottal dolgozik.</p>
+<p><strong>Osztályok:</strong> Játékfolyamat, Játékállapot, Játékoskarakter.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-01–07, UC-01–03.</p>
+
+<h4>2.3.2 Állomástér és feladatok alrendszer</h4>
+<p>Az űrállomás logikai területeit, átjáróit, használható objektumait, rejtekhelyeit és a továbbjutás feltételeit képviseli.</p>
+<p><strong>Osztályok:</strong> Űrállomás, Terület, Átjáró, InterakciósObjektum, Rejtekhely, Feladat, TeljesítésiFeltétel.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-06, FR-08–10, UC-02–03, UC-07.</p>
+
+<h4>2.3.3 Készlet és eszközök alrendszer</h4>
+<p>A begyűjthető tárgyak, készlettételek, fogyóeszközök, figyelemelterelők és csapdák szabályait tartalmazza.</p>
+<p><strong>Osztályok:</strong> Készlet, Készlettétel, Tárgy, Fogyóeszköz, FigyelemelterelőEszköz, Csapda.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-11–15, UC-04–06.</p>
+
+<h4>2.3.4 Lény-MI és észlelés alrendszer</h4>
+<p>A fenyegető lény szabályos érzékelésből származó döntéseit, mozgását, viselkedésállapotát és a támadás feltételeit foglalja össze.</p>
+<p><strong>Osztályok:</strong> Lény, LényMI, ÉszlelésiEsemény.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-16–21, UC-11–13.</p>
+
+<h4>2.3.5 Rendező-MI és feszültség alrendszer</h4>
+<p>A játékeseményekből következtetett feszültség becslését és a játékvilág szabályait tiszteletben tartó eseményütemezést végzi.</p>
+<p><strong>Osztályok:</strong> RendezőMI, FeszültségProfil, RendezőiEsemény.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-22–27, UC-14–16.</p>
+
+<h4>2.3.6 Történet, napló és befejezések alrendszer</h4>
+<p>A felfedezett információkat, a játékos jelentős döntéseit és a feltételektől függő lezárásokat kezeli.</p>
+<p><strong>Osztályok:</strong> Napló, Naplóbejegyzés, Döntés, Befejezés.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-28–31, UC-09.</p>
+
+<h4>2.3.7 Felület, beállítások és mentés alrendszer</h4>
+<p>Az alapvető felhasználói visszajelzéseket, konfigurációt, a teljes játékmenet perzisztens pillanatképét, mentést és hibakezelést támogatja.</p>
+<p><strong>Osztályok:</strong> FelhasználóiFelület, Beállítások, Hangmegjelenítés, MentésKezelő, MentésAdat.</p>
+<p><strong>Fő követelmények és használati esetek:</strong> FR-01, FR-03, FR-15, FR-32–39, UC-01, UC-08, UC-10.</p>
+
+<h2 id="jatekfolyamat">3. Játékfolyamat és karakter alrendszer modellje</h2>
+
+<p>A játék elindítását, szüneteltetését, a játékmenet állapotát és a szerelő karakterének működését kezeli. A többi alrendszer ezzel a koherens játékállapottal dolgozik.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-01–07, UC-01–03.</p>
+
+<h3 id="c31">3.1 Statikus modell</h3>
+
+<h4>3.1.1 Kapcsolatok pontosítása</h4>
+
+<p>A Játékfolyamat az alkalmazási életciklus határa, nem tartalmazza egyetlen másik alrendszer szabályait sem. A Játékállapot az egységes, menthető tartományi állapot, míg a Játékoskarakter ennek egy szereplője. A felület és a mentés csak együttműködő; nem módosítja önkényesen az MI állapotait.</p>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>Játékfolyamat – Játékállapot</td><td>1 : 1</td><td>összetétel</td><td>Egy aktív játékfolyamathoz egy élő állapot tartozik.</td></tr>
+<tr><td>Játékfolyamat – Játékoskarakter</td><td>1 : 1</td><td>társítás</td><td>A fő játékmenet egy irányított szerelővel számol.</td></tr>
+<tr><td>Játékállapot – Űrállomás</td><td>1 : 1</td><td>társítás</td><td>A pillanatkép egy állomástopológiát kezel.</td></tr>
+<tr><td>Játékállapot – Lény</td><td>1 : 1</td><td>társítás</td><td>A tervezett alapesetben egy központi fenyegetés szerepel.</td></tr>
+<tr><td>Játékállapot – RendezőMI</td><td>1 : 1</td><td>társítás</td><td>Az állapot feszültségkezelője.</td></tr>
+<tr><td>Játékállapot – Napló</td><td>1 : 1</td><td>összetétel</td><td>A játékos felfedezései a játékállapot részei.</td></tr>
+<tr><td>Játékoskarakter – Készlet</td><td>1 : 1</td><td>összetétel</td><td>Egy karakter egy aktuális készlettel rendelkezik.</td></tr>
+<tr><td>Játékoskarakter – Terület</td><td>0..1 : 1</td><td>társítás</td><td>A karakter adott pillanatban egy területen tartózkodik, de egy terület lehet üres.</td></tr>
+<tr><td>Játékoskarakter – Rejtekhely</td><td>1 : 0..1</td><td>társítás</td><td>Egyszerre legfeljebb egy rejtekhelyen lehet.</td></tr>
+<tr><td>Hangmegjelenítés – Játékállapot</td><td>1 : 1</td><td>megfigyelés</td><td>A forrás és hallgató világpozíciója alapján történik a térbeli lejátszás.</td></tr>
+<tr><td>FelhasználóiFelület – Játékfolyamat</td><td>1 : 1</td><td>vezérlés</td><td>A menü a játékfázisok kezdeményezője.</td></tr>
+<tr><td>MentésKezelő – Játékállapot</td><td>1 : 1</td><td>pillanatkép</td><td>A mentés az élő állapot másolatát kezeli.</td></tr>
+</table>
+
+<h4>3.1.2 Attribútumok azonosítása</h4>
+
+<p>Különválasztjuk a játékfázist a játékidőtől: szünetben a játékfázis változhat, de a játékidő és a lény döntési ciklusa nem léphet előre. A mozgásmód a zajkibocsátás és láthatóság számításának bemenete, nem egyszerű megjelenítési jelző.</p>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>Játékfolyamat</td><td>fázis: JátékFázis, aktívMenü: MenüTípus</td></tr>
+<tr><td>Játékállapot</td><td>játékidő: Időtartam, aktívTerületAzonosító: Azonosító</td></tr>
+<tr><td>Játékoskarakter</td><td>pozíció: Pozíció, mozgásmód: Mozgásmód, életerő: Érték, zajszint: Érték, rejtettségiSzint: Érték</td></tr>
+</table>
+
+<h4>3.1.3 Bázisosztályok keresése</h4>
+
+<p>A Játékoskarakter és a Lény nem kap közös ősosztályt az analízisben: eltérő felelősségük és vezérlésük miatt a pusztán közös pozíció- vagy életerőadat nem indokol külön bázisosztályt. A futó/szünetelő állapot nem leszármazás, hanem állapotdiagram szerinti életciklus.</p>
+
+<h3 id="c32">3.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-01 – Játék indítása; UC-02 – Mozgás és navigáció; UC-03 – Rejtőzködés.</p>
+
+<h4>3.2.1 UC-01 – Játék indítása (szekvencia)</h4>
+<ol>
+<li>A Játékos „Új játék” parancsot ad a Felületnek.</li>
+<li>A Felület újJátékIndítása() üzenetet küld a Játékfolyamatnak.</li>
+<li>A Játékfolyamat kezdeti állapotot kér a Játékállapottól.</li>
+<li>A Játékállapot létrehozza a karaktert és az induló készletet.</li>
+<li>A Játékállapot konzisztens állapotot ad vissza a Játékfolyamatnak.</li>
+<li>A Játékfolyamat értesíti a Felületet, hogy a játékmenet aktív.</li>
+</ol>
+
+<h4>3.2.2 Állapotok és állapotátmenetek</h4>
+
+<pre>
+[kezdet] -> Főmenü
+Főmenü -> Fut : új játék / betöltés
+Fut -> Szünet : szünet
+Szünet -> Fut : folytatás
+Fut -> Lezárt : vég / halál
+Lezárt -> Főmenü : vissza
+</pre>
+
+<h3 id="c33">3.3 Funkcionális modell</h3>
+
+<h4>3.3.1 Új játék indítása</h4>
+<p>A felület új játékot kér; a Játékfolyamat induló állapotot, kezdő karaktert és készletet kapcsol össze; csak sikeres konzisztencia-ellenőrzés után kezdődik a szimuláció.</p>
+
+<h4>3.3.2 Mozgás és lopakodás</h4>
+<p>A mozgási parancs a Játékoskarakter mozgásmódjára hat; a terület átjárhatósági szabályai érvényesülnek; az új pozíció és a mozgásból származó érzékelhető jel frissül.</p>
+
+<h4>3.3.3 Szüneteltetés</h4>
+<p>Szünetben a Játékfolyamat megállítja a játékidő-függő frissítéseket, beleértve a lény-MI-t és a rendező-MI eseményidőzítését; a menük tovább működhetnek.</p>
+
+<h3 id="c34">3.4 Operációk azonosítása</h3>
+
+<p>Az életciklus-műveletek a Játékfolyamat osztályba, az állapot-frissítés a Játékállapotba, a mozgás és rejtőzködés a Játékoskarakterbe kerül. Így a megjelenítés nem tartalmaz játékszabályt.</p>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>Játékfolyamat</td><td>újJátékIndítása(), szünetVáltása(), játékLezárása()</td></tr>
+<tr><td>Játékállapot</td><td>léptetés(), állapotEllenőrzése(), pillanatképKészítése()</td></tr>
+<tr><td>Játékoskarakter</td><td>mozog(), elrejtőzik(), sérül()</td></tr>
+</table>
+
+<h3 id="c35">3.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+FelhasználóiFelület 1 -- 1 Játékfolyamat
+Játékfolyamat 1 -- 1 Játékállapot
+Játékfolyamat 1 -- 1 Játékoskarakter
+Játékoskarakter 1 -- 1 Készlet
+MentésKezelő 1 -- 1 Játékállapot
+</pre>
+
+<h3 id="c36">3.6 Az analízis modell osztályainak listája</h3>
+
+<h4>Játékfolyamat</h4>
+<p>A játék életciklusát vezérlő osztály. Attribútumai: fázis, aktívMenü. Operációi: újJátékIndítása(), szünetVáltása(), játékLezárása(). Felelőssége az állapotváltások felügyelete, a többi alrendszer szabályainak érvényesítése nélkül.</p>
+
+<h4>Játékállapot</h4>
+<p>A játékmenet pillanatképe. Attribútumai: játékidő, aktívTerületAzonosító. Operációi: léptetés(), állapotEllenőrzése(), pillanatképKészítése(). Felelőssége az összefüggő állapot fenntartása.</p>
+
+<h4>Játékoskarakter</h4>
+<p>A játékos által irányított szerelő. Attribútumai: pozíció, mozgásmód, életerő, zajszint, rejtettségiSzint. Operációi: mozog(), elrejtőzik(), sérül().</p>
+
+<h2 id="allomaster">4. Állomástér és feladatok alrendszer modellje</h2>
+
+<p>Az űrállomás logikai területeit, átjáróit, használható objektumait, rejtekhelyeit és a továbbjutás feltételeit képviseli.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-06, FR-08–10, UC-02–03, UC-07.</p>
+
+<h3 id="c41">4.1 Statikus modell</h3>
+
+<h4>4.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>Űrállomás – Terület</td><td>1 : 2..*</td><td>összetétel</td><td>Az állomás több területből épül fel, a területek az állomás részei.</td></tr>
+<tr><td>Terület – Átjáró</td><td>2 : 0..*</td><td>társítás</td><td>Egy átjáró mindig két területet köt össze; egy területnek több átjárója lehet.</td></tr>
+<tr><td>Terület – InterakciósObjektum</td><td>1 : 0..*</td><td>összetétel</td><td>A terület tartalmazza az interakciós elemeket.</td></tr>
+<tr><td>Rejtekhely – InterakciósObjektum</td><td>általánosítás</td><td>öröklés</td><td>A rejtekhely specializált interakciós objektum.</td></tr>
+<tr><td>Feladat – TeljesítésiFeltétel</td><td>1 : 1..*</td><td>összetétel</td><td>Minden feladatnak legalább egy teljesítési feltétele van.</td></tr>
+<tr><td>Átjáró – TeljesítésiFeltétel</td><td>0..* : 0..*</td><td>társítás</td><td>Egy átjáróhoz több feltétel tartozhat, egy feltétel több átjárót is nyithat.</td></tr>
+</table>
+
+<h4>4.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>Űrállomás</td><td>azonosító: Azonosító, név: Szöveg, területek: TerületLista</td></tr>
+<tr><td>Terület</td><td>azonosító: Azonosító, név: Szöveg, bejárhatóság: Logikai, kapcsolódóTerületek: TerületLista</td></tr>
+<tr><td>Átjáró</td><td>forrásTerület: Terület, célTerület: Terület, nyitott: Logikai, feltételek: FeltételLista</td></tr>
+<tr><td>InterakciósObjektum</td><td>azonosító: Azonosító, típus: InterakcióTípus, állapot: Állapot, aktiválásiFeltétel: Feltétel</td></tr>
+<tr><td>Rejtekhely</td><td>kapacitás: Érték, rejtettségiSzint: Érték</td></tr>
+<tr><td>Feladat</td><td>azonosító: Azonosító, név: Szöveg, állapot: FeladatÁllapot, feltételek: FeltételLista</td></tr>
+<tr><td>TeljesítésiFeltétel</td><td>típus: FeltételTípus, hivatkozottAzonosító: Azonosító, teljesült: Logikai</td></tr>
+</table>
+
+<h4>4.1.3 Bázisosztályok keresése</h4>
+
+<p>Az InterakciósObjektum ősosztály, amelyből a Rejtekhely és további interakciós elemek (ajtó, terminál, kapcsoló) származtathatók. A Terület nem bázisosztály, mert a területtípusok (lakómodul, labor, raktár, gépház) elsősorban tartalmi és topológiai különbségeket hordoznak, nem viselkedésbeli specializációt.</p>
+
+<h3 id="c42">4.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-02 – Mozgás és navigáció; UC-03 – Rejtőzködés; UC-07 – Környezeti interakció.</p>
+
+<h4>4.2.1 UC-07 – Környezeti interakció (szekvencia)</h4>
+<ol>
+<li>A Játékos interakciós szándékot jelez a Felület felé.</li>
+<li>A Felület továbbítja a parancsot a Játékoskarakternek.</li>
+<li>A Játékoskarakter azonosítja a közeli InterakciósObjektumot.</li>
+<li>Az InterakciósObjektum ellenőrzi az aktiválási feltételeket.</li>
+<li>Sikeres aktiválás esetén az InterakciósObjektum állapota megváltozik.</li>
+<li>A Játékállapot értesül az állapotváltozásról.</li>
+</ol>
+
+<h3 id="c43">4.3 Funkcionális modell</h3>
+
+<h4>4.3.1 Terület bejárása</h4>
+<p>A Játékoskarakter mozgása során a Terület bejárhatósági szabályai érvényesülnek. Az Átjáró csak teljesült feltételekkel használható, a nyitott állapot a Játékállapotban tárolódik.</p>
+
+<h4>4.3.2 Interakció kezelése</h4>
+<p>A Játékoskarakter az aktuális területen azonosítja a közeli InterakciósObjektumokat. Az interakció során ellenőrzésre kerülnek az aktiválási feltételek, például a szükséges tárgy megléte vagy a megfelelő állapot.</p>
+
+<h4>4.3.3 Rejtőzködés kezelése</h4>
+<p>A rejtőzködés során a Játékoskarakter egy Rejtekhely objektumhoz kapcsolódik. A rejtettségi állapot befolyásolja a LényMI érzékelési folyamatát, de nem garantál automatikus észrevétlenséget. A rejtőzködés megszüntetésekor a karakter visszatér a normál állapotba.</p>
+
+<h4>4.3.4 Feladat teljesítése</h4>
+<p>A Feladat a TeljesítésiFeltétel objektumokon keresztül ellenőrzi az előrehaladást. Teljesített feltétel esetén a Feladat állapota frissül, és a továbbjutás feltételei újraértékelődnek.</p>
+
+<h3 id="c44">4.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>Űrállomás</td><td>területKeresése(), konzisztenciaEllenőrzése()</td></tr>
+<tr><td>Terület</td><td>bejárható(), szomszédosTerületek(), interakciósObjektumok()</td></tr>
+<tr><td>Átjáró</td><td>nyitható(), átlépés()</td></tr>
+<tr><td>InterakciósObjektum</td><td>aktivál(), állapotLekérdez()</td></tr>
+<tr><td>Rejtekhely</td><td>elrejt(), felfed()</td></tr>
+<tr><td>Feladat</td><td>teljesült(), állapotFrissítése()</td></tr>
+<tr><td>TeljesítésiFeltétel</td><td>ellenőriz()</td></tr>
+</table>
+
+<h3 id="c45">4.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+Űrállomás 1 -- 2..* Terület
+Terület 2 -- 0..* Átjáró
+Terület 1 -- 0..* InterakciósObjektum
+InterakciósObjektum &lt;|-- Rejtekhely
+Feladat 1 -- 1..* TeljesítésiFeltétel
+Átjáró 0..* -- 0..* TeljesítésiFeltétel
+Játékoskarakter 0..1 -- 1 Terület
+Játékoskarakter 1 -- 0..1 Rejtekhely
+</pre>
+
+<h3 id="c46">4.6 Az analízis modell osztályainak listája</h3>
+
+<h4>Űrállomás</h4>
+<p>Az elhagyott űrállomás topológiájának gyökere. Attribútumai: azonosító, név, területek. Operációi: területKeresése(), konzisztenciaEllenőrzése().</p>
+
+<h4>Terület</h4>
+<p>Az állomás bejárható logikai egysége. Attribútumai: azonosító, név, bejárhatóság, kapcsolódóTerületek. Operációi: bejárható(), szomszédosTerületek(), interakciósObjektumok().</p>
+
+<h4>Átjáró</h4>
+<p>Két terület közti összeköttetés. Attribútumai: forrásTerület, célTerület, nyitott, feltételek. Operációi: nyitható(), átlépés().</p>
+
+<h4>InterakciósObjektum</h4>
+<p>Környezeti interakciós elem. Attribútumai: azonosító, típus, állapot, aktiválásiFeltétel. Operációi: aktivál(), állapotLekérdez().</p>
+
+<h4>Rejtekhely</h4>
+<p>Rejtőzködést segítő interakciós objektum. Attribútumai: kapacitás, rejtettségiSzint. Operációi: elrejt(), felfed().</p>
+
+<h4>Feladat</h4>
+<p>Továbbjutáshoz kapcsolódó cél. Attribútumai: azonosító, név, állapot, feltételek. Operációi: teljesült(), állapotFrissítése().</p>
+
+<h4>TeljesítésiFeltétel</h4>
+<p>Újrafelhasználható logikai előfeltétel. Attribútumai: típus, hivatkozottAzonosító, teljesült. Operációi: ellenőriz().</p>
+
+<h2 id="keszlet">5. Készlet és eszközök alrendszer modellje</h2>
+
+<p>A begyűjthető tárgyak, készlettételek, fogyóeszközök, figyelemelterelők és csapdák szabályait tartalmazza.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-11–15, UC-04–06.</p>
+
+<h3 id="c51">5.1 Statikus modell</h3>
+
+<h4>5.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>Készlet – Készlettétel</td><td>1 : 0..*</td><td>összetétel</td><td>A készlet tételekből áll; a tétel a készlethez tartozik.</td></tr>
+<tr><td>Készlettétel – Tárgy</td><td>0..* : 1</td><td>társítás</td><td>Egy tétel egy tárgyfajtát képvisel, mennyiséggel.</td></tr>
+<tr><td>Fogyóeszköz – Tárgy</td><td>általánosítás</td><td>öröklés</td><td>A fogyóeszköz specializált tárgy.</td></tr>
+<tr><td>FigyelemelterelőEszköz – Tárgy</td><td>általánosítás</td><td>öröklés</td><td>A figyelemelterelő specializált tárgy.</td></tr>
+<tr><td>Csapda – Tárgy</td><td>általánosítás</td><td>öröklés</td><td>A csapda specializált tárgy.</td></tr>
+</table>
+
+<h4>5.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>Készlet</td><td>kapacitás: Érték, tételek: KészlettételLista</td></tr>
+<tr><td>Készlettétel</td><td>tárgy: Tárgy, mennyiség: Érték</td></tr>
+<tr><td>Tárgy</td><td>azonosító: Azonosító, név: Szöveg, leírás: Szöveg, súly: Érték, használható: Logikai</td></tr>
+<tr><td>Fogyóeszköz</td><td>hátralévőHasználat: Érték</td></tr>
+<tr><td>FigyelemelterelőEszköz</td><td>hatótávolság: Érték, hangintenzitás: Érték</td></tr>
+<tr><td>Csapda</td><td>típus: CsapdaTípus, aktiválásiIdő: Időtartam, hatás: Hatás</td></tr>
+</table>
+
+<h4>5.1.3 Bázisosztályok keresése</h4>
+
+<p>A Tárgy ősosztály, amelyből a Fogyóeszköz, a FigyelemelterelőEszköz és a Csapda származik. A közös attribútumok (azonosító, név, súly) és a közös operációk (használ) indokolják a bázisosztályt. A Készlettétel nem tárgy-leszármazott, mert mennyiségi kapcsolatot fejez ki.</p>
+
+<h3 id="c52">5.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-04 – Erőforrás gyűjtése; UC-05 – Tárgy használata; UC-06 – Csapda állítása.</p>
+
+<h4>5.2.1 UC-04 – Erőforrás gyűjtése (szekvencia)</h4>
+<ol>
+<li>A Játékos interakciót kezdeményez egy felvehető Tárgy irányába.</li>
+<li>A Játékoskarakter ellenőrzi a távolságot és a készlet kapacitását.</li>
+<li>A Készlet hozzáadja a Tárgyat a tárgylistához.</li>
+<li>A Játékállapot eltávolítja a felvehető tárgyat a területről.</li>
+<li>A FelhasználóiFelület frissíti a készletinformációkat.</li>
+</ol>
+
+<h4>5.2.2 UC-06 – Csapda állítása (szekvencia)</h4>
+<ol>
+<li>A Játékos kiválaszt egy Csapda tárgyat a Készletből.</li>
+<li>A Játékoskarakter ellenőrzi a csapda helyezésének feltételeit.</li>
+<li>A Készlet eltávolítja a csapdát a tárgylistából.</li>
+<li>A Csapda objektum elhelyezésre kerül az aktuális Területen.</li>
+<li>A Terület frissíti az interakciós elemek listáját.</li>
+</ol>
+
+<h3 id="c53">5.3 Funkcionális modell</h3>
+
+<h4>5.3.1 Készletkezelés</h4>
+<p>A Készlet objektum nyilvántartja a karakter által hordozott tárgyakat. A műveletek közé tartozik a tárgy hozzáadása, eltávolítása és lekérdezése. A készlet kapacitása korlátozott, ezért a tárgyfelvétel előtt ellenőrizni kell a szabad helyet.</p>
+
+<h4>5.3.2 Tárgy használata</h4>
+<p>A tárgy használata a típusától függ. A fogyóeszköz használat után elfogy, a figyelemelterelő eszköz hangot kelt, a csapda elhelyezésre kerül. A használat során a Készlettétel mennyisége csökken.</p>
+
+<h4>5.3.3 Csapda elhelyezése</h4>
+<p>A csapda elhelyezése a készletből történő kiválasztással indul. A rendszer ellenőrzi a helyezés feltételeit, majd a csapda objektum bekerül a terület interakciós elemei közé. A csapda aktiválódása a lény mozgásához kapcsolódó esemény.</p>
+
+<h3 id="c54">5.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>Készlet</td><td>hozzáad(), eltávolít(), keres(), listáz()</td></tr>
+<tr><td>Készlettétel</td><td>mennyiségNövel(), mennyiségCsökkent()</td></tr>
+<tr><td>Tárgy</td><td>használ(), megsemmisül()</td></tr>
+<tr><td>Fogyóeszköz</td><td>elfogyaszt()</td></tr>
+<tr><td>FigyelemelterelőEszköz</td><td>hangotKelt()</td></tr>
+<tr><td>Csapda</td><td>elhelyez(), aktivál(), hatásKifejt()</td></tr>
+</table>
+
+<h3 id="c55">5.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+Készlet 1 -- 0..* Készlettétel
+Készlettétel 0..* -- 1 Tárgy
+Tárgy &lt;|-- Fogyóeszköz
+Tárgy &lt;|-- FigyelemelterelőEszköz
+Tárgy &lt;|-- Csapda
+Játékoskarakter 1 -- 1 Készlet
+</pre>
+
+<h3 id="c56">5.6 Az analízis modell osztályainak listája</h3>
+
+<h4>Készlet</h4>
+<p>A karakter által hordozott tárgyak gyűjteménye. Attribútumai: kapacitás, tételek. Operációi: hozzáad(), eltávolít(), keres(), listáz().</p>
+
+<h4>Készlettétel</h4>
+<p>A készlet és egy tárgyfajta közti mennyiségi kapcsolat. Attribútumai: tárgy, mennyiség. Operációi: mennyiségNövel(), mennyiségCsökkent().</p>
+
+<h4>Tárgy</h4>
+<p>A felvehető vagy használható eszköz ősosztálya. Attribútumai: azonosító, név, leírás, súly, használható. Operációi: használ(), megsemmisül().</p>
+
+<h4>Fogyóeszköz</h4>
+<p>Korlátozottan használható tárgy. Attribútumai: hátralévőHasználat. Operációi: elfogyaszt().</p>
+
+<h4>FigyelemelterelőEszköz</h4>
+<p>Hangot keltő tárgy. Attribútumai: hatótávolság, hangintenzitás. Operációi: hangotKelt().</p>
+
+<h4>Csapda</h4>
+<p>Elhelyezhető tárgy. Attribútumai: típus, aktiválásiIdő, hatás. Operációi: elhelyez(), aktivál(), hatásKifejt().</p>
+
+<h2 id="lenymi">6. Lény-MI és észlelés alrendszer modellje</h2>
+
+<p>A fenyegető lény szabályos érzékelésből származó döntéseit, mozgását, viselkedésállapotát és a támadás feltételeit foglalja össze.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-16–21, UC-11–13.</p>
+
+<h3 id="c61">6.1 Statikus modell</h3>
+
+<h4>6.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>Lény – LényMI</td><td>1 : 1</td><td>összetétel</td><td>A lény viselkedését a LényMI irányítja.</td></tr>
+<tr><td>LényMI – ÉszlelésiEsemény</td><td>1 : 0..*</td><td>társítás</td><td>A LényMI érzékelési eseményeket dolgoz fel.</td></tr>
+<tr><td>LényMI – Lény</td><td>1 : 1</td><td>társítás</td><td>A döntési logika a lény mozgását vezérli.</td></tr>
+</table>
+
+<h4>6.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>Lény</td><td>pozíció: Pozíció, viselkedésÁllapot: ViselkedésÁllapot, életerő: Érték</td></tr>
+<tr><td>LényMI</td><td>gyanúSzint: Érték, utolsóIsmertPozíció: Pozíció, állapot: MIÁllapot</td></tr>
+<tr><td>ÉszlelésiEsemény</td><td>forrásPozíció: Pozíció, időbélyeg: Időpont, típus: ÉszlelésTípus, erősség: Érték</td></tr>
+</table>
+
+<h4>6.1.3 Bázisosztályok keresése</h4>
+
+<p>A Lény és a LényMI között nincs öröklési kapcsolat: a Lény a fizikai megjelenést és mozgást, a LényMI a döntési logikát képviseli. Az ÉszlelésiEsemény önálló osztály, amelyet a LényMI dolgoz fel.</p>
+
+<h3 id="c62">6.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-11 – Lény észlelése; UC-12 – Lény üldözése; UC-13 – Lény nyomvesztése.</p>
+
+<h4>6.2.1 UC-11 – Lény észlelése (szekvencia)</h4>
+<ol>
+<li>A Játékoskarakter mozgása érzékelhető jelet kelt.</li>
+<li>A Játékállapot ÉszlelésiEseményt hoz létre.</li>
+<li>A LényMI fogadja az eseményt, és kiértékeli a forrás pozícióját.</li>
+<li>A LényMI frissíti a gyanúszintet és az utolsó ismert pozíciót.</li>
+<li>A LényMI döntési állapotba lép.</li>
+</ol>
+
+<h4>6.2.2 Viselkedésállapotok</h4>
+
+<pre>
+[kezdet] -> Járőrözés
+Járőrözés -> Gyanakvás : észlelési esemény
+Gyanakvás -> Üldözés : megerősített észlelés
+Gyanakvás -> Járőrözés : gyanú elmúlik
+Üldözés -> Nyomvesztés : kapcsolat megszakad
+Nyomvesztés -> Járőrözés : nyom elveszett
+Nyomvesztés -> Üldözés : nyom újra megtalálva
+</pre>
+
+<h3 id="c63">6.3 Funkcionális modell</h3>
+
+<h4>6.3.1 Észlelés feldolgozása</h4>
+<p>A LényMI az ÉszlelésiEseményeket erősség és típus szerint értékeli. A hallási és látási jelek külön súllyal szerepelnek. A rejtettségi szint csökkenti a látási észlelés erősségét, de nem szünteti meg teljesen.</p>
+
+<h4>6.3.2 Döntési logika</h4>
+<p>A LényMI a gyanúszint és az utolsó ismert pozíció alapján választ viselkedésállapotot. Üldözés során a lény a szabályos navigációs hálózaton mozog, nem teleportál. Nyomvesztés esetén a lény visszatér a járőrözéshez.</p>
+
+<h4>6.3.3 Támadás</h4>
+<p>A támadás feltétele a lény és a karakter közötti megfelelő közelség, valamint a karakter nem rejtett állapota. A támadás a karakter életerejét csökkenti.</p>
+
+<h3 id="c64">6.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>Lény</td><td>mozog(), támad(), állapotVáltás()</td></tr>
+<tr><td>LényMI</td><td>észlelésFeldolgoz(), döntés(), útvonalTervez()</td></tr>
+<tr><td>ÉszlelésiEsemény</td><td>erősségLekérdez(), forrásAzonosít()</td></tr>
+</table>
+
+<h3 id="c65">6.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+Lény 1 -- 1 LényMI
+LényMI 1 -- 0..* ÉszlelésiEsemény
+RendezőMI 1 -- 1 LényMI
+Játékállapot 1 -- 1 Lény
+</pre>
+
+<h3 id="c66">6.6 Az analízis modell osztályainak listája</h3>
+
+<h4>Lény</h4>
+<p>Az űrállomáson a karaktert fenyegető ellenfél. Attribútumai: pozíció, viselkedésÁllapot, életerő. Operációi: mozog(), támad(), állapotVáltás().</p>
+
+<h4>LényMI</h4>
+<p>Az ellenfél döntési logikája. Attribútumai: gyanúszint, utolsóIsmertPozíció, állapot. Operációi: észlelésFeldolgoz(), döntés(), útvonalTervez().</p>
+
+<h4>ÉszlelésiEsemény</h4>
+<p>Hallási vagy látási jel. Attribútumai: forrásPozíció, időbélyeg, típus, erősség. Operációi: erősségLekérdez(), forrásAzonosít().</p>
+
+<h2 id="rendezomi">7. Rendező-MI és feszültség alrendszer modellje</h2>
+
+<p>A játékeseményekből következtetett feszültség becslését és a játékvilág szabályait tiszteletben tartó eseményütemezést végzi.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-22–27, UC-14–16.</p>
+
+<h3 id="c71">7.1 Statikus modell</h3>
+
+<h4>7.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>RendezőMI – FeszültségProfil</td><td>1 : 1</td><td>összetétel</td><td>A feszültségprofil a rendező-MI belső állapota.</td></tr>
+<tr><td>RendezőMI – RendezőiEsemény</td><td>1 : 0..*</td><td>társítás</td><td>A rendező-MI eseményeket javasol és ütemez.</td></tr>
+<tr><td>RendezőMI – LényMI</td><td>1 : 1</td><td>társítás</td><td>A rendező-MI csak szabályos aktivitást jelezhet a lény-MI felé.</td></tr>
+</table>
+
+<h4>7.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>RendezőMI</td><td>aktív: Logikai, ütemezésiIntervallum: Időtartam, engedélyezettEsemények: EseményTípusLista</td></tr>
+<tr><td>FeszültségProfil</td><td>aktuálisSzint: Érték, célSzint: Érték, stabilizálásiParaméterek: ParaméterLista</td></tr>
+<tr><td>RendezőiEsemény</td><td>típus: EseményTípus, tervezettIdő: Időpont, végrehajtva: Logikai, helyszín: Terület</td></tr>
+</table>
+
+<h4>7.1.3 Bázisosztályok keresése</h4>
+
+<p>A RendezőiEsemény nem kap közös ősosztályt az ÉszlelésiEseménnyel: az előbbi tervezett környezeti történés, az utóbbi a lény érzékelési bemenete. A két eseménytípus eltérő feldolgozási utat jár be.</p>
+
+<h3 id="c72">7.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-14 – Feszültségszint becslése; UC-15 – Eseményütemezés; UC-16 – Dinamikus nehézség.</p>
+
+<h4>7.2.1 UC-15 – Eseményütemezés (szekvencia)</h4>
+<ol>
+<li>A Játékállapot játékeseményt jelez a RendezőMI felé.</li>
+<li>A RendezőMI frissíti a FeszültségProfil aktuális szintjét.</li>
+<li>A RendezőMI kiválaszt egy engedélyezett eseménytípust.</li>
+<li>A RendezőMI létrehoz egy RendezőiEseményt a tervezett időponttal.</li>
+<li>A Játékállapot végrehajtja az eseményt a megadott helyszínen.</li>
+</ol>
+
+<h3 id="c73">7.3 Funkcionális modell</h3>
+
+<h4>7.3.1 Feszültségbecslés</h4>
+<p>A FeszültségProfil a játékeseményekből (például a játékos észlelése, menekülés, rejtőzködés) becsüli a feszültségszintet. A becslés kizárólag játékbeli megfigyeléseken alapul, nem élettani mérés.</p>
+
+<h4>7.3.2 Eseményütemezés</h4>
+<p>A RendezőMI a feszültségszint és az engedélyezett események listája alapján választ eseményt. Az esemény csak a játékvilág szabályait tiszteletben tartva kerülhet végrehajtásra. A rendező-MI nem írhatja felül a lény-MI érzékelési szabályait.</p>
+
+<h4>7.3.3 Dinamikus nehézség</h4>
+<p>A feszültségszint hosszú távú átlaga alapján a RendezőMI módosíthatja az események gyakoriságát. A módosítás nem érinti a lény alapvető viselkedési szabályait.</p>
+
+<h3 id="c74">7.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>RendezőMI</td><td>feszültségFrissítése(), eseményÜtemezése(), eseményVégrehajtása()</td></tr>
+<tr><td>FeszültségProfil</td><td>szintBecslése(), célBeállítása()</td></tr>
+<tr><td>RendezőiEsemény</td><td>végrehajtható(), végrehajt()</td></tr>
+</table>
+
+<h3 id="c75">7.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+RendezőMI 1 -- 1 FeszültségProfil
+RendezőMI 1 -- 0..* RendezőiEsemény
+RendezőMI 1 -- 1 LényMI
+Játékállapot 1 -- 1 RendezőMI
+</pre>
+
+<h3 id="c76">7.6 Az analízis modell osztályainak listája</h3>
+
+<h4>RendezőMI</h4>
+<p>A játékmenet eseményeiből becsült feszültség alapján eseményeket javasol és ütemez. Attribútumai: aktív, ütemezésiIntervallum, engedélyezettEsemények. Operációi: feszültségFrissítése(), eseményÜtemezése(), eseményVégrehajtása().</p>
+
+<h4>FeszültségProfil</h4>
+<p>A belső feszültségszintet és stabilizálási paramétereit tárolja. Attribútumai: aktuálisSzint, célSzint, stabilizálásiParaméterek. Operációi: szintBecslése(), célBeállítása().</p>
+
+<h4>RendezőiEsemény</h4>
+<p>Egy tervezett és végrehajtott környezeti történés. Attribútumai: típus, tervezettIdő, végrehajtva, helyszín. Operációi: végrehajtható(), végrehajt().</p>
+
+<h2 id="tortenet">8. Történet, napló és befejezések alrendszer modellje</h2>
+
+<p>A felfedezett információkat, a játékos jelentős döntéseit és a feltételektől függő lezárásokat kezeli.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-28–31, UC-09.</p>
+
+<h3 id="c81">8.1 Statikus modell</h3>
+
+<h4>8.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>Napló – Naplóbejegyzés</td><td>1 : 0..*</td><td>összetétel</td><td>A napló bejegyzésekből áll; a bejegyzés a naplóhoz tartozik.</td></tr>
+<tr><td>Döntés – Befejezés</td><td>0..* : 0..*</td><td>társítás</td><td>A döntések befolyásolják a befejezés feltételeit.</td></tr>
+<tr><td>Játékállapot – Napló</td><td>1 : 1</td><td>összetétel</td><td>A napló a játékállapot része.</td></tr>
+</table>
+
+<h4>8.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>Napló</td><td>bejegyzések: NaplóbejegyzésLista</td></tr>
+<tr><td>Naplóbejegyzés</td><td>azonosító: Azonosító, cím: Szöveg, tartalom: Szöveg, felfedezve: Logikai</td></tr>
+<tr><td>Döntés</td><td>azonosító: Azonosító, leírás: Szöveg, következmény: Következmény</td></tr>
+<tr><td>Befejezés</td><td>azonosító: Azonosító, típus: BefejezésTípus, feltételek: FeltételLista</td></tr>
+</table>
+
+<h4>8.1.3 Bázisosztályok keresése</h4>
+
+<p>A Naplóbejegyzés, a Döntés és a Befejezés között nincs közös ősosztály: eltérő felelősségük miatt a közös azonosító-attribútum nem indokol bázisosztályt.</p>
+
+<h3 id="c82">8.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-09 – Napló megnyitása; UC-10 – Befejezés elérése.</p>
+
+<h4>8.2.1 UC-09 – Napló megnyitása (szekvencia)</h4>
+<ol>
+<li>A Játékos megnyitja a naplót a Felület felől.</li>
+<li>A Felület a Naplóhoz fordul a felfedezett bejegyzésekért.</li>
+<li>A Napló visszaadja a felfedezett Naplóbejegyzések listáját.</li>
+<li>A Felület megjeleníti a bejegyzéseket.</li>
+</ol>
+
+<h3 id="c83">8.3 Funkcionális modell</h3>
+
+<h4>8.3.1 Naplóbejegyzés felfedezése</h4>
+<p>A játékos egy Naplóbejegyzést fedez fel. A bejegyzés felfedezve állapota igazra vált, és a Napló bejegyzéslistája frissül. A már felfedezett bejegyzések újra megnyithatók.</p>
+
+<h4>8.3.2 Döntés és befejezés</h4>
+<p>A játékos jelentős döntéseket hoz, amelyek következményei a Befejezés feltételeit befolyásolják. A játék végén a teljesült feltételek alapján a megfelelő Befejezés aktiválódik.</p>
+
+<h3 id="c84">8.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>Napló</td><td>hozzáad(), keres(), felfedezettBejegyzések()</td></tr>
+<tr><td>Naplóbejegyzés</td><td>felfedez(), megnyit()</td></tr>
+<tr><td>Döntés</td><td>rögzít(), következményAlkalmaz()</td></tr>
+<tr><td>Befejezés</td><td>feltételEllenőrzés(), aktivál()</td></tr>
+</table>
+
+<h3 id="c85">8.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+Napló 1 -- 0..* Naplóbejegyzés
+Döntés 0..* -- 0..* Befejezés
+Játékállapot 1 -- 1 Napló
+</pre>
+
+<h3 id="c86">8.6 Az analízis modell osztályainak listája</h3>
+
+<h4>Napló</h4>
+<p>A felfedezett történeti információk gyűjteménye. Attribútumai: bejegyzések. Operációi: hozzáad(), keres(), felfedezettBejegyzések().</p>
+
+<h4>Naplóbejegyzés</h4>
+<p>Szöveges vagy hangos történeti információ. Attribútumai: azonosító, cím, tartalom, felfedezve. Operációi: felfedez(), megnyit().</p>
+
+<h4>Döntés</h4>
+<p>Jelentős játékosválasztás. Attribútumai: azonosító, leírás, következmény. Operációi: rögzít(), következményAlkalmaz().</p>
+
+<h4>Befejezés</h4>
+<p>A játék záróállapotának egy ága. Attribútumai: azonosító, típus, feltételek. Operációi: feltételEllenőrzés(), aktivál().</p>
+
+<h2 id="felulet">9. Felület, beállítások és mentés alrendszer modellje</h2>
+
+<p>Az alapvető felhasználói visszajelzéseket, konfigurációt, a teljes játékmenet perzisztens pillanatképét, mentést és hibakezelést támogatja.</p>
+
+<p><strong>Forrás-kapcsolat:</strong> FR-01, FR-03, FR-15, FR-32–39, UC-01, UC-08, UC-10.</p>
+
+<h3 id="c91">9.1 Statikus modell</h3>
+
+<h4>9.1.1 Kapcsolatok pontosítása</h4>
+
+<table>
+<tr><th>Kapcsolat</th><th>Számosság</th><th>Jelleg</th><th>Elemzési indok</th></tr>
+<tr><td>FelhasználóiFelület – Játékfolyamat</td><td>1 : 1</td><td>vezérlés</td><td>A menü a játékfázisok kezdeményezője.</td></tr>
+<tr><td>FelhasználóiFelület – Beállítások</td><td>1 : 1</td><td>összetétel</td><td>A beállítások a felület részei.</td></tr>
+<tr><td>FelhasználóiFelület – Hangmegjelenítés</td><td>1 : 1</td><td>társítás</td><td>A hangmegjelenítés a felület egyik szolgáltatása.</td></tr>
+<tr><td>MentésKezelő – MentésAdat</td><td>1 : 0..*</td><td>összetétel</td><td>A mentéskezelő több mentésadatot kezel.</td></tr>
+<tr><td>MentésKezelő – Játékállapot</td><td>1 : 1</td><td>pillanatkép</td><td>A mentés az élő állapot másolatát kezeli.</td></tr>
+</table>
+
+<h4>9.1.2 Attribútumok azonosítása</h4>
+
+<table>
+<tr><th>Osztály</th><th>Attribútumok</th></tr>
+<tr><td>FelhasználóiFelület</td><td>aktívNézet: NézetTípus, elérhetőMenük: MenüLista</td></tr>
+<tr><td>Beállítások</td><td>hangerő: Érték, feliratok: Logikai, irányítás: IrányításiSéma, hozzáférhetőség: HozzáférhetőségiBeállítások</td></tr>
+<tr><td>Hangmegjelenítés</td><td>hangerő: Érték, térbeliLejátszás: Logikai</td></tr>
+<tr><td>MentésKezelő</td><td>mentések: MentésAdatLista, aktuálisMentés: MentésAdat</td></tr>
+<tr><td>MentésAdat</td><td>azonosító: Azonosító, időbélyeg: Időpont, verzió: Verziószám, állapotPillanatkép: JátékállapotPillanatkép</td></tr>
+</table>
+
+<h4>9.1.3 Bázisosztályok keresése</h4>
+
+<p>A FelhasználóiFelület, a Beállítások, a Hangmegjelenítés, a MentésKezelő és a MentésAdat önálló osztályok, közöttük nincs öröklési kapcsolat. A MentésAdat nem a Játékállapot leszármazottja, mert az élő állapot pillanatképe, nem annak altípusa.</p>
+
+<h3 id="c92">9.2 Dinamikus modell</h3>
+
+<p><strong>Elemzett használati esetek:</strong> UC-01 – Játék indítása; UC-08 – Mentés; UC-10 – Betöltés.</p>
+
+<h4>9.2.1 UC-08 – Mentés (szekvencia)</h4>
+<ol>
+<li>A Játékos mentést kezdeményez a Felület felől.</li>
+<li>A Felület a MentésKezelőhöz fordul.</li>
+<li>A MentésKezelő pillanatképet kér a Játékállapottól.</li>
+<li>A Játékállapot visszaadja a pillanatképet.</li>
+<li>A MentésKezelő létrehoz egy új MentésAdatot.</li>
+<li>A MentésKezelő értesíti a Felületet a sikeres mentésről.</li>
+</ol>
+
+<h3 id="c93">9.3 Funkcionális modell</h3>
+
+<h4>9.3.1 Menükezelés</h4>
+<p>A FelhasználóiFelület kezeli a főmenüt, a szünetmenüt és a beállítások elérését. A menüparancsok a Játékfolyamathoz kerülnek, amely az állapotváltásokat végrehajtja.</p>
+
+<h4>9.3.2 Beállítások kezelése</h4>
+<p>A Beállítások objektum tárolja a hangerőt, a feliratokat, az irányítást és a hozzáférhetőségi opciókat. A beállítások módosítása a Hangmegjelenítés és a FelhasználóiFelület viselkedését is befolyásolja.</p>
+
+<h4>9.3.3 Mentés és betöltés</h4>
+<p>A MentésKezelő a Játékállapot teljes pillanatképét menti el MentésAdat formájában. Betöltéskor a MentésAdatból visszaáll a Játékállapot. Az előző érvényes mentés védve van.</p>
+
+<h3 id="c94">9.4 Operációk azonosítása</h3>
+
+<table>
+<tr><th>Osztály</th><th>Azonosított operációk</th></tr>
+<tr><td>FelhasználóiFelület</td><td>nézetVáltás(), menüMegjelenítés(), bemenetFeldolgozás()</td></tr>
+<tr><td>Beállítások</td><td>betölt(), mentés(), alapértelmezésVisszaállítás()</td></tr>
+<tr><td>Hangmegjelenítés</td><td>hangLejátszás(), hangerőBeállítás()</td></tr>
+<tr><td>MentésKezelő</td><td>mentés(), betöltés(), mentésekListázása(), törlés()</td></tr>
+<tr><td>MentésAdat</td><td>érvényességEllenőrzés(), pillanatképVisszaadás()</td></tr>
+</table>
+
+<h3 id="c95">9.5 Az analízis modell osztálydiagramja</h3>
+
+<pre>
+FelhasználóiFelület 1 -- 1 Játékfolyamat
+FelhasználóiFelület 1 -- 1 Beállítások
+FelhasználóiFelület 1 -- 1 Hangmegjelenítés
+MentésKezelő 1 -- 0..* MentésAdat
+MentésKezelő 1 -- 1 Játékállapot
+Hangmegjelenítés 1 -- 1 Játékállapot
+</pre>
+
+<h3 id="c96">9.6 Az analízis modell osztályainak listája</h3>
+
+<h4>FelhasználóiFelület</h4>
+<p>A játékos felé történő megjelenítés egységes felülete. Attribútumai: aktívNézet, elérhetőMenük. Operációi: nézetVáltás(), menüMegjelenítés(), bemenetFeldolgozás().</p>
+
+<h4>Beállítások</h4>
+<p>A felhasználói beállítási adatok gyűjteménye. Attribútumai: hangerő, feliratok, irányítás, hozzáférhetőség. Operációi: betölt(), mentés(), alapértelmezésVisszaállítás().</p>
+
+<h4>Hangmegjelenítés</h4>
+<p>Térbeli hangvisszajelzést előállító osztály. Attribútumai: hangerő, térbeliLejátszás. Operációi: hangLejátszás(), hangerőBeállítás().</p>
+
+<h4>MentésKezelő</h4>
+<p>A mentések létrehozását, ellenőrzését és visszaállítását koordinálja. Attribútumai: mentések, aktuálisMentés. Operációi: mentés(), betöltés(), mentésekListázása(), törlés().</p>
+
+<h4>MentésAdat</h4>
+<p>Egy mentési helyhez tartozó pillanatkép. Attribútumai: azonosító, időbélyeg, verzió, állapotPillanatkép. Operációi: érvényességEllenőrzés(), pillanatképVisszaadás().</p>
+
+<h2 id="osszefoglalas">10. Összefoglalás</h2>
+
+<p>Jelen dokumentum a Visszhang (Echo) játék objektumorientált analízismodelljét mutatta be. A kezdeti osztálydiagram, a hét funkcionális alrendszer, valamint az alrendszerek részletes statikus, dinamikus és funkcionális modellje megalapozza a H4 rendszertervezési dokumentum és a H5 objektumtervezési dokumentum elkészítését. A modell az SRS követelményeire és használati eseteire épül, és a további mérföldkövek során finomítható.</p>
+
+<p>Vissza a lap tetejére: <a href="#top">ugrás a címlapra</a>.</p>
+
+</body>
+</html>

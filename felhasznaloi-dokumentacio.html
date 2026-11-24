@@ -1,152 +1,318 @@
 <!DOCTYPE html>
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Felhasználói dokumentáció – Visszhang (Echo) – Szevasztopol Szoftverek</title>
-<meta name="description" content="A Visszhang (Echo) játék H3 felhasználói kézikönyvének első verziója.">
-<style>
-html{scroll-behavior:smooth} body{font-family:"Times New Roman",Times,serif;font-size:16px;line-height:1.38;color:#111;background:#fff;max-width:1000px;margin:28px auto;padding:0 24px 60px}
-h1{font-size:2em;margin:1em 0 .45em}h2{font-size:1.5em;margin:1.25em 0 .55em}h3{font-size:1.18em;margin:1.1em 0 .4em}h4{font-size:1.03em;margin:1em 0 .2em}h3 small{font-size:.78em;font-weight:normal;font-style:italic}p{margin:.55em 0 .85em;text-align:justify}ul,ol{margin:.55em 0 1em;padding-left:2.2em}li{margin:.15em 0}a{color:#0645ad;text-decoration:underline}a:visited{color:#551a8b}hr{border:0;border-top:1px solid #777;margin:22px 0}table{border-collapse:collapse;width:100%;margin:12px 0 20px;table-layout:auto}th,td{border:1px solid #666;padding:6px 8px;vertical-align:top;text-align:left}th{background:#eee}td:first-child{min-width:115px} .subtitle{font-size:1.05em;font-style:italic;margin-top:-.45em}.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}.toc ul{list-style:disc}.toplink{text-align:right;font-size:.83em;margin-top:0}.warning{background:#f7f7f7;border-left:3px solid #777;padding:8px 12px}.cover{margin-bottom:20px}.english{font-style:italic;font-weight:normal;font-size:.7em;display:block;margin-top:2px}.muted{color:#444} .page{break-before:page}@media(max-width:650px){body{padding:0 12px;margin:16px auto}table{display:block;overflow:auto;font-size:.92em}h1{font-size:1.7em}}@media print{body{max-width:none;margin:12mm;padding:0;font-size:11pt}a{color:#111}h2,h3,h4{break-after:avoid}table{break-inside:avoid} .toplink{display:none}}
-</style>
-</head><body id="top">
-<header class="cover"><h1>Felhasználói dokumentáció</h1><p class="subtitle">Visszhang (Echo) – Felhasználói kézikönyv, első verzió</p><hr><h2>Címlap</h2>
-<table><tr><th>Adat</th><th>Érték</th></tr>
-<tr><td><strong>Projekt neve</strong></td><td>Visszhang (Echo)</td></tr>
-<tr><td><strong>Csoport neve</strong></td><td>Szevasztopol Szoftverek</td></tr>
-<tr><td><strong>Dokumentum típusa</strong></td><td>Felhasználói dokumentáció – felhasználói kézikönyv</td></tr>
-<tr><td><strong>Verzió</strong></td><td>1.0 – első tervezet</td></tr>
-<tr><td><strong>Mérföldkő</strong></td><td>H3</td></tr>
-<tr><td><strong>Készítette</strong></td><td>Szevasztopol Szoftverek csapat</td></tr>
-<tr><td><strong>Intézmény</strong></td><td>Miskolci Egyetem</td></tr>
-<tr><td><strong>Alapdokumentum</strong></td><td>Software követelmény specifikáció, 1.0 tervezet</td></tr>
-</table></header>
-<h2>Verziótörténet</h2><table><tr><th>Verzió</th><th>Leírás</th><th>Szerző</th></tr><tr><td>1.0</td><td>Első felhasználói kézikönyv az SRS és a projektterv alapján.</td><td>Szevasztopol Szoftverek</td></tr></table>
-<h2>Tartalomjegyzék</h2><nav class="toc" aria-label="Tartalomjegyzék"><ol>
-<li><a href="#fejezet-1">1. Bevezetés</a></li>
-<li><a href="#fejezet-2">2. A játék áttekintése</a></li>
-<li><a href="#fejezet-3">3. Rendszerkövetelmények és telepítés</a></li>
-<li><a href="#fejezet-4">4. Indítás, főmenü és szünet</a></li>
-<li><a href="#fejezet-5">5. Irányítás és kezelőfelület</a></li>
-<li><a href="#fejezet-6">6. Túlélés, lopakodás és a lény</a></li>
-<li><a href="#fejezet-7">7. Felfedezés, feladatok, készlet és napló</a></li>
-<li><a href="#fejezet-8">8. Mentés és betöltés</a></li>
-<li><a href="#fejezet-9">9. Beállítások és akadálymentesítés</a></li>
-<li><a href="#fejezet-10">10. Példa egy első játékmenetre</a></li>
-<li><a href="#fejezet-11">11. Hibaelhárítás és gyakori kérdések</a></li>
-<li><a href="#fejezet-12">12. Fogalomtár, függelék és további pontosítások</a></li>
-</ol></nav><hr>
-<section id="fejezet-1"><h2>1. Bevezetés</h2>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Felhasználói dokumentáció – Visszhang (Echo)</title>
+</head>
+<body>
+
+<h1>Felhasználói dokumentáció</h1>
+
+<table>
+<tr><th>Projekt neve</th><td>Visszhang (Echo)</td></tr>
+<tr><th>Csoport neve</th><td>Szevasztopol Szoftverek</td></tr>
+<tr><th>Dokumentum típusa</th><td>Felhasználói dokumentáció – felhasználói kézikönyv</td></tr>
+<tr><th>Mérföldkő</th><td>H4</td></tr>
+<tr><th>Verzió</th><td>1.0</td></tr>
+<tr><th>Készítette</th><td>Szevasztopol Szoftverek csapat</td></tr>
+<tr><th>Intézmény</th><td>Miskolci Egyetem</td></tr>
+<tr><th>Alapdokumentum</th><td>Software követelmény specifikáció, Vízió, Projekt terv, OO analízismodell, OO rendszertervezés</td></tr>
+</table>
+
+<h2>Verziótörténet</h2>
+<table>
+<tr><th>Verzió</th><th>Leírás</th><th>Szerző</th></tr>
+<tr><td>1.0</td><td>A H4 analízismodell és rendszerterv alapján frissített felhasználói kézikönyv: felületi állapotok, mentési és betöltési folyamat, MI-viselkedés, beállítások, hibakezelés és kapcsolódó dokumentumok.</td><td>Szevasztopol Szoftverek</td></tr>
+</table>
+
+<h2>Tartalomjegyzék</h2>
+<ul>
+<li><a href="#bevezetes">1. Bevezetés</a></li>
+<li><a href="#attekintes">2. A játék áttekintése</a></li>
+<li><a href="#rendszer">3. Rendszerkövetelmények és telepítés</a></li>
+<li><a href="#inditas">4. Indítás, főmenü és szünet</a></li>
+<li><a href="#vezerles">5. Irányítás és kezelőfelület</a></li>
+<li><a href="#tuleles">6. Túlélés, lopakodás és a lény</a></li>
+<li><a href="#felfedezes">7. Felfedezés, feladatok, készlet és napló</a></li>
+<li><a href="#mentes">8. Mentés és betöltés</a></li>
+<li><a href="#beallitasok">9. Beállítások és akadálymentesítés</a></li>
+<li><a href="#pelda">10. Példa egy első játékmenetre</a></li>
+<li><a href="#hiba">11. Hibaelhárítás és gyakori kérdések</a></li>
+<li><a href="#fogalomtar">12. Fogalomtár és további információk</a></li>
+</ul>
+
+<h2 id="bevezetes">1. Bevezetés</h2>
 
 <h3>1.1 A kézikönyv célja</h3>
-<p>Ez a dokumentum a <strong>Visszhang (Echo)</strong> munkacímű, egyjátékos túlélőhorror-játék tervezett használatát mutatja be a leendő játékos szemszögéből. A játékos egy elhagyatott űrállomáson rekedt szerelőt irányít, akinek feladatok teljesítése, információk gyűjtése és a veszélyek elkerülése közben kell kijutnia az állomásról. A kézikönyv az SRS első változatán alapul, ezért <strong>tervezett használati folyamatokat</strong> dokumentál, nem egy már kipróbálható játék bizonyított működését.</p>
-<h3>1.2 Célközönség és előismeretek</h3>
-<p>Elsősorban a játék leendő felhasználóinak, tesztelőinek és a dokumentációt értékelő oktatóknak készült. A használathoz alapvető számítógép-kezelési ismeretek elegendők; a lopakodó játékok ismerete előnyt jelenthet, de nem feltétel.</p>
-<h3>1.3 Jelölések és dokumentumállapot</h3>
-<table><tr><th>Jelölés</th><th>Jelentés</th></tr><tr><td><strong>Tervezett</strong></td><td>A követelményspecifikációban szereplő funkció, amelyet a kész játékban meg kell valósítani.</td></tr><tr><td><strong>Pontosítandó</strong></td><td>A projekt jelenlegi dokumentumaiban még nem rögzített részlet.</td></tr><tr><td><strong>Javasolt</strong></td><td>Felhasználói élményt segítő útmutatás, nem kötelezően jóváhagyott viselkedés vagy paraméter.</td></tr></table>
-<p class="warning"><strong>Fontos:</strong> A projekt elsődlegesen dokumentációs feladat; a H3 mérföldkőnél nem áll rendelkezésre megerősített, telepíthető játékverzió. Az itt szereplő menüpontok, funkciók és lépések a tervezett felhasználói felület leírásai.</p>
-<h3>1.4 Kapcsolódó dokumentumok</h3>
-<p>A kézikönyv alapját a <a href="kovetelmeny-specifikacio.html">Software követelmény specifikáció</a>, a <a href="vizio.html">Vízió dokumentum</a> és a <a href="projekt-terv.html">Projekt terv</a> képezi.</p>
+<p>Ez a dokumentum a <strong>Visszhang (Echo)</strong> munkacímű, egyjátékos túlélőhorror-játék tervezett használatát mutatja be. A játékos egy elhagyatott űrállomáson rekedt szerelőt irányít, aki feladatokat old meg, információt gyűjt, és a veszélyek elkerülésével próbál kijutni. A kézikönyv a követelményspecifikáció, a H4 analízismodell és a H4 rendszerterv alapján készült, ezért tervezett működést dokumentál.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-2"><h2>2. A játék áttekintése</h2>
+<h3>1.2 Célközönség és előismeretek</h3>
+<p>A leendő játékosoknak, tesztelőknek és a projekt értékelőinek készült. Alapvető számítógép-kezelési ismeretek elegendők; a lopakodó játékok ismerete előnyt jelenthet, de nem feltétel.</p>
+
+<h3>1.3 Kapcsolódó dokumentumok</h3>
+<p>A kézikönyv kapcsolódó forrásai: Software követelmény specifikáció, Vízió dokumentum, Projekt terv, Szótár, valamint a H4 analízismodell és rendszerterv.</p>
+
+<h2 id="attekintes">2. A játék áttekintése</h2>
 
 <h3>2.1 A játék célja</h3>
-<p>A játékosnak fel kell derítenie az űrállomás területeit, meg kell oldania a továbbjutást lehetővé tevő feladatokat, össze kell gyűjtenie a szükséges erőforrásokat, és túl kell élnie a lény jelenlétét. Az összegyűjtött információk és a meghozott döntések befolyásolhatják a történet végkimenetelét; a tervek szerint legalább két eltérő befejezés létezik.</p>
-<h3>2.2 Alapvető játékelvek</h3>
-<ul><li><strong>Kerülés a harc helyett:</strong> a fő célok közvetlen harc nélkül is teljesíthetők.</li><li><strong>Hang és láthatóság:</strong> mozgásunk, környezetünk és eszközeink hatással vannak arra, hogy az ellenfél észlel-e bennünket.</li><li><strong>Erőforrás-gazdálkodás:</strong> az eszközök és fogyó tárgyak mennyisége korlátozott lehet.</li><li><strong>Változó feszültség:</strong> a rendező-MI a játékhelyzethez igazítja a fenyegetések ritmusát, de nem adhat tisztességtelen információt az ellenfélnek.</li><li><strong>Felfedezés és döntés:</strong> a naplók, állomásadatok és feladatok a történet megértését segítik.</li></ul>
-<h3>2.3 Játékmód és kapcsolat</h3>
-<p>Az alapjáték <strong>egyjátékos és offline használatra tervezett</strong>; nem szükséges többszereplős kapcsolat, matchmaking vagy folyamatos internet-hozzáférés.</p>
+<p>A játékos felderíti az állomást, feladatokat teljesít, gazdálkodik a korlátozott erőforrásokkal, és elkerüli az idegen lényt. A megszerzett adatok és a döntések a történet kimenetelét is alakíthatják; a terv legalább két eltérő befejezést tartalmaz.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-3"><h2>3. Rendszerkövetelmények és telepítés</h2>
+<h3>2.2 Alapvető játékelvek</h3>
+<ul>
+<li><strong>Kerülés a harc helyett:</strong> a fő célokat közvetlen harc nélkül kell tudni teljesíteni.</li>
+<li><strong>Hang és láthatóság:</strong> a mozgás és a környezeti zaj hatással van az észlelhetőségre.</li>
+<li><strong>Erőforrás-gazdálkodás:</strong> a tárgyak és fogyóeszközök mennyisége korlátozott.</li>
+<li><strong>Változó feszültség:</strong> a rendező-MI változtathatja a fenyegetés ritmusát, de nem sértheti a lény szabályos érzékelését.</li>
+<li><strong>Felfedezés és döntés:</strong> naplók, feladatok és választások alakítják a történet megértését.</li>
+</ul>
+
+<h3>2.3 Játékmód és kapcsolat</h3>
+<p>Az alapjáték <strong>egyjátékos és offline</strong> működésre tervezett; nem része az alapkövetelményeknek a többjátékos mód vagy a folyamatos hálózati kapcsolat.</p>
+
+<h3>2.4 A rendszer felépítésének jelentősége a játékosnak</h3>
+<p>A H4 analízis elkülöníti a karaktert, az állomásteret, a készletet, a lény-MI-t, a rendező-MI-t, a történetet, valamint a mentést és a felületet kezelő alrendszereket. A játékos ezeket egységes élményként használja; az elkülönítés azt szolgálja, hogy egy naplóbejegyzés, készletváltozás vagy mentés ne veszítse el a többi rendszerhez tartozó kapcsolódó állapotokat.</p>
+
+<h2 id="rendszer">3. Rendszerkövetelmények és telepítés</h2>
 
 <h3>3.1 Támogatott környezet</h3>
-<table><tr><th>Elem</th><th>Jelenlegi állapot</th></tr><tr><td>Operációs rendszer / platform</td><td>Pontosítandó – célplatform és OS-verzió még nem végleges.</td></tr><tr><td>Processzor, memória, videokártya, tárhely</td><td>Pontosítandó – referencia hardver és minimális követelmények még nincsenek jóváhagyva.</td></tr><tr><td>Beviteli eszközök</td><td>Tervezett: billentyűzet és egér, illetve kontroller.</td></tr><tr><td>Megjelenítő és hang</td><td>Tervezett: monitor vagy televízió, valamint hangszóró vagy fejhallgató.</td></tr><tr><td>Internet</td><td>Az alapjátékhoz nem kötelező.</td></tr><tr><td>Játékmotor, csomagformátum</td><td>Pontosítandó.</td></tr></table>
-<h3>3.2 Telepítés</h3><p><strong>A tényleges telepítési lépések jelenleg nem adhatók meg</strong>, mert nincs elfogadott telepítő, letöltési csatorna vagy futtatható kiadás. Ha elkészül a játék, ez a fejezet platformonként ismerteti majd a letöltést, telepítést, indítást és eltávolítást.</p>
-<h3>3.3 Első indítás előtti ellenőrzés</h3><ol><li>Ellenőrizze majd a végleges rendszerkövetelmények és a saját eszközének megfelelőségét.</li><li>Csatlakoztassa a választott beviteli eszközt és a hangkimenetet.</li><li>Az első indítás után a <em>Beállítások</em> menüben tekintse át a hangerőt, a feliratokat és a vezérléskiosztást.</li></ol>
+<table>
+<tr><th>Elem</th><th>Jelenlegi állapot</th></tr>
+<tr><td>Operációs rendszer / platform</td><td>A projekt koncepciója PC-t és konzolokat céloz; a végleges célplatform a megvalósítás során rögzíthető.</td></tr>
+<tr><td>Processzor, memória, videokártya, tárhely</td><td>A minimális hardverkövetelmények a megvalósítás során rögzíthetők.</td></tr>
+<tr><td>Beviteli eszközök</td><td>Tervezett: billentyűzet és egér, valamint kontroller.</td></tr>
+<tr><td>Megjelenítő és hang</td><td>Tervezett: kijelző, hangszóró vagy fejhallgató.</td></tr>
+<tr><td>Internet</td><td>Az alapjátékhoz nem szükséges.</td></tr>
+<tr><td>Játékmotor és kiadási csomag</td><td>A megvalósítás során rögzíthető.</td></tr>
+<tr><td>Helyi mentési adatkezelés</td><td>A H4 rendszerterv helyi perzisztencia-megoldásként SQLite-adatbázist rögzít; a felhasználónak nem kell közvetlenül adatbázist kezelnie.</td></tr>
+</table>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-4"><h2>4. Indítás, főmenü és szünet</h2>
+<h3>3.2 Telepítés</h3>
+<p>A projekt jelenlegi állapotában nincs publikált telepíthető kiadás. A letöltés, telepítés és eltávolítás tényleges lépései a megvalósítás után dokumentálhatók.</p>
+
+<h3>3.3 Első indítás előtti ellenőrzés</h3>
+<ol>
+<li>Ellenőrizze a támogatott rendszert és a gépigényt.</li>
+<li>Csatlakoztasson beviteli eszközt és hangkimenetet.</li>
+<li>Az indítást követően tekintse át a hangot, a feliratokat, a vezérlést és a vizuális jelzéseket.</li>
+</ol>
+
+<h2 id="inditas">4. Indítás, főmenü és szünet</h2>
 
 <h3>4.1 A főmenü tervezett elemei</h3>
-<table><tr><th>Menüpont</th><th>Feladat</th></tr><tr><td>Új játék</td><td>Új végigjátszás indítása az alap kezdőállapotból.</td></tr><tr><td>Folytatás / Betöltés</td><td>Korábban elmentett játékállapot visszaállítása. Mentés hiányában nem szabad hibás betöltést kezdeményeznie.</td></tr><tr><td>Beállítások</td><td>Hang, feliratok, vezérlés és egyéb megjelenítési lehetőségek áttekintése.</td></tr><tr><td>Kilépés</td><td>A játék bezárása.</td></tr></table>
-<h3>4.2 Új játék indítása</h3><ol><li>Nyissa meg a játékot a később meghatározott indítási módon.</li><li>A főmenüből válassza az <strong>Új játék</strong> lehetőséget.</li><li>A játék betölti a szerelő karakterét, a kezdőállomás-részt és a kezdőkészletet.</li><li>Figyelje az első célkitűzést és a kezelési tippeket, ha az adott változatban rendelkezésre állnak.</li></ol>
-<h3>4.3 Korábbi játék folytatása</h3><ol><li>Válassza a <strong>Folytatás / Betöltés</strong> menüpontot.</li><li>Ha több mentés van, válassza ki a megfelelő azonosító vagy időpont alapján.</li><li>Erősítse meg a betöltést; a játék a mentett helyzetet és előrehaladást állítja vissza.</li></ol><p><em>Pontosítandó:</em> automatikus folytatás, mentési helyek száma és a menüpontok végleges elnevezése.</p>
-<h3>4.4 Szüneteltetés</h3><p>A tervek szerint a szünetmenü megállítja a játékvilág előrehaladását és a lény döntésciklusát. Innen érhetők el a releváns beállítások, valamint a játék folytatására szolgáló művelet. A szünet megnyitására szolgáló gomb a végleges kiosztásban rögzítendő.</p>
+<table>
+<tr><th>Menüpont</th><th>Feladat</th></tr>
+<tr><td>Új játék</td><td>Új végigjátszás és kezdőállapot létrehozása.</td></tr>
+<tr><td>Folytatás / Betöltés</td><td>Érvényes mentés visszaállítása; mentés hiányában a funkció nem kezdeményez hibás betöltést.</td></tr>
+<tr><td>Beállítások</td><td>Hang-, kép-, felirat-, vezérlés- és akadálymentesítési lehetőségek.</td></tr>
+<tr><td>Kilépés</td><td>Az alkalmazás lezárása.</td></tr>
+</table>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-5"><h2>5. Irányítás és kezelőfelület</h2>
+<h3>4.2 Új játék indítása</h3>
+<ol>
+<li>Indítsa el az alkalmazást a végleges kiadásban meghatározott módon.</li>
+<li>Válassza az <strong>Új játék</strong> lehetőséget.</li>
+<li>A rendszer létrehozza a karakter, a pálya és a készlet kezdőállapotát.</li>
+<li>Tekintse meg az aktuális célt és az elérhető súgójelzéseket.</li>
+</ol>
 
-<h3>5.1 A legfontosabb műveletek</h3>
-<p>A funkciók billentyűzettel és egérrel, valamint kontrollerrel is elérhetők lesznek. <strong>Az alábbi táblázat szándékosan nem állít be nem jóváhagyott konkrét billentyűket.</strong> A teljes kiosztás a játék Beállítások menüjében lesz megtekinthető és az alapgomboknál módosítható.</p>
-<table><tr><th>Művelet</th><th>Hatás</th><th>Alapértelmezett gomb</th></tr><tr><td>Mozgás</td><td>A karakter járással mozog az állomáson.</td><td>Pontosítandó</td></tr><tr><td>Futás</td><td>Gyorsabb helyváltoztatás, nagyobb észlelési kockázattal.</td><td>Pontosítandó</td></tr><tr><td>Guggolás / lopakodás</td><td>Óvatosabb, jellemzően kevésbé feltűnő mozgás.</td><td>Pontosítandó</td></tr><tr><td>Interakció</td><td>Tárgy vagy terminál használata az előírt távolságból.</td><td>Pontosítandó</td></tr><tr><td>Készlet</td><td>A tárgyak és fogyóeszközök megnyitása.</td><td>Pontosítandó</td></tr><tr><td>Napló / célok</td><td>Megtalált adatok és aktuális feladat áttekintése.</td><td>Pontosítandó</td></tr><tr><td>Eszköz használata</td><td>Kiválasztott használható tárgy aktiválása.</td><td>Pontosítandó</td></tr><tr><td>Szünet</td><td>Játék megállítása és szünetmenü megnyitása.</td><td>Pontosítandó</td></tr></table>
-<h3>5.2 A játék közbeni kijelzés</h3><p>A tervezett kezelőfelület a játékos számára szükséges információkat mutatja: aktuális cél, közelben használható objektumok jelzése, készlet és szükséges státuszok. A horrorhangulat miatt nem jeleníti meg a lény titkos belső állapotát vagy a rendező-MI feszültségbecslését.</p>
-<h3>5.3 Interakciók</h3><ol><li>Közelítsen egy ajtóhoz, terminálhoz vagy felvehető tárgyhoz.</li><li>Várja meg a használhatóságot jelző visszajelzést.</li><li>Válassza az <em>Interakció</em> műveletet.</li><li>Figyelje az eredményt: a tárgy bekerülhet a készletbe, az állomás egy rendszere aktiválódhat, vagy új feladat válhat elérhetővé.</li></ol><p>Nem minden objektum használható; a szükséges feltételek és az interakciós távolság korlátozhatják a műveletet.</p>
+<h3>4.3 Korábbi játék folytatása</h3>
+<ol>
+<li>Válassza a <strong>Folytatás / Betöltés</strong> menüpontot.</li>
+<li>Válasszon a rendelkezésre álló, érvényes mentések közül.</li>
+<li>A betöltés visszaállítja a kompatibilis játékállapotot; hibás mentésnél üzenet jelenik meg.</li>
+</ol>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-6"><h2>6. Túlélés, lopakodás és a lény</h2>
+<h3>4.4 Szünet és visszatérés</h3>
+<p>A szünetmenü a játék folytatását, a beállításokat és a főmenübe visszatérést teszi lehetővé. A H4 felületterv külön állapotként kezeli a főmenüt, a futó játékot és a szünetet. A szünetben a szimulált idő és az MI-döntések nem haladnak előre.</p>
 
-<h3>6.1 Mozgás és észlelhetőség</h3><p>A gyors mozgás előnyös a menekülésben, de a keletkező zaj és a láthatóság növelheti a veszélyt. A lopakodás és az akadályok mögötti közlekedés csökkentheti az észrevétel valószínűségét, de <strong>egyik sem teszi automatikusan láthatatlanná</strong> a játékost.</p>
-<h3>6.2 A lény reakciói</h3><p>Az ellenfél a játékvilágban érzékelhető látvány- és hangesemények alapján járőrözhet, gyanakodhat, kereshet, üldözhet, majd elveszítheti a célpontot. A lény nem rendelkezik folyamatos, jogosulatlan információval a játékos pontos helyéről. Az ismétlődő taktikákra a tervek szerint korlátozottan alkalmazkodhat.</p>
-<h3>6.3 Mit tegyen veszély esetén?</h3><ol><li>Értékelje, honnan közeledik a veszély, különösen a hallható környezeti jeleket.</li><li>Ha még nem észlelték, mérsékelje a zajt, és keressen fedezéket vagy alternatív útvonalat.</li><li>Ha üldözés kezdődik, használja a navigálható folyosókat, akadályokat és menekülési útvonalakat.</li><li>Ha rendelkezésre áll és használható, alkalmazzon figyelemelterelő eszközt.</li><li>Miután elhárult a közvetlen fenyegetés, ellenőrizze céljait és erőforrásait.</li></ol>
-<h3>6.4 A rendező-MI működése a játékos szemszögéből</h3><p>A háttérben működő rendező-MI a játék haladását, az üldözéseket és a rendelkezésre álló erőforrásokat figyelve alakíthatja a feszültség ritmusát. Ez változatos eseménysorrendet eredményezhet, ezért ugyanaz a helyzet nem feltétlenül azonos módon ismétlődik. A rendszernek pihenőszakaszokat is biztosítania kell, és nem sértheti az ellenfél szabályos érzékelési korlátait.</p>
+<h3>4.5 A felület állapotai és navigációja</h3>
+<p>A H4 rendszerterv a következő képernyőállapotokat különíti el: főmenü, játékmenet, szünet, készlet és napló, mentés és betöltés, beállítások, valamint befejezés vagy halál. A navigáció minden esetben a játékfolyamat fázisváltásain keresztül történik; közvetlen képernyőváltás nem megengedett. A képernyőváltás nem jelentheti a készlet, a feladat vagy a történet állapotának elvesztését.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-7"><h2>7. Felfedezés, feladatok, készlet és napló</h2>
+<h2 id="vezerles">5. Irányítás és kezelőfelület</h2>
 
-<h3>7.1 Tájékozódás az űrállomáson</h3><p>Az űrállomás egymással összekapcsolt területekből és szintekből áll. A továbbjutást lezárt átjárók, működtethető rendszerek és feladatelőfeltételek szabályozhatják. Ha egy út zárva van, keresse a hozzá tartozó feladatot vagy interaktív objektumot; ne feltételezze, hogy minden ajtó azonnal nyitható.</p>
-<h3>7.2 Feladatok teljesítése</h3><ol><li>Tekintse meg az aktuális célkitűzést.</li><li>Vizsgálja meg a kapcsolódó környezetet és használható tárgyakat.</li><li>Teljesítse a szükséges feltételt – például egy állomásrendszer működésének helyreállítását vagy egy releváns információ megszerzését.</li><li>Ellenőrizze a teljesítési visszajelzést és a következő cél megjelenését.</li></ol><p>A pontos feladatok és pályák a későbbi tartalmi tervekben kerülnek véglegesítésre; a fenti eljárás általános.</p>
-<h3>7.3 Tárgyak és erőforrások</h3><p>A készletben felvehető, tárolható, használható és – ahol megengedett – eldobható tárgyak szerepelnek. Egyes fogyóeszközök mennyisége korlátozott; a használat csökkenti a készletet, és nulla darabszámnál a művelet nem hajtható végre. A használhatatlan tárgyakról a rendszernek érthető visszajelzést kell adnia.</p>
-<h3>7.4 Figyelemelterelés, akadályok és csapdák</h3><p>Bizonyos eszközökkel zajforrás hozható létre, amelyre a lény reagálhat. A tervek között ideiglenes akadályok vagy csapdák előkészítése is szerepel, de csak kijelölt környezetben és korlátozott hatással. Az eszköz neve, hatótávolsága és aktiválási módja jelenleg nem végleges.</p>
-<h3>7.5 Történeti információk és napló</h3><p>Az állomáson megtalálható feljegyzések, terminálok vagy hanganyagok az események hátterét világítják meg. A fontos, már megszerzett információkat a napló újra elérhetővé teszi. A döntések és összegyűjtött adatok hatással lehetnek a befejezésre; a kézikönyv szándékosan nem árulja el az egyes lezárások konkrét feltételeit.</p>
+<h3>5.1 Alapműveletek</h3>
+<table>
+<tr><th>Művelet</th><th>Hatás</th><th>Javasolt alapértelmezés</th></tr>
+<tr><td>Mozgás</td><td>Járás az állomáson</td><td>W/A/S/D</td></tr>
+<tr><td>Kamera</td><td>Nézet irányítása</td><td>Egér</td></tr>
+<tr><td>Futás</td><td>Gyorsabb mozgás, nagyobb zajjal</td><td>Shift</td></tr>
+<tr><td>Guggolás / lopakodás</td><td>Óvatosabb, kevésbé feltűnő mozgás</td><td>Ctrl</td></tr>
+<tr><td>Interakció</td><td>Tárgy, ajtó vagy terminál használata</td><td>E</td></tr>
+<tr><td>Készlet</td><td>Tárgylista és mennyiségek megnyitása</td><td>Tab</td></tr>
+<tr><td>Napló / célok</td><td>Megtalált információk és feladatok megtekintése</td><td>J</td></tr>
+<tr><td>Eszközhasználat</td><td>Kiválasztott tárgy aktiválása</td><td>A készletnézetből</td></tr>
+<tr><td>Szünet</td><td>Szünetmenü előhívása</td><td>Esc</td></tr>
+</table>
+<p>A kiosztás a beállításokban átállítható. A kontrolleres megfeleltetés a rendszertervben rögzített javaslat szerint történik; a végleges kiosztás a megvalósítás során ellenőrizhető.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-8"><h2>8. Mentés és betöltés</h2>
+<h3>5.2 A játék közbeni kijelzés</h3>
+<p>A tervezett HUD az aktuális célt, a közelben használható objektumokat, a releváns állapotokat és indokolt esetben a kiválasztott eszköz adatait mutatja. A H4 felületterv a HUD-ot elkülöníti a készlet-, napló- és mentési képernyőktől. A lény rejtett belső MI-állapota és a rendező-MI belső feszültségértéke nem része a játékosnak közvetlenül látható információnak.</p>
 
-<h3>8.1 Mentés</h3><p>A tervezett mentési rendszer a karakter, az űrállomás, a készlet, a történeti előrehaladás és a két MI releváns állapotát is megőrzi. A mentés elérhetősége és elindításának pontos helye még tisztázandó, ezért az alábbi folyamat <strong>elvi használati sorrend</strong>.</p>
-<ol><li>Nyissa meg a mentési funkciót, amikor a játék azt lehetővé teszi.</li><li>Válassza ki a mentési helyet vagy hozzon létre új mentést, amennyiben ez támogatott.</li><li>Indítsa el a mentést, és várja meg a sikeres művelet visszajelzését.</li><li>Kilépés előtt ellenőrizze, hogy a mentés érvényesen létrejött.</li></ol>
-<h3>8.2 Betöltés</h3><ol><li>A főmenüben vagy a megfelelő játékbeli felületen nyissa meg a betöltést.</li><li>Azonosítsa a mentést időpont vagy előrehaladási adatok alapján.</li><li>Indítsa el a visszaállítást.</li><li>Ellenőrizze a karakter helyzetét, a készletet és a célállapotot.</li></ol>
-<h3>8.3 Sikertelen mentés és sérült mentés</h3><p>Hiba esetén a rendszernek érthető üzenetet kell adnia, és lehetőség szerint meg kell őriznie a korábbi érvényes mentést. Ha egy mentés nem tölthető be, próbáljon korábbi érvényes mentést választani. A mentések tárolási helyét, formátumát, darabszámát és az automatikus mentés támogatását később kell rögzíteni.</p>
+<h3>5.3 Interakciók</h3>
+<ol>
+<li>Közelítsen meg egy ajtót, terminált vagy felvehető tárgyat.</li>
+<li>Várja meg a használhatóságot jelző visszajelzést.</li>
+<li>Indítsa el az <strong>Interakció</strong> műveletet.</li>
+<li>Ellenőrizze az eredményt: tárgyfelvétel, rendszeraktiválás vagy célfrissülés történhet.</li>
+</ol>
+<p>Az interakció hatótávolsághoz és feladatfeltételhez kötött lehet. Sikertelen művelet esetén a felület egyértelmű jelzést ad.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-9"><h2>9. Beállítások és akadálymentesítés</h2>
+<h3>5.4 Képernyők közötti navigáció</h3>
+<p>A H4 rendszerterv főmenü, játék, szünet, készlet, napló, beállítások és mentés/betöltés képernyőállapotokat különít el. A képernyőváltás nem jelentheti a készlet, feladat vagy történet állapotának elvesztését.</p>
 
-<h3>9.1 Hang</h3><p>A tervek szerint külön állítható legalább a <strong>fő hangerő</strong> és a <strong>hangeffektek</strong> szintje. A hangok iránya és távolsága segít a fenyegetés felismerésében, ezért fejhallgató használata javasolt, de nem kötelező.</p>
-<h3>9.2 Feliratok és vizuális segítség</h3><p>A feliratok bekapcsolhatók, és a fontos, kizárólag hanggal jelzett információk legalább részben vizuálisan is hozzáférhetők lesznek. Tervezett továbbá egy színlátási akadályozottságot segítő mód vagy jelzés. A konkrét megjelenés és feliratméret még pontosítandó.</p>
-<h3>9.3 Vezérlés testreszabása</h3><ol><li>Nyissa meg a <strong>Beállítások</strong> menüpontot.</li><li>Keresse meg a <strong>Vezérlés</strong> részt.</li><li>Válassza ki a módosítani kívánt alapműveletet, és rendelje hozzá a kívánt bemenetet.</li><li>Ellenőrizze, hogy az új kiosztás használható maradt-e minden szükséges művelethez.</li></ol>
-<h3>9.4 Kép és felület</h3><p>A játék a tervek szerint több felbontáson és képarányon skálázható kezelőfelületet kínál. Az elérhető grafikai beállítások és a támogatott kijelzőprofilok listája később véglegesíthető.</p>
+<h2 id="tuleles">6. Túlélés, lopakodás és a lény</h2>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-10"><h2>10. Példa egy első játékmenetre</h2>
+<h3>6.1 Mozgás és észlelhetőség</h3>
+<p>A futás gyors, de nagyobb zajt kelthet. A guggolás, az akadályok és a fedezék mérsékelhetik az észlelés valószínűségét; <strong>egyik sem biztosít automatikus láthatatlanságot</strong>.</p>
 
-<p>Az alábbi <strong>illusztratív, nem egy konkrét pálya leírását adó</strong> forgatókönyv megmutatja, hogyan kapcsolódnak össze a tervezett funkciók.</p>
-<ol><li>Indítson új játékot, és ismerkedjen meg a kezdő területtel.</li><li>Olvassa el az aktuális célkitűzést, majd vizsgálja meg a közelben használható terminált.</li><li>Keressen egy továbbjutáshoz szükséges tárgyat, és vegye fel a készletbe.</li><li>Ha veszélyre utaló hangot hall, váltson óvatosabb mozgásra, és használja a fedezékeket.</li><li>Amennyiben a lény közeledik, mérlegelje a visszavonulást vagy egy figyelemelterelő eszköz használatát.</li><li>Teljesítse a területre vonatkozó feladatot, és olvassa el az újonnan megszerzett állomásadatot.</li><li>Tekintse át a naplóbejegyzést és az elérhető készletet.</li><li>Ha a mentés engedélyezett, rögzítse a játékállapotot, majd szükség esetén térjen vissza a főmenübe.</li></ol>
-<p>A végleges játékban az állomástér, a feladatok, az eszközök és a fenyegetések tényleges sorrendje eltérhet ettől a szemléltető példától.</p>
+<h3>6.2 A lény reakciói</h3>
+<p>A lény-MI a játékvilágban szabályosan érzékelhető látvány- és hangesemények alapján járőrözhet, gyanakodhat, kereshet, üldözhet és elveszítheti a célpontot. Nem használhat folyamatos, jogosulatlan pontos helyinformációt.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-11"><h2>11. Hibaelhárítás és gyakori kérdések</h2>
+<h3>6.3 Mit tegyen veszély esetén?</h3>
+<ol>
+<li>Figyeljen a hangokra és a látható veszélyjelzésekre.</li>
+<li>Ha még nem észlelték, lassítson, és keressen fedezéket vagy másik útvonalat.</li>
+<li>Üldözéskor használja az akadályokat és az ismert átjárókat.</li>
+<li>Ha megfelelő eszköze van, mérlegeljen figyelemelterelést.</li>
+<li>Veszély után ellenőrizze a készletét és az aktuális célját.</li>
+</ol>
 
-<table><tr><th>Jelenség / kérdés</th><th>Teendő / magyarázat</th></tr><tr><td>Nem indul a játék.</td><td>Jelenleg nincs publikált telepíthető kiadás. A végleges kiadásnál ellenőrizze majd a támogatott rendszert és a telepítést.</td></tr><tr><td>A Folytatás nem választható.</td><td>Lehetséges, hogy még nem létezik érvényes mentés; kezdjen új játékot.</td></tr><tr><td>Nem használható egy ajtó vagy tárgy.</td><td>Lépjen közelebb, figyelje az interakciójelzést, illetve ellenőrizze az előfeltételeket és az aktuális célt.</td></tr><tr><td>Miért vett észre a lény?</td><td>A látótávolságon kívül a hang, a mozgás és a korábbi érzékelési események is befolyásolhatják a keresést.</td></tr><tr><td>Miért nem működik egy eszköz?</td><td>Ellenőrizze a darabszámot, a használhatósági feltételeket és az adott terület korlátait.</td></tr><tr><td>Nem hallom jól a fontos jelzéseket.</td><td>Állítsa a hangeffektek szintjét és kapcsolja be a feliratokat, illetve az elérhető vizuális jelzéseket.</td></tr><tr><td>Betöltési hiba jelenik meg.</td><td>Próbáljon másik érvényes mentést használni; sérült fájlt ne írjon felül, amennyiben megőrizhető.</td></tr><tr><td>Kell internet a játékhoz?</td><td>Az alapjáték tervezetten offline működik.</td></tr><tr><td>Miért változik az események ritmusa?</td><td>A rendező-MI a játékhelyzethez igazítja a feszültséget, meghatározott korlátokon belül.</td></tr><tr><td>Hová jelezhetem a problémákat?</td><td>A végleges hibabejelentési csatorna még nem ismert. A projekt dokumentációs kapcsolattartása a csapaton keresztül történik.</td></tr></table>
-<h3>11.1 Hibabejelentéshez javasolt adatok</h3><p>Ha majd elérhető lesz tesztelhető változat, a hibajelentésben hasznos lehet az alkalmazás verziója, az operációs rendszer, az érintett funkció, az ismétlés lépései, az elvárt és a tényleges viselkedés, továbbá szükség esetén képernyőkép vagy napló.</p>
+<h3>6.4 A rendező-MI működése a játékos szemszögéből</h3>
+<p>A rendező-MI a játékbeli eseményekből és előrehaladásból következtet a feszültségre, és ennek megfelelően időzíthet eseményeket vagy pihenőszakaszokat. A lény-MI-től elkülönülő feladata nem jogosítja fel arra, hogy a lénynek szabálytalanul felfedje a játékos pontos helyét.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<section id="fejezet-12"><h2>12. Fogalomtár, függelék és további pontosítások</h2>
+<h3>6.5 Hangjelzések és tájékozódás</h3>
+<p>A H4 terv szerint a térbeli hang irányt és távolságot érzékeltető jelzés. Fontos játékmechanikai hangokhoz vizuális vagy feliratos megfelelő is szükséges. Fejhallgató használata javasolt, de nem kötelező.</p>
+
+<h2 id="felfedezes">7. Felfedezés, feladatok, készlet és napló</h2>
+
+<h3>7.1 Tájékozódás az űrállomáson</h3>
+<p>Az állomás egymással összekapcsolt területekből áll. Az átjárók megnyitását feladatok, tárgyak vagy állomásrendszerek működése korlátozhatja.</p>
+
+<h3>7.2 Feladatok teljesítése</h3>
+<ol>
+<li>Olvassa el az aktuális célt.</li>
+<li>Vizsgálja meg a kapcsolódó területet és interaktív objektumokat.</li>
+<li>Szerezze meg a szükséges információt, eszközt, vagy állítsa helyre a rendszert.</li>
+<li>Ellenőrizze a teljesítési visszajelzést és a következő célt.</li>
+</ol>
+
+<h3>7.3 Tárgyak és erőforrások</h3>
+<p>A készletben a tárgyak és darabszámaik nyilvántartása történik. Az egyes eszközök felvehetők, használhatók, és ahol engedélyezett, eldobhatók. Nulla darabszám esetén a fogyóeszköz használata nem hajtható végre. A H4 analízis a készletet és a tárgyhasználatot külön, a feladat- és pályarendszerrel együttműködő alrendszerként kezeli.</p>
+
+<h3>7.4 Figyelemelterelés, akadályok és csapdák</h3>
+<p>Zajt keltő eszközök elterelhetik a lény figyelmét, bizonyos akadályok vagy csapdák pedig ideiglenesen lassíthatják. Az alkalmazható eszközök neve, használati korlátja és hatótávolsága a megvalósítás során rögzíthető.</p>
+
+<h3>7.5 Történeti információk és napló</h3>
+<p>Feljegyzések, termináladatok és más történeti források új információkat nyithatnak meg. A napló a már megismert tartalmat tartja elérhetővé. A döntések és az információk a befejezésre hatással lehetnek; a kézikönyv nem árulja el előre a konkrét feltételeket.</p>
+
+<h3>7.6 Az előrehaladás összhangja</h3>
+<p>A H4 modell szerint a feladat- és történetállapot, a hozzáférési jogosultságok és a készlet összefüggenek. Emiatt egy tárgy megszerzése vagy egy cél teljesítése később másik állomásterületen is változást eredményezhet.</p>
+
+<h2 id="mentes">8. Mentés és betöltés</h2>
+
+<h3>8.1 Mentés</h3>
+<p>A mentési rendszer a karakter, az állomástér, a készlet, a feladatok, a történet és a releváns MI-állapotok <strong>összehangolt pillanatképét</strong> őrzi meg. A H4 rendszerterv helyi, SQLite-alapú adatkezelést rögzít, de a felhasználónak nem kell közvetlenül adatbázist kezelnie. A mentési pontok és az automatikus mentés szabályai a megvalósítás során rögzíthetők.</p>
+<ol>
+<li>A mentés engedélyezésekor nyissa meg a megfelelő menüt vagy érje el a mentési pontot.</li>
+<li>Válasszon mentési helyet, ha a felület támogatja.</li>
+<li>Indítsa el a mentést, és ellenőrizze a sikeres művelet visszajelzését.</li>
+<li>Kilépés előtt győződjön meg arról, hogy a mentés érvényesen létrejött.</li>
+</ol>
+
+<h3>8.2 Betöltés</h3>
+<ol>
+<li>A főmenüben vagy a játékban nyissa meg a <strong>Betöltés</strong> lehetőséget.</li>
+<li>Válassza ki a kívánt érvényes mentést az elérhető azonosító, időpont vagy előrehaladási adat alapján.</li>
+<li>Indítsa el a betöltést; a rendszer ellenőrzi a mentés épségét és kompatibilitását.</li>
+<li>Siker esetén ellenőrizze a karakter helyzetét, készletét és célállapotát.</li>
+</ol>
+
+<h3>8.3 Sikertelen mentés és sérült mentés</h3>
+<p>A H4 rendszerterv tranzakcióval és konzisztencia-ellenőrzéssel védi az állományokat. Sikertelen mentéskor a korábbi érvényes állapot megőrzése és világos hibaüzenet az elvárt viselkedés. Sérült, hiányos vagy nem kompatibilis mentés esetén nem szabad a játékvilágot csak részben visszaállítani. Válasszon korábbi érvényes mentést, ha van ilyen.</p>
+
+<h3>8.4 Mentések és beállítások elkülönítése</h3>
+<p>A H4 modell a játék előrehaladásának mentését és az általános felhasználói beállításokat fogalmilag külön kezeli. A beállítások tárolásának módja és a mentési helyek száma a megvalósítás során rögzíthető.</p>
+
+<h2 id="beallitasok">9. Beállítások és akadálymentesítés</h2>
+
+<h3>9.1 Hang</h3>
+<p>Tervezett a fő hangerő és a hangeffektek szintjének állítása. A térbeli hang a fenyegetés irányának és távolságának felismerését segíti.</p>
+
+<h3>9.2 Feliratok és vizuális segítség</h3>
+<p>A feliratok bekapcsolhatók; fontos hangjelzésekhez vizuális megfelelő vagy más hozzáférhető visszajelzés szükséges. A pontos feliratméret, ikonok és színlátási segédmód a megvalósítás során rögzíthető.</p>
+
+<h3>9.3 Vezérlés testreszabása</h3>
+<ol>
+<li>Nyissa meg a <strong>Beállítások</strong> menüt.</li>
+<li>Lépjen a <strong>Vezérlés</strong> részre.</li>
+<li>Válasszon műveletet, majd rendeljen hozzá támogatott bemenetet.</li>
+<li>Ellenőrizze, hogy az összes alapvető művelet elérhető maradt.</li>
+</ol>
+
+<h3>9.4 Kép és felület</h3>
+<p>Tervezett a különböző felbontásokhoz és képarányokhoz alkalmazkodó felület. A H4 képernyőtervek alapján a HUD, a készlet, a napló és a beállítások külön nézetek, egységes navigációval és visszalépési lehetőséggel.</p>
+
+<h3>9.5 Beállítások megőrzése</h3>
+<p>A H4 terv külön beállításkezelő komponenst tartalmaz, amely az érvényes értékeket rögzíti, és szükség esetén alapértelmezett értékeket állít vissza. Az elérhető opciók és alapértékek a megvalósítás során ellenőrizhetők.</p>
+
+<h2 id="pelda">10. Példa egy első játékmenetre</h2>
+<p>Az alábbi <strong>illusztratív, nem egy végleges pályát leíró</strong> forgatókönyv bemutatja a tervezett funkciók kapcsolatát.</p>
+<ol>
+<li>Indítson új játékot, és tekintse meg a kezdő célt.</li>
+<li>Vizsgáljon meg egy közeli terminált és egy felvehető tárgyat.</li>
+<li>Nyissa meg a készletet, és ellenőrizze a megszerzett eszközt.</li>
+<li>Veszélyes hang hallatán csökkentse a zajt, és keressen fedezéket.</li>
+<li>Szükség esetén használjon figyelemelterelést vagy egy alternatív átjárót.</li>
+<li>Teljesítse a feladat feltételeit; ellenőrizze a napló frissülését.</li>
+<li>A mentés engedélyezésekor kezdeményezzen mentést, és ellenőrizze a sikerességét.</li>
+<li>Térjen vissza a főmenübe, majd egy érvényes mentésből folytassa a játékot.</li>
+</ol>
+<p>A pálya, az eszközök és a konkrét események sorrendje a későbbi megvalósításban eltérhet a példától.</p>
+
+<h2 id="hiba">11. Hibaelhárítás és gyakori kérdések</h2>
+<table>
+<tr><th>Jelenség / kérdés</th><th>Teendő / magyarázat</th></tr>
+<tr><td>Nem indul a játék.</td><td>A projekt jelenlegi állapotában nincs publikált telepíthető kiadás.</td></tr>
+<tr><td>A Folytatás nem választható.</td><td>Lehet, hogy nem létezik érvényes mentés; kezdjen új játékot.</td></tr>
+<tr><td>Nem használható egy ajtó vagy tárgy.</td><td>Ellenőrizze a távolságot, az interakciójelzést és a feladat előfeltételeit.</td></tr>
+<tr><td>Miért vett észre a lény?</td><td>A zaj, a látvány és a korábbi érzékelési események növelhetik a keresés valószínűségét.</td></tr>
+<tr><td>Nem működik az eszköz.</td><td>Ellenőrizze a darabszámot, a helyzetet és a használati feltételeket.</td></tr>
+<tr><td>Nem hallom a fontos jeleket.</td><td>Állítsa a hangeffektek hangerejét, valamint kapcsolja be a feliratokat és vizuális jelzéseket.</td></tr>
+<tr><td>A mentés sikertelen.</td><td>Olvassa el a hibaüzenetet; lehetőség szerint a korábbi érvényes mentés maradjon meg.</td></tr>
+<tr><td>A betöltés hibát jelez.</td><td>Próbáljon másik érvényes mentést; a rendszernek ki kell zárnia a részleges betöltést.</td></tr>
+<tr><td>A régi mentés nem kompatibilis.</td><td>A H4 terv sémaverzió-ellenőrzést tartalmaz; a kompatibilitási és migrációs szabályok a megvalósítás során rögzíthetők.</td></tr>
+<tr><td>Kell internet a játékhoz?</td><td>Az egyjátékos alapfunkciókhoz nem szükséges.</td></tr>
+<tr><td>Miért változik az események ritmusa?</td><td>A rendező-MI a játékhelyzetből becsült feszültség alapján alakíthatja az eseményeket.</td></tr>
+<tr><td>Hol jelezhetek hibát?</td><td>A kiadási és támogatási csatorna a megvalósítás során rögzíthető.</td></tr>
+</table>
+
+<h3>11.1 Hibabejelentéshez javasolt adatok</h3>
+<p>Tesztelhető kiadás esetén adja meg az alkalmazás verzióját, platformját, a hiba pontos lépéseit, a várt és tapasztalt eredményt, a kapcsolódó mentést és ha lehetséges a naplóbejegyzést. Személyes adatot szükségtelenül ne mellékeljen.</p>
+
+<h2 id="fogalomtar">12. Fogalomtár és további információk</h2>
 
 <h3>12.1 Fogalomtár</h3>
-<table><tr><th>Fogalom</th><th>Jelentés</th></tr><tr><td>Játékoskarakter</td><td>Az űrállomáson rekedt, a felhasználó által irányított szerelő.</td></tr><tr><td>Lény-MI</td><td>Az üldöző lény érzékelését, keresését és mozgását irányító mesterséges intelligencia.</td></tr><tr><td>Rendező-MI</td><td>A feszültség és az események ritmusát szabályozó háttérrendszer.</td></tr><tr><td>HUD</td><td>A játék közben látható információs felület.</td></tr><tr><td>Interakció</td><td>Felhasználói művelet a játékvilágban elérhető objektumon.</td></tr><tr><td>Készlet</td><td>A birtokolt tárgyak és felhasználható erőforrások gyűjteménye.</td></tr><tr><td>Napló</td><td>A megszerzett, később visszakereshető történeti információk helye.</td></tr><tr><td>Mentés</td><td>A játék releváns állapotának későbbi visszaállításhoz történő rögzítése.</td></tr><tr><td>SRS</td><td>Software Requirements Specification – szoftverkövetelmény-specifikáció.</td></tr></table>
-<h3>12.2 Függőben lévő dokumentációs adatok</h3>
-<ul><li>A végleges célplatform, operációsrendszer-támogatás és minimális gépigény;</li><li>a letöltés, a telepítés, az eltávolítás és az indítás tényleges folyamata;</li><li>a billentyűzetes és kontrolleres alapértelmezett kiosztás;</li><li>a mentési helyek és a mentés automatikus/kézi működésének részletei;</li><li>a pontos menüelnevezések, HUD-elemek és képernyőképek;</li><li>a konkrét pályák, eszközök, feladatok és befejezési feltételek;</li><li>a támogatási, hibabejelentési és kiadási csatornák.</li></ul>
-<h3>12.3 Kapcsolat az SRS-hez</h3>
-<table><tr><th>Felhasználói kézikönyv</th><th>Kapcsolódó SRS-fejezet</th></tr>
-<tr><td>3. Rendszerkövetelmények és telepítés</td><td>2., 3.2, 9., 12.2, 12.4</td></tr>
-<tr><td>4. Indítás, főmenü és szünet</td><td>3.2, 4. (UC-01), 12.1</td></tr>
-<tr><td>5. Irányítás és kezelőfelület</td><td>3.3, 3.10, 4. (UC-02, UC-10), 12.1, 12.2</td></tr>
-<tr><td>6. Túlélés, lopakodás és a lény</td><td>3.3, 3.6, 3.7, 4. (UC-03, UC-11, UC-12, UC-13, UC-14)</td></tr>
-<tr><td>7. Felfedezés, feladatok, készlet és napló</td><td>3.4, 3.5, 3.8, 4. (UC-04, UC-05, UC-06, UC-07)</td></tr>
-<tr><td>8. Mentés és betöltés</td><td>3.9, 4. (UC-08), 6.</td></tr>
-<tr><td>9. Beállítások és akadálymentesítés</td><td>3.10, 4. (UC-10), 5., 10.</td></tr>
-<tr><td>11. Hibaelhárítás és gyakori kérdések</td><td>3.9, 6., 10.</td></tr>
+<table>
+<tr><th>Fogalom</th><th>Jelentés</th></tr>
+<tr><td>Játékoskarakter</td><td>A játékos által irányított szerelő.</td></tr>
+<tr><td>Lény-MI</td><td>Az ellenfél érzékelését és döntéseit kezelő alrendszer.</td></tr>
+<tr><td>Rendező-MI</td><td>A feszültségi ívet és eseményeket szabályozó háttérrendszer.</td></tr>
+<tr><td>HUD</td><td>A játék közbeni információk felülete.</td></tr>
+<tr><td>Interakció</td><td>Egy használható játékvilágbeli objektumon kezdeményezett művelet.</td></tr>
+<tr><td>Készlet</td><td>A játékos által birtokolt tárgyak és mennyiségek nyilvántartása.</td></tr>
+<tr><td>Napló</td><td>A megszerzett történeti információk és célok gyűjteménye.</td></tr>
+<tr><td>Mentési pillanatkép</td><td>A karakter, pálya, készlet, feladatok és MI-k összehangolt állapota.</td></tr>
+<tr><td>Mentési hely</td><td>A mentett állapot kiválasztására szolgáló felhasználói bejegyzés.</td></tr>
+<tr><td>Térbeli hang</td><td>A hang irányát és távolságát érzékeltető megjelenítés.</td></tr>
+<tr><td>SRS</td><td>Software Requirements Specification – szoftverkövetelmény-specifikáció.</td></tr>
+<tr><td>SQLite</td><td>A H4 rendszertervben rögzített helyi adatbázis-megoldás; nem felhasználói kezelésű funkció.</td></tr>
 </table>
-<h3>12.4 Felhasznált források</h3><ol><li><a href="kovetelmeny-specifikacio.html">Visszhang – Software követelmény specifikáció, H3, 1.0 tervezet</a>.</li><li><a href="vizio.html">Szevasztopol Szoftverek – Vízió dokumentum</a>.</li><li><a href="projekt-terv.html">Szevasztopol Szoftverek – Projekt terv</a>.</li><li><a href="index.html">Szevasztopol Szoftverek – Projekt dokumentumok</a>.</li></ol>
-<p class="muted">A kézikönyv a H3 mérföldkőre készült első változat. A H4 során a részletes felülettervek és az új döntések alapján módosítandó.</p>
+<p>A további tervezési és adatmodellezési fogalmak a külön Szótár dokumentumban találhatók.</p>
 
-<p class="toplink"><a href="#top">Vissza a lap tetejére</a></p></section><hr>
-<footer><p class="muted">Szevasztopol Szoftverek · Visszhang (Echo) · H3 · Felhasználói dokumentáció, 1.0</p></footer></body></html>
+<h3>12.2 Kapcsolat a követelményekkel és a H4 modellekkel</h3>
+<p>A kézikönyv fejezetei a következő módon kapcsolódnak a projekt dokumentumaihoz. A rendszerkövetelmények és a telepítés a követelményspecifikáció és a rendszerterv ide vonatkozó részeire épül. Az indítás, a főmenü és a szünet a követelményspecifikáció használati eseteire és a rendszerterv felületi állapotaira támaszkodik. Az irányítás és a kezelőfelület a rendszerterv képernyőterveit és vezérlési javaslatát követi. A túlélés, a lopakodás és a lény a H4 analízismodell lény-MI és rendező-MI alrendszereinek szabályait tükrözi. A felfedezés, a feladatok, a készlet és a napló az analízismodell pálya-, készlet- és történetkezelésére épül. A mentés és a betöltés a rendszerterv perzisztencia-tervét követi. A beállítások és az akadálymentesítés a rendszerterv felületi és beállítási fejezeteire támaszkodik. A hibaelhárítás a követelményspecifikáció és a rendszerterv ide vonatkozó részeit használja.</p>
+
+<p>Vissza a lap tetejére: <a href="#top">ugrás a címlapra</a>.</p>
+
+</body>
+</html>
